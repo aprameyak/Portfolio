@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aprameya Kannan</title>
+    <style>
+        body {
+            background-color: #1a202c;
+            color: #d6bcfa;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        header, footer {
+            background-color: #2d3748;
+            padding: 20px;
+        }
+        .container {
+            width: 90%;
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+        .profile-picture {
+            width: 150px; 
+            height: 150px; 
+            border-radius: 50%; 
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 20px auto;
+            border: 3px solid #c77dff;
+        }
+        .profile-picture img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .project {
+            background-color: #2d3748;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            border: 1px solid #c77dff;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+        }
+        .project h3 {
+            color: #e0aaff;
+        }
+        .project p {
+            color: #9d4edd;
+        }
+        .project a {
+            color: #e0aaff;
+            text-decoration: underline;
+        }
+        .contact img {
+            width: 40px;
+            height: 40px;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Aprameya Kannan</h1>
+        <div class="profile-picture">
+            <img src="https://aprameyak-portfolio-assets.s3.us-east-1.amazonaws.com/profilepic.jpg" alt="Profile Picture">
+        </div>
+    </header>
+    
+    <section class="container">
+        <h2>I am a student at the</h2>
+        <h1>University of Maryland.</h1>
+        <h3>Passionate about the future of technology:</h3>
+        <p>Focusing on software development, cloud computing, and artificial intelligence.</p>
+    </section>
+    
+    <section class="container">
+        <h2>Projects</h2>
+        <div class="project">
+            <h3>FitSync</h3>
+            <p>Developed a MERN stack application for fitness goal tracking. Users can log workouts, track progress, and monitor personal records over time. Implemented a MongoDB backend with Express.js API routes, a React.js frontend, and user authentication with Firebase.</p>
+            <a href="https://github.com/aprameyak/FitSync">GitHub</a>
+        </div>
+        <div class="project">
+            <h3>LaughALot</h3>
+            <p>Developed a serverless Generative AI-powered joke generator using GPT-4. Optimized responses via LangChain and fine-tuned parameters. Built a React.js frontend with MaterialUI and integrated Clerk for authentication. Deployed using Vercel with CI/CD pipelines.</p>
+            <a href="https://github.com/aprameyak/LaughALot">GitHub</a> |
+            <a href="https://laughalot.vercel.app/">Live Demo</a>
+        </div>
+        <div class="project">
+            <h3>StockUp</h3>
+            <p>Designed and developed a functional kitchen pantry management system with full CRUD operations. Leveraged Firebase for real-time database updates, built a RESTful API, and implemented an intuitive React.js UI with MaterialUI.</p>
+            <a href="https://github.com/aprameyak/KitchenPantryApp">GitHub</a> |
+            <a href="https://pantryapp-iota.vercel.app/">Live Demo</a>
+        </div>
+        <div class="project">
+            <h3>ScoreMe</h3>
+            <p>Cleaned and analyzed a Kaggle CSV dataset to derive a linear regression model predicting student exam scores. Utilized Pandas, NumPy, and Scikit-learn to preprocess data and evaluate model performance.</p>
+            <a href="https://github.com/aprameyak/PredictingStudentPerformance">GitHub</a>
+        </div>
+        <div class="project">
+            <h3>Wordle Clone</h3>
+            <p>Designed a FastAPI backend for a Wordle clone, generating random five-letter words via OpenAI's API. Built a responsive React.js frontend and implemented game mechanics including colored feedback for guesses.</p>
+            <a href="https://github.com/aprameyak/WordleClone">GitHub</a>
+        </div>
+        <div class="project">
+            <h3>Car Safety Classifier</h3>
+            <p>Extracted and cleaned data from a Kaggle CSV file, preparing a dataset containing car features using a Pandas dataframe in a Jupyter Notebook. Utilized Numpy, Seaborn, and Matplotlib to visualize and analyze key features related to car safety. Built and trained a Random Forest Classifier model using Scikit-Learn, optimizing it to achieve 94.6% accuracy with 100 decision trees using K-Nearest Neighbors (KNN) to refine model predictions.</p>
+            <a href="https://github.com/aprameyak/CarSafetyClassifier">GitHub</a>
+        </div>
+        <div class="project">
+            <h3>Streaming Platform Data Visualization</h3>
+            <p>Analyzed a Kaggle dataset about the most streamed songs across platforms using Python with Pandas and Matplotlib. Used Pearson correlation to measure the relationship between track scores and playlist counts across Apple Music, Amazon, and Deezer.</p>
+            <a href="https://github.com/aprameyak/MusicStreams">GitHub</a>
+        </div>
+        <div class="project">
+            <h3>Computer Vision Image Labeller</h3>
+            <p>Developed a Python script to analyze image files stored in AWS S3 buckets, utilizing AWS Rekognition for image label detection. Automated processing and classification of image data, demonstrating scalability and reliability.</p>
+            <a href="https://github.com/aprameyak/ComputerVisionRekognition">GitHub</a>
+        </div>
+        <div class="project">
+            <h3>Stock Price Emailer</h3>
+            <p>Utilized a Node.js script to get stock price data from an API within an AWS Lambda function and invoke AWS SES. Created an AWS EventBridge scheduler to invoke the AWS Lambda function daily to send stock price data to my inbox.</p>
+            <a href="https://github.com/aprameyak/StockPriceEmailer">GitHub</a>
+        </div>
+    </section>
+    
+    <section class="container">
+        <h2>Connect</h2>
+        <div class="contact">
+            <a href="https://www.github.com/aprameyak/"><img src="https://aprameyak-portfolio-assets.s3.us-east-1.amazonaws.com/github.png" alt="GitHub"></a>
+            <a href="https://www.linkedin.com/in/aprameyak/"><img src="https://aprameyak-portfolio-assets.s3.us-east-1.amazonaws.com/linkedin.png" alt="LinkedIn"></a>
+        </div>
+    </section>
+    
+    <footer>
+        <p>&copy; 2025 Aprameya Kannan. All rights reserved.</p>
+    </footer>
+</body>
+</html>
