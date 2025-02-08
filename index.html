@@ -39,7 +39,7 @@
             height: 100%;
             object-fit: cover;
         }
-        .project {
+        .project, .experience, .skills {
             background-color: #2d3748;
             padding: 15px;
             border-radius: 8px;
@@ -47,15 +47,29 @@
             border: 1px solid #c77dff;
             box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
         }
-        .project h3 {
+        .project h3, .experience h3, .skills h3 {
             color: #e0aaff;
         }
-        .project p {
+        .project p, .experience p, .skills p {
             color: #9d4edd;
         }
-        .project a {
+        .project a, .experience a {
             color: #e0aaff;
             text-decoration: underline;
+            margin-right: 10px;
+        }
+        .skills ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .skills li {
+            display: inline-block;
+            background-color: #4a5568;
+            color: #e0aaff;
+            padding: 8px 12px;
+            margin: 5px;
+            border-radius: 5px;
+            font-size: 14px;
         }
         .contact img {
             width: 40px;
@@ -83,62 +97,142 @@
         <h2>Projects</h2>
         <div class="project">
             <h3>FitSync</h3>
-            <p>Developed a MERN stack application for fitness goal tracking. Users can log workouts, track progress, and monitor personal records over time. Implemented a MongoDB backend with Express.js API routes, a React.js frontend, and user authentication with Firebase.</p>
+            <p>Engineered a scalable MERN stack application, leveraging Firebase Firestore for authentication and AWS-hosted MongoDB Atlas for storing personalized health profiles, fitness logs, and nutrition data. Developed and tested RESTful APIs with Node.js and Express.js middleware with Mongoose, utilizing Postman for unit, integration, and end-to-end testing to ensure accurate calorie calculations and data integrity with eventual consistency. Integrated GPT-4-powered chatbot using OpenAI API for real-time, personalized fitness guidance based on user activity logs and health data. Designed a responsive user interface with a React.js, TypeScript, and MaterialUI frontend stack to deliver an intuitive, dynamic user experience with efficient data synchronization.</p>
             <a href="https://github.com/aprameyak/FitSync">GitHub</a>
+            <p><strong>Tech Stack:</strong> Node.js, Express.js, React.js, TypeScript, JavaScript, MaterialUI, MongoDB, Firebase, Mongoose, AWS</p>
         </div>
         <div class="project">
-            <h3>LaughALot</h3>
-            <p>Developed a serverless Generative AI-powered joke generator using GPT-4. Optimized responses via LangChain and fine-tuned parameters. Built a React.js frontend with MaterialUI and integrated Clerk for authentication. Deployed using Vercel with CI/CD pipelines.</p>
-            <a href="https://github.com/aprameyak/LaughALot">GitHub</a> |
-            <a href="https://laughalot.vercel.app/">Live Demo</a>
-        </div>
-        <div class="project">
-            <h3>StockUp</h3>
-            <p>Designed and developed a functional kitchen pantry management system with full CRUD operations. Leveraged Firebase for real-time database updates, built a RESTful API, and implemented an intuitive React.js UI with MaterialUI.</p>
-            <a href="https://github.com/aprameyak/KitchenPantryApp">GitHub</a> |
-            <a href="https://pantryapp-iota.vercel.app/">Live Demo</a>
+            <h3>Play2Learn</h3>
+            <p>Used GitHub to develop an Arcade-themed web application for gamified learning featuring deployment and integration with CI/CD pipelines using GitHub Actions and Vercel for continuous delivery. Used Node.js with AWS Lambda and API Gateway to create serverless endpoints to generate JSON documents of questions and answers for three distinct games using a well-engineered prompt for OpenAI’s GPT-4 model using an indicated topic as the request body tested via Postman. Used Figma to design an arcade-themed user interface that enhanced the gamified user experience and implemented this with React.js and Next.js using next navigation to route from the homepage to the different games and back with logic defining the beginning and ending of the games.</p>
+            <a href="https://github.com/aprameyak/Play2Learn">GitHub</a> |
+            <a href="https://play2learn-ten.vercel.app/">Live Demo</a>
+            <p><strong>Tech Stack:</strong> Node.js, React.js, Next.js, TypeScript, JavaScript, AWS Lambda, AWS API Gateway, Postman, Vercel, Figma</p>
         </div>
         <div class="project">
             <h3>ScoreMe</h3>
-            <p>Cleaned and analyzed a Kaggle CSV dataset to derive a linear regression model predicting student exam scores. Utilized Pandas, NumPy, and Scikit-learn to preprocess data and evaluate model performance.</p>
+            <p>Processed and analyzed a Kaggle dataset using Pandas, Matplotlib, and Seaborn to understand student exam performance patterns. Developed a linear regression model using Scikit-Learn to predict student exam scores, achieving an accuracy of 98.8% and packaged it for future use via Pickle. Built a React.js front-end interface to collect user inputs and dynamically predict exam scores through a Flask API backend. Ensured smooth data integration between the decoupled frontend and backend, providing real-time exam performance predictions to users.</p>
             <a href="https://github.com/aprameyak/PredictingStudentPerformance">GitHub</a>
+            <p><strong>Tech Stack:</strong> Python, JavaScript, Flask, Scikit-Learn, Pandas, Matplotlib, Seaborn, Pickle</p>
+        </div>
+        <div class="project">
+            <h3>LaughALot</h3>
+            <p>Developed a serverless Generative AI-powered joke generator leveraging OpenAI's GPT-4 model optimizing responses through fine-tuned parameters like temperature, top_p, and maxTokens via LangChain for contextual joke creation. Built a stateless JavaScript API with ternary GET/POST routes tested on Postman to create jokes on user-provided or general topics. Created a responsive and secure interface using React.js and MaterialUI for seamless experience authentication through Clerk, enabling login via identity federation. Designed CI/CD pipelines with GitHub Actions and Vercel to streamline code deployment with continuous integration and delivery.</p>
+            <p><strong>Tech Stack:</strong> React.js, Next.js, JavaScript, LangChain, MaterialUI, Clerk, Vercel</p>
+            <p><a href="https://laughalot.vercel.app/" target="_blank">Live Demo</a> | <a href="https://github.com/aprameyak/LaughALot" target="_blank">View Code</a></p>
+        </div>
+        <div class="project">
+            <h3>StockUp</h3>
+            <p>Designed and developed a functional kitchen pantry management system with full CRUD (Create, Read, Update, Delete) operations via a Google Cloud Platform Firebase NoSQL database. Built a RESTful JavaScript API to handle front-end interactions and synchronize real-time updates with the MaterialUI interface. Delivered a highly interactive experience by integrating real-time search, modal-based item addition, and bulk inventory updates as features to enhance the user experience.</p>
+            <p><strong>Tech Stack:</strong> React.js, Next.js, Firebase Firestore, Google Cloud Platform, MaterialUI</p>
+            <p><a href="https://pantryapp-iota.vercel.app/?vercelToolbarCode=IULSuS2R3DuSkdh" target="_blank">Live Demo</a> | <a href="https://github.com/aprameyak/KitchenPantryApp" target="_blank">View Code</a></p>
         </div>
         <div class="project">
             <h3>Wordle Clone</h3>
-            <p>Designed a FastAPI backend for a Wordle clone, generating random five-letter words via OpenAI's API. Built a responsive React.js frontend and implemented game mechanics including colored feedback for guesses.</p>
-            <a href="https://github.com/aprameyak/WordleClone">GitHub</a>
+            <p>Designed a FastAPI Python backend with CORS Middleware to ensure secure communication to the React.js front-end interface. Implemented a FastAPI HTTP GET route using the OpenAI API for GPT-3.5-turbo to generate random 5-letter words. Built a responsive interface to emulate Wordle's existing green, yellow, and grey feedback for user guesses and added functionality to reset games to start new games on demand.</p>
+            <p><strong>Tech Stack:</strong> Python, FastAPI, React.js, JavaScript, CORS Middleware</p>
+            <p><a href="https://github.com/aprameyak/WordleClone" target="_blank">View Code</a></p>
         </div>
         <div class="project">
             <h3>Car Safety Classifier</h3>
-            <p>Extracted and cleaned data from a Kaggle CSV file, preparing a dataset containing car features using a Pandas dataframe in a Jupyter Notebook. Utilized Numpy, Seaborn, and Matplotlib to visualize and analyze key features related to car safety. Built and trained a Random Forest Classifier model using Scikit-Learn, optimizing it to achieve 94.6% accuracy with 100 decision trees using K-Nearest Neighbors (KNN) to refine model predictions.</p>
-            <a href="https://github.com/aprameyak/CarSafetyClassifier">GitHub</a>
+            <p>Extracted and cleaned data from a Kaggle CSV file, preparing a dataset containing car features using a Pandas dataframe in a Jupyter Notebook. Utilized Numpy, Seaborn, and Matplotlib to visualize and analyze key features related to car safety, uncovering valuable insights for model improvement. Built and trained a Random Forest Classifier model using Scikit-Learn, optimizing the model by achieving 94.6% accuracy with 100 decision trees using K-Nearest Neighbors (KNN) to further improve classification results and refine model predictions.</p>
+            <p><strong>Tech Stack:</strong> Python, Scikit-Learn, Matplotlib, Pandas, Seaborn, Numpy, Jupyter</p>
+            <p><a href="https://github.com/aprameyak/CarSafetyClassifier" target="_blank">View Code</a></p>
         </div>
         <div class="project">
-            <h3>Streaming Platform Data Visualization</h3>
-            <p>Analyzed a Kaggle dataset about the most streamed songs across platforms using Python with Pandas and Matplotlib. Used Pearson correlation to measure the relationship between track scores and playlist counts across Apple Music, Amazon, and Deezer.</p>
-            <a href="https://github.com/aprameyak/MusicStreams">GitHub</a>
+            <h3>Streaming Data Visualization</h3>
+            <p>Analyzed a Kaggle dataset about the most streamed songs across platforms using Python with Pandas and Matplotlib. Cleaned the dataset by filling missing values in the playlist count columns for each platform to ensure complete data for analysis. Used Pearson correlation to measure the relationship between track scores and playlist counts across three platforms: Apple Music, Amazon, and Deezer. Created a line plot to compare the number of playlists containing a song on each platform against its track score with the Pearson correlation coefficients to highlight the strength of the relationships between track score and playlist count for each platform.</p>
+            <p><strong>Tech Stack:</strong> Python, Pandas, Matplotlib, SciPy</p>
+            <p><a href="https://github.com/aprameyak/MusicStreams" target="_blank">View Code</a></p>
         </div>
         <div class="project">
-            <h3>Computer Vision Image Labeller</h3>
-            <p>Developed a Python script to analyze image files stored in AWS S3 buckets, utilizing AWS Rekognition for image label detection. Automated processing and classification of image data, demonstrating scalability and reliability.</p>
-            <a href="https://github.com/aprameyak/ComputerVisionRekognition">GitHub</a>
-        </div>
-        <div class="project">
-            <h3>Stock Price Emailer</h3>
-            <p>Utilized a Node.js script to get stock price data from an API within an AWS Lambda function and invoke AWS SES. Created an AWS EventBridge scheduler to invoke the AWS Lambda function daily to send stock price data to my inbox.</p>
-            <a href="https://github.com/aprameyak/StockPriceEmailer">GitHub</a>
+            <h3>Computer Vision Labeller</h3>
+            <p>Developed a Python script to analyze image files stored in AWS S3 buckets, utilizing AWS Rekognition for image label detection. Configured AWS CLI with IAM permissions to enable secure and efficient execution of the script locally. Implemented functionality to detect up to 10 labels per image with a minimum confidence level of 80%, enhancing accuracy in classification. Automated the processing and classification of image data, demonstrating scalability and reliability in handling computer vision workflows.</p>
+            <p><strong>Tech Stack:</strong> Python, AWS SDK (boto3), AWS Rekognition, AWS S3, AWS IAM</p>
+            <p><a href="https://github.com/aprameyak/ComputerVisionRekognition" target="_blank">View Code</a></p>
         </div>
     </section>
-    
+
     <section class="container">
-        <h2>Connect</h2>
-        <div class="contact">
-            <a href="https://www.github.com/aprameyak/"><img src="https://aprameyak-portfolio-assets.s3.us-east-1.amazonaws.com/github.png" alt="GitHub"></a>
-            <a href="https://www.linkedin.com/in/aprameyak/"><img src="https://aprameyak-portfolio-assets.s3.us-east-1.amazonaws.com/linkedin.png" alt="LinkedIn"></a>
+        <h2>Experience</h2>
+        <div class="experience">
+            <h3>Syntag - Software Engineer</h3>
+            <p>Developed and deployed scalable NLP-based AI receptionist agents using Azure AKS (Azure Kubernetes Service), leveraging the Deepngram transcriber for real-time transcription and processing. Designed and implemented a Python FastAPI backend to effectively distribute load from WebSocket API requests, preventing throttling and ensuring a seamless user experience even under high traffic. Redesigned the user interface with a focus on both aesthetics and functionality, utilizing Tailwind CSS for rapid, responsive styling and TypeScript with React.js to accurately translate a Figma wireframe into a polished, user-friendly web application.</p>
+        </div>
+        <div class="experience">
+            <h3>Minvest - Software Development Engineer</h3>
+            <p>Tested React.js, ChakraUI, and TypeScript, using organized Git source control actions to communicate progress on AGILE sprint deadlines. Leveraged Amazon Web Services (AWS) cloud infrastructure with ECR, ECS, and EC2, to decrease costs by 30% while hosting decoupled components as Docker images. Designed an interactive frontend that updated user metadata through a point system as part of a gamification initiative, resulting in a 40% boost in user engagement. Initialized a web application paper trading simulator, integrating a Python Flask API to retrieve and consistently update public stock data and user metadata.</p>
+        </div>
+        <div class="experience">
+            <h3>CodePath - Technical Interview Prep Student</h3>
+            <p>Completed an intensive 10-week Technical Interview Prep program, with a focus on strengthening problem-solving skills and preparing for technical interviews at top tech companies. The program emphasized fundamental concepts such as arrays, linked lists, trees, graphs, dynamic programming, and sorting algorithms, with all solutions implemented and optimized in Python. It included weekly coding assignments, timed mock interviews, and collaborative peer-learning sessions, developing the ability to tackle complex technical problems effectively under time constraints.</p>
+        </div>
+        <div class="experience">
+            <h3>Headstarter - Software Engineering Fellow</h3>
+            <p>Collaborated with a team of engineers, designers, and AI experts to develop AI-powered software solutions. Contributed to the design and optimization of algorithms to improve efficiency and performance. Utilized Python, JavaScript, and cloud-based platforms to build scalable, reliable software systems. Worked with cross-functional teams to integrate AI solutions into real-world use cases. Participated in code reviews and fostered a culture of continuous improvement and learning. Enhanced problem-solving skills and deepened understanding of AI in software development.</p>
+        </div>
+        <div class="experience">
+            <h3>Amazon Web Services - Certified Solutions Architect</h3>
+            <p>Proficiency in designing and deploying scalable, highly available, and fault-tolerant systems on Amazon Web Services (AWS) that meet both technical and business requirements. Skilled in selecting appropriate AWS services for various use cases and architecting secure, cost-efficient cloud infrastructures. Gained expertise in deploying and managing applications in the cloud, optimizing cost structures, and ensuring security best practices. Worked with AWS services including EC2, S3, RDS, Lambda, and VPC.</p>
         </div>
     </section>
-    
+
+    <section class="container skills">
+        <h2>Skills</h2>
+        <h3>Technical Skills</h3>
+        <ul>
+            <li>React.js</li>
+            <li>Node.js</li>
+            <li>Express.js</li>
+            <li>Next.js</li>
+            <li>TypeScript</li>
+            <li>JavaScript</li>
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>Tailwind CSS</li>
+            <li>MaterialUI</li>
+            <li>ChakraUI</li>
+            <li>Python</li>
+            <li>FastAPI</li>
+            <li>Flask</li>
+            <li>Java</li>
+            <li>SQL</li>
+            <li>Oracle</li>
+            <li>MySQL</li>
+            <li>MongoDB</li>
+            <li>SQLite</li>
+            <li>AWS ECS</li>
+            <li>AWS EC2</li>
+            <li>AWS ECR</li>
+            <li>AWS Lambda</li>
+            <li>AWS S3</li>
+            <li>AWS IAM</li>
+            <li>AWS Cloudformation</li>
+            <li>AWS SES</li>
+            <li>AWS EventBridge</li>
+            <li>AWS API Gateway</li>
+            <li>AWS DynamoDB</li>
+            <li>AWS CodePipeline</li>
+            <li>AWS Amplify</li>
+            <li>AWS Cognito</li>
+            <li>GCP Firebase</li>
+            <li>Docker</li>
+            <li>Figma</li>
+            <li>GitHub</li>
+            <li>Visual Studio Code</li>
+            <li>RESTful APIs</li>
+            <li>Websocket APIs</li>
+            <li>CI/CD Pipelines</li>
+            <li>AGILE Methodologies</li>
+        </ul>
+    </section>
+
     <footer>
+        <p>Feel free to reach out to me:</p>
+        <div class="contact">
+            <a href="https://github.com/aprameyak" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" alt="GitHub"></a>
+            <a href="https://www.linkedin.com/in/aprameyakannan" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/0/0e/LinkedIn_Logo_2023.png" alt="LinkedIn"></a>
+            <a href="mailto:aprameyakannan@gmail.com"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/Email_icon.svg" alt="Email"></a>
+        </div>
         <p>&copy; 2025 Aprameya Kannan. All rights reserved.</p>
     </footer>
 </body>
