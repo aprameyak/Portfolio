@@ -27,4 +27,4 @@ jobs:
       # Step 3: Upload index.html to S3 bucket
       - name: Upload index.html to S3
         run: |
-          aws s3 cp index.html s3://${{ secrets.S3_BUCKET_NAME }}/index.html
+          aws s3 cp index.html s3://${{ secrets.S3_BUCKET_NAME }}/index.html --acl public-read
