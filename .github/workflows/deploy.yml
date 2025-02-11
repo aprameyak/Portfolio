@@ -1,0 +1,30 @@
+name: Deploy to S3
+
+on:
+  push:
+    branches:
+      - main  # Trigger the action when there's a push to the 'main' branch
+    paths:
+      - 'index.html'  # Trigger only when index.html is modified (optional)
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest  # Use the latest Ubuntu runner
+
+    steps:
+      # Step 1: Checkout the repository
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      # Step 2: Set up AWS CLI
+      - name: Set up AWS CLI
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ secrets.AWS_REGION }}  # Make sure this is set correctly in your secrets
+          
+      # Step 3: Upload index.html to S3 bucket
+      - name: Upload index.html to S3
+        run: |
+          aws s3 cp index.html s3://${{ secrets.S3_BUCKET_NAME }}/index.html
