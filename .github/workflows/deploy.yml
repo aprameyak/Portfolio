@@ -12,7 +12,7 @@ jobs:
 
       - name: Create config file
         run: |
-          echo "{\"TOKEN\":\"${{ secrets.TOKEN }}\"}" > config.json
+          echo "{\"TOKEN\":\"${{ secrets.TOKEN }}\", \"OPENAI_KEY\":\"${{ secrets.OPENAI_KEY }}\"}" > config.json
 
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v1
