@@ -264,7 +264,8 @@
             'ShoppingDataAnalysis',
             'FinancialAnalysis',
             'HousePricePrediction',
-            'WebScrapingPriceVisualization'
+            'WebScrapingPriceVisualization',
+            'ResuMaker'
         ];
 
         const scriptTag = document.createElement('script');
@@ -349,7 +350,7 @@
 
         function displayProjects(repos) {
             const sortedRepos = repos
-                .filter(repo => !repo.private && !excludedRepos.includes(repo.name))
+                .filter(repo => !repo.private && !repo.fork && !excludedRepos.includes(repo.name))
                 .sort((a, b) => new Date(b.updated_at) - new Date(a.updated_at));
 
             const projectsContainer = document.getElementById('projects-container');
@@ -369,16 +370,12 @@
                 }
 
                 const projectHTML = `
-                    <div class="project ${repo.fork ? 'forked' : ''}">
-                        <h3>
-                            ${repo.name}
-                            ${repo.fork ? '<span class="fork-badge">Forked</span>' : ''}
-                        </h3>
+                    <div class="project">
+                        <h3>${repo.name}</h3>
                         <p>${repo.description || 'No description available.'}</p>
                         <div class="project-links">
                             <a href="${repo.html_url}" target="_blank">GitHub</a>
                             ${repo.homepage ? `| <a href="${repo.homepage}" target="_blank">Live Demo</a>` : ''}
-                            ${repo.fork && repo.parent ? `| <a href="${repo.parent.html_url}" target="_blank">Original Repo</a>` : ''}
                         </div>
                         <p><strong>Tech Stack:</strong> ${repo.topics ? repo.topics.join(', ') : 'Not specified'}</p>
                         ${readmePreview ? `
@@ -394,12 +391,59 @@
                                 Last updated: ${new Date(repo.updated_at).toLocaleDateString()} | 
                                 ⭐ ${repo.stargazers_count} | 
                                 🍴 ${repo.forks_count}
-                                ${repo.fork && repo.parent ? ` | Forked from: ${repo.parent.full_name || 'Unknown'}` : ''}
                             </small>
                         </p>
                     </div>
                 `;
                 projectsContainer.innerHTML += projectHTML;
+            }
+        }
+
+        async function analyzeWithGPT(repo, readme, config) {
+            try {
+                const prompt = `
+                    You are a technical documentation expert. Analyze this GitHub repository and its README:
+                    Repository Name: ${repo.name}
+                    Current Description: ${repo.description || 'None'}
+                    README Content: ${readme || 'None'}
+
+                    Provide a response in JSON format with these strict requirements:
+                    1. Description: One clear, concise sentence (max 20 words) explaining the project's main purpose
+                    2. Tech Stack: Only list the main technologies used (languages, frameworks, major libraries)
+
+                    Required JSON format:
+                    {
+                        "description": "Single sentence description here",
+                        "techStack": ["tech1", "tech2", "tech3"]
+                    }
+
+                    Keep descriptions action-oriented and focused on the core functionality.
+                    Example format: "A [type of application] that [main function] using [key technology]."
+                `;
+
+                const response = await fetch('https://api.openai.com/v1/completions', {
+                    method: 'POST',
+                    headers: {
+                        'Authorization': `Bearer ${config.OPENAI_KEY}`,
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        model: "gpt-3.5-turbo-instruct",
+                        prompt: prompt,
+                        max_tokens: 200,
+                        temperature: 0.3
+                    })
+                });
+
+                if (!response.ok) {
+                    throw new Error('OpenAI API request failed');
+                }
+
+                const data = await response.json();
+                return JSON.parse(data.choices[0].text);
+            } catch (error) {
+                console.error('Error analyzing with GPT:', error);
+                return null;
             }
         }
 
