@@ -6,16 +6,18 @@
     <title>Aprameya Kannan</title>
     <style>
         body {
-            background-color: #1a202c;
-            color: #d6bcfa;
+            background-color: #1a1625;
+            color: #e2d9f3;
             font-family: Arial, sans-serif;
             text-align: center;
             margin: 0;
             padding: 0;
+            line-height: 1.6;
         }
         header, footer {
-            background-color: #2d3748;
+            background-color: #2d2438;
             padding: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
         .container {
             width: 90%;
@@ -32,7 +34,8 @@
             justify-content: center;
             align-items: center;
             margin: 20px auto;
-            border: 3px solid #c77dff;
+            border: 3px solid #9d4edd;
+            box-shadow: 0 0 15px rgba(157, 78, 221, 0.3);
         }
         .profile-picture img {
             width: 100%;
@@ -40,41 +43,106 @@
             object-fit: cover;
         }
         .project, .experience, .skills {
-            background-color: #2d3748;
-            padding: 15px;
-            border-radius: 8px;
-            margin-bottom: 15px;
-            border: 1px solid #c77dff;
-            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+            background-color: #2d2438;
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            border: 1px solid #9d4edd;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
         .project h3, .experience h3, .skills h3 {
-            color: #e0aaff;
+            color: #c77dff;
+            margin-bottom: 15px;
+            font-size: 1.4em;
         }
         .project p, .experience p, .skills p {
-            color: #9d4edd;
+            color: #e2d9f3;
+            line-height: 1.6;
+            margin-bottom: 15px;
         }
         .project a, .experience a {
-            color: #e0aaff;
-            text-decoration: underline;
-            margin-right: 10px;
+            color: #c77dff;
+            text-decoration: none;
+            margin-right: 15px;
+            padding: 5px 10px;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+        .project a:hover, .experience a:hover {
+            background-color: #9d4edd;
+            color: white;
         }
         .skills ul {
             list-style-type: none;
             padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
         }
         .skills li {
-            display: inline-block;
-            background-color: #4a5568;
-            color: #e0aaff;
-            padding: 8px 12px;
-            margin: 5px;
-            border-radius: 5px;
+            background-color: #3d3151;
+            color: #e2d9f3;
+            padding: 8px 16px;
+            border-radius: 20px;
             font-size: 14px;
+            border: 1px solid #9d4edd;
+            transition: all 0.3s ease;
+        }
+        .skills li:hover {
+            background-color: #9d4edd;
+            transform: translateY(-2px);
         }
         .contact img {
             width: 40px;
             height: 40px;
             margin: 10px;
+            transition: transform 0.3s ease;
+        }
+        .contact img:hover {
+            transform: scale(1.1);
+        }
+        .project-meta {
+            color: #b8a9d9;
+            font-size: 0.9em;
+            border-top: 1px solid #3d3151;
+            padding-top: 10px;
+            margin-top: 10px;
+        }
+        .loading {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .loading-spinner {
+            border: 4px solid #3d3151;
+            border-top: 4px solid #9d4edd;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        @media (max-width: 768px) {
+            body {
+                font-size: 16px;
+            }
+            
+            .container {
+                width: 95%;
+                padding: 15px;
+            }
+            
+            .project, .experience, .skills {
+                padding: 15px;
+            }
         }
     </style>
 </head>
@@ -95,66 +163,10 @@
     
     <section class="container">
         <h2>Projects</h2>
-        <div class="project">
-            <h3>FitSync</h3>
-            <p>Engineered a scalable MERN stack application, leveraging Firebase Firestore for authentication and AWS-hosted MongoDB Atlas for storing personalized health profiles, fitness logs, and nutrition data. Developed and tested RESTful APIs with Node.js and Express.js middleware with Mongoose, utilizing Postman for unit, integration, and end-to-end testing to ensure accurate calorie calculations and data integrity with eventual consistency. Integrated GPT-4-powered chatbot using OpenAI API for real-time, personalized fitness guidance based on user activity logs and health data. Designed a responsive user interface with a React.js, TypeScript, and MaterialUI frontend stack to deliver an intuitive, dynamic user experience with efficient data synchronization.</p>
-            <a href="https://github.com/aprameyak/FitSync">GitHub</a>
-            <p><strong>Tech Stack:</strong> Node.js, Express.js, React.js, TypeScript, JavaScript, MaterialUI, MongoDB, Firebase, Mongoose, AWS</p>
-        </div>
-        <div class="project">
-            <h3>Play2Learn</h3>
-            <p>Used GitHub to develop an Arcade-themed web application for gamified learning featuring deployment and integration with CI/CD pipelines using GitHub Actions and Vercel for continuous delivery. Used Node.js with AWS Lambda and API Gateway to create serverless endpoints to generate JSON documents of questions and answers for three distinct games using a well-engineered prompt for OpenAI’s GPT-4 model using an indicated topic as the request body tested via Postman. Used Figma to design an arcade-themed user interface that enhanced the gamified user experience and implemented this with React.js and Next.js using next navigation to route from the homepage to the different games and back with logic defining the beginning and ending of the games.</p>
-            <a href="https://github.com/aprameyak/Play2Learn">GitHub</a> |
-            <a href="https://play2learn-ten.vercel.app/">Live Demo</a>
-            <p><strong>Tech Stack:</strong> Node.js, React.js, Next.js, TypeScript, JavaScript, AWS Lambda, AWS API Gateway, Postman, Vercel, Figma</p>
-        </div>
-        <div class="project">
-            <h3>Pathos</h3>
-            <p>Used DeepFace to perform real-time facial recognition and emotional analysis, leveraging models like VGG-Face, FaceNet, and ArcFace to identify faces and classify emotions such as happiness, sadness, and anger. Integrated the frontend with ReactJS, JavaScript, HTML5, and CSS3, utilizing Chrome Extension APIs (chrome.runtime, chrome.tabs, chrome.desktopCapture) for efficient tab management and screen capture. Developed a Flask backend with DeepFace, OpenCV, and NumPy to handle facial recognition and emotion analysis, enabling seamless real-time communication and accurate emotion detection.</p>
-            <p><a href="https://github.com/aprameyak/Pathos" target="_blank">View Code</a> | <a href="https://pathos-extension.vercel.app/" target="_blank">Live Demo</a></p>
-            <p><strong>Tech Stack:</strong> ReactJS, JavaScript, HTML5, CSS3, Flask, DeepFace, OpenCV (cv2), NumPy, Chrome Extension APIs, MediaDevices API, Base64 Encoding</p>
-        </div>
-        <div class="project">
-            <h3>ScoreMe</h3>
-            <p>Processed and analyzed a Kaggle dataset using Pandas, Matplotlib, and Seaborn to understand student exam performance patterns. Developed a linear regression model using Scikit-Learn to predict student exam scores, achieving an accuracy of 98.8% and packaged it for future use via Pickle. Built a React.js front-end interface to collect user inputs and dynamically predict exam scores through a Flask API backend. Ensured smooth data integration between the decoupled frontend and backend, providing real-time exam performance predictions to users.</p>
-            <a href="https://github.com/aprameyak/PredictingStudentPerformance">GitHub</a>
-            <p><strong>Tech Stack:</strong> Python, JavaScript, Flask, Scikit-Learn, Pandas, Matplotlib, Seaborn, Pickle</p>
-        </div>
-        <div class="project">
-            <h3>LaughALot</h3>
-            <p>Developed a serverless Generative AI-powered joke generator leveraging OpenAI's GPT-4 model optimizing responses through fine-tuned parameters like temperature, top_p, and maxTokens via LangChain for contextual joke creation. Built a stateless JavaScript API with ternary GET/POST routes tested on Postman to create jokes on user-provided or general topics. Created a responsive and secure interface using React.js and MaterialUI for seamless experience authentication through Clerk, enabling login via identity federation. Designed CI/CD pipelines with GitHub Actions and Vercel to streamline code deployment with continuous integration and delivery.</p>
-            <p><strong>Tech Stack:</strong> React.js, Next.js, JavaScript, LangChain, MaterialUI, Clerk, Vercel</p>
-            <p><a href="https://laughalot.vercel.app/" target="_blank">Live Demo</a> | <a href="https://github.com/aprameyak/LaughALot" target="_blank">View Code</a></p>
-        </div>
-        <div class="project">
-            <h3>StockUp</h3>
-            <p>Designed and developed a functional kitchen pantry management system with full CRUD (Create, Read, Update, Delete) operations via a Google Cloud Platform Firebase NoSQL database. Built a RESTful JavaScript API to handle front-end interactions and synchronize real-time updates with the MaterialUI interface. Delivered a highly interactive experience by integrating real-time search, modal-based item addition, and bulk inventory updates as features to enhance the user experience.</p>
-            <p><strong>Tech Stack:</strong> React.js, Next.js, Firebase Firestore, Google Cloud Platform, MaterialUI</p>
-            <p><a href="https://pantryapp-iota.vercel.app/?vercelToolbarCode=IULSuS2R3DuSkdh" target="_blank">Live Demo</a> | <a href="https://github.com/aprameyak/KitchenPantryApp" target="_blank">View Code</a></p>
-        </div>
-        <div class="project">
-            <h3>Wordle Clone</h3>
-            <p>Designed a FastAPI Python backend with CORS Middleware to ensure secure communication to the React.js front-end interface. Implemented a FastAPI HTTP GET route using the OpenAI API for GPT-3.5-turbo to generate random 5-letter words. Built a responsive interface to emulate Wordle's existing green, yellow, and grey feedback for user guesses and added functionality to reset games to start new games on demand.</p>
-            <p><strong>Tech Stack:</strong> Python, FastAPI, React.js, JavaScript, CORS Middleware</p>
-            <p><a href="https://github.com/aprameyak/WordleClone" target="_blank">View Code</a></p>
-        </div>
-        <div class="project">
-            <h3>Car Safety Classifier</h3>
-            <p>Extracted and cleaned data from a Kaggle CSV file, preparing a dataset containing car features using a Pandas dataframe in a Jupyter Notebook. Utilized Numpy, Seaborn, and Matplotlib to visualize and analyze key features related to car safety, uncovering valuable insights for model improvement. Built and trained a Random Forest Classifier model using Scikit-Learn, optimizing the model by achieving 94.6% accuracy with 100 decision trees using K-Nearest Neighbors (KNN) to further improve classification results and refine model predictions.</p>
-            <p><strong>Tech Stack:</strong> Python, Scikit-Learn, Matplotlib, Pandas, Seaborn, Numpy, Jupyter</p>
-            <p><a href="https://github.com/aprameyak/CarSafetyClassifier" target="_blank">View Code</a></p>
-        </div>
-        <div class="project">
-            <h3>Streaming Data Visualization</h3>
-            <p>Analyzed a Kaggle dataset about the most streamed songs across platforms using Python with Pandas and Matplotlib. Cleaned the dataset by filling missing values in the playlist count columns for each platform to ensure complete data for analysis. Used Pearson correlation to measure the relationship between track scores and playlist counts across three platforms: Apple Music, Amazon, and Deezer. Created a line plot to compare the number of playlists containing a song on each platform against its track score with the Pearson correlation coefficients to highlight the strength of the relationships between track score and playlist count for each platform.</p>
-            <p><strong>Tech Stack:</strong> Python, Pandas, Matplotlib, SciPy</p>
-            <p><a href="https://github.com/aprameyak/MusicStreams" target="_blank">View Code</a></p>
-        </div>
-        <div class="project">
-            <h3>Computer Vision Labeller</h3>
-            <p>Developed a Python script to analyze image files stored in AWS S3 buckets, utilizing AWS Rekognition for image label detection. Configured AWS CLI with IAM permissions to enable secure and efficient execution of the script locally. Implemented functionality to detect up to 10 labels per image with a minimum confidence level of 80%, enhancing accuracy in classification. Automated the processing and classification of image data, demonstrating scalability and reliability in handling computer vision workflows.</p>
-            <p><strong>Tech Stack:</strong> Python, AWS SDK (boto3), AWS Rekognition, AWS S3, AWS IAM</p>
-            <p><a href="https://github.com/aprameyak/ComputerVisionRekognition" target="_blank">View Code</a></p>
+        <div id="projects-container">
+            <div class="loading">
+                <div class="loading-spinner"></div>
+            </div>
         </div>
     </section>
 
@@ -241,5 +253,100 @@
         </div>
         <p>&copy; 2025 Aprameya Kannan. All rights reserved.</p>
     </footer>
+
+    <script>
+        async function getConfig() {
+            try {
+                const response = await fetch('config.json');
+                if (!response.ok) throw new Error('Failed to load config');
+                return await response.json();
+            } catch (error) {
+                console.error('Error loading config:', error);
+                return {};
+            }
+        }
+
+        async function fetchGitHubProjects() {
+            const config = await getConfig();
+            const username = 'aprameyak';
+            const cacheKey = 'github-projects-cache';
+            const cacheExpiry = 'github-projects-cache-expiry';
+            
+            // Check cache first
+            const cached = localStorage.getItem(cacheKey);
+            const expiry = localStorage.getItem(cacheExpiry);
+            
+            if (cached && expiry && Date.now() < parseInt(expiry)) {
+                displayProjects(JSON.parse(cached));
+                return;
+            }
+
+            try {
+                const response = await fetch(`https://api.github.com/users/${username}/repos`, {
+                    headers: {
+                        'Authorization': `Bearer ${config.TOKEN}`,
+                        'Accept': 'application/vnd.github.v3+json'
+                    }
+                });
+                
+                if (response.status === 403) {
+                    throw new Error('API rate limit exceeded. Please try again later.');
+                }
+                
+                if (!response.ok) {
+                    throw new Error(`Failed to fetch projects: ${response.statusText}`);
+                }
+
+                const repos = await response.json();
+                
+                // Cache the response for 1 hour
+                localStorage.setItem(cacheKey, JSON.stringify(repos));
+                localStorage.setItem(cacheExpiry, (Date.now() + 3600000).toString());
+                
+                displayProjects(repos);
+            } catch (error) {
+                console.error('Error fetching GitHub projects:', error);
+                document.getElementById('projects-container').innerHTML = `
+                    <div class="project">
+                        <p>Error: ${error.message}</p>
+                    </div>
+                `;
+            }
+        }
+
+        function displayProjects(repos) {
+            const sortedRepos = repos
+                .filter(repo => !repo.fork && !repo.private) // Only show public, non-fork repos
+                .sort((a, b) => new Date(b.updated_at) - new Date(a.updated_at));
+
+            const projectsContainer = document.getElementById('projects-container');
+            projectsContainer.innerHTML = '';
+
+            for (const repo of sortedRepos) {
+                const projectHTML = `
+                    <div class="project">
+                        <h3>${repo.name}</h3>
+                        <p>${repo.description || 'No description available.'}</p>
+                        <div class="project-links">
+                            <a href="${repo.html_url}" target="_blank">GitHub</a>
+                            ${repo.homepage ? `| <a href="${repo.homepage}" target="_blank">Live Demo</a>` : ''}
+                        </div>
+                        <p><strong>Tech Stack:</strong> ${repo.topics ? repo.topics.join(', ') : 'Not specified'}</p>
+                        <p class="project-meta">
+                            <small>
+                                Last updated: ${new Date(repo.updated_at).toLocaleDateString()} | 
+                                ⭐ ${repo.stargazers_count} | 
+                                🍴 ${repo.forks_count}
+                            </small>
+                        </p>
+                    </div>
+                `;
+                projectsContainer.innerHTML += projectHTML;
+            }
+        }
+
+        // Fetch projects when the page loads
+        fetchGitHubProjects();
+    </script>
 </body>
 </html>
