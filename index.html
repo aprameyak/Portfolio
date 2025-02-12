@@ -308,11 +308,11 @@
             const cacheKey = 'github-projects-cache';
             const cacheExpiry = 'github-projects-cache-expiry';
             
-            localStorage.removeItem(cacheKey); // Clear cache for testing
-            localStorage.removeItem(cacheExpiry); // Clear cache for testing
+            localStorage.removeItem(cacheKey);
+            localStorage.removeItem(cacheExpiry);
 
             try {
-                const response = await fetch(`https://api.github.com/users/${username}/repos?sort=updated&direction=desc`, {
+                const response = await fetch(`https://api.github.com/users/${username}/repos?per_page=100&sort=updated&direction=desc`, {
                     headers: {
                         'Authorization': `Bearer ${config.TOKEN}`,
                         'Accept': 'application/vnd.github.v3+json'
@@ -328,7 +328,6 @@
                 }
 
                 const repos = await response.json();
-                console.log('All repos:', repos.map(r => r.name)); // Debug log
                 
                 for (const repo of repos) {
                     repo.readme = await fetchReadme(repo, config);
@@ -352,8 +351,6 @@
             const sortedRepos = repos
                 .filter(repo => !repo.private && !excludedRepos.includes(repo.name))
                 .sort((a, b) => new Date(b.updated_at) - new Date(a.updated_at));
-
-            console.log('Filtered repos:', sortedRepos.map(r => r.name)); // Debug log
 
             const projectsContainer = document.getElementById('projects-container');
             projectsContainer.innerHTML = '';
@@ -381,7 +378,7 @@
                         <div class="project-links">
                             <a href="${repo.html_url}" target="_blank">GitHub</a>
                             ${repo.homepage ? `| <a href="${repo.homepage}" target="_blank">Live Demo</a>` : ''}
-                            ${repo.fork ? `| <a href="${repo.source.html_url}" target="_blank">Original Repo</a>` : ''}
+                            ${repo.fork && repo.parent ? `| <a href="${repo.parent.html_url}" target="_blank">Original Repo</a>` : ''}
                         </div>
                         <p><strong>Tech Stack:</strong> ${repo.topics ? repo.topics.join(', ') : 'Not specified'}</p>
                         ${readmePreview ? `
@@ -397,7 +394,7 @@
                                 Last updated: ${new Date(repo.updated_at).toLocaleDateString()} | 
                                 ⭐ ${repo.stargazers_count} | 
                                 🍴 ${repo.forks_count}
-                                ${repo.fork ? ` | Forked from: ${repo.source?.full_name || 'Unknown'}` : ''}
+                                ${repo.fork && repo.parent ? ` | Forked from: ${repo.parent.full_name || 'Unknown'}` : ''}
                             </small>
                         </p>
                     </div>
