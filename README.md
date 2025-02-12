@@ -1,7 +1,29 @@
-Aprameya Kannan Portfolio
+# Aprameya Kannan Portfolio
 
-A personal portfolio website built using HTML, hosted as a static site on AWS S3. The deployment process is automated via GitHub Actions, with the pipeline defined using a YAML template. AWS IAM best practices are followed for secure access and deployment.
+A modern, responsive portfolio website showcasing my experience as an aspiring devloper.
 
-Static Website: Hosted on AWS S3 for reliable and scalable access.
-Automated Deployment: Integrated GitHub Actions workflow for automatic deployment on push to the main branch.
-Security: IAM best practices for controlling access during deployment.
+## Features
+
+- **Dynamic Project Showcase**: Automatically fetches and displays GitHub projects using GitHub API
+- **AI-Enhanced Content**: Uses OpenAI GPT to generate concise project descriptions and tech stacks
+- **Responsive Design**: Clean, modern interface that works across all devices
+- **Automated Updates**: Projects section automatically updates when new repositories are added
+
+## Technical Architecture
+
+### Frontend
+- Pure HTML/CSS for optimal performance
+- Vanilla JavaScript for dynamic content
+- Marked.js for markdown processing
+
+### Infrastructure
+- **Hosting**: AWS S3 Static Website Hosting
+- **CI/CD**: GitHub Actions for automated deployment
+- **APIs**: 
+  - GitHub API for repository data
+  - OpenAI API for content enhancement
+
+### Security
+- AWS IAM role-based access
+- Secure credential management via GitHub Secrets
+- API key rotation and best practices
