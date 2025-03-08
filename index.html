@@ -339,10 +339,15 @@
                 }
 
                 const data = await response.json();
-                return JSON.parse(data.choices[0].text.trim());
+                const resultText = data.choices[0].text.trim();
+                if (resultText) {
+                    return JSON.parse(resultText);
+                } else {
+                    return { description: "No description available.", techStack: [] };
+                }
             } catch (error) {
                 console.error('Error analyzing with GPT:', error);
-                return null;
+                return { description: "No description available.", techStack: [] };
             }
         }
 
@@ -431,7 +436,7 @@
                             <a href="${repo.html_url}" target="_blank">GitHub</a>
                             ${repo.homepage ? `| <a href="${repo.homepage}" target="_blank">Live Demo</a>` : ''}
                         </div>
-                        <p><strong>Tech Stack:</strong> ${repo.enhancedTechStack ? repo.enhancedTechStack.join(', ') : 'Not specified'}</p>
+                        <p><strong>Tech Stack:</strong> ${repo.enhancedTechStack.length > 0 ? repo.enhancedTechStack.join(', ') : 'Not specified'}</p>
                         <p class="project-meta">
                             <small>
                                 Last updated: ${new Date(repo.updated_at).toLocaleDateString()} 
