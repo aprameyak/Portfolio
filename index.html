@@ -295,11 +295,15 @@
                 return await response.json();
             } catch (error) {
                 console.error('Error loading config:', error);
-                return {};
+                return { TOKEN: '', OPENAI_KEY: '' }; // Fallback config
             }
         }
 
         async function analyzeWithGPT(repo, readme, config) {
+            if (!config.OPENAI_KEY) {
+                console.error('OpenAI API key is missing in the config.');
+                return { description: "No description available.", techStack: [] };
+            }
             try {
                 const prompt = `
                     You are a technical documentation expert. Analyze this GitHub repository and its README:
@@ -340,9 +344,10 @@
 
                 const data = await response.json();
                 const resultText = data.choices[0].text.trim();
-                if (resultText) {
+                try {
                     return JSON.parse(resultText);
-                } else {
+                } catch (error) {
+                    console.error('Error parsing JSON:', error);
                     return { description: "No description available.", techStack: [] };
                 }
             } catch (error) {
@@ -416,6 +421,8 @@
                         <p>Check out my projects <a href="https://aprameyak.s3.us-east-1.amazonaws.com/index.html" target="_blank">here</a>.</p>
                     </div>
                 `;
+            } finally {
+                document.querySelector('.loading').style.display = 'none'; // Hide loading spinner
             }
         }
 
