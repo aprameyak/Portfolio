@@ -12,18 +12,18 @@
             text-align: center;
             margin: 0;
             padding: 0;
-            line-height: 1.6;
+            line-height: 1.8; /* Increased line-height for better readability */
         }
         header, footer {
             background-color: #2d2438;
-            padding: 20px;
+            padding: 30px; /* Increased padding for better spacing */
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
         .container {
             width: 90%;
             max-width: 800px;
-            margin: 20px auto;
-            padding: 20px;
+            margin: 30px auto; /* Increased margin for better spacing */
+            padding: 30px; /* Increased padding for better spacing */
         }
         .profile-picture {
             width: 150px; 
@@ -44,20 +44,20 @@
         }
         .project, .experience, .skills {
             background-color: #2d2438;
-            padding: 20px;
+            padding: 25px; /* Increased padding for better spacing */
             border-radius: 12px;
-            margin-bottom: 20px;
+            margin-bottom: 25px; /* Increased margin for better spacing */
             border: 1px solid #9d4edd;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
         .project h3, .experience h3, .skills h3 {
             color: #c77dff;
             margin-bottom: 15px;
-            font-size: 1.4em;
+            font-size: 1.6em; /* Increased font size for better readability */
         }
         .project p, .experience p, .skills p {
             color: #e2d9f3;
-            line-height: 1.6;
+            line-height: 1.8; /* Increased line-height for better readability */
             margin-bottom: 15px;
         }
         .project a, .experience a {
@@ -160,7 +160,7 @@
         <h3>Passionate about the future of technology:</h3>
         <p>Focusing on software development, cloud computing, and artificial intelligence.</p>
     </section>
-    
+
     <section class="container">
         <h2>Projects</h2>
         <div id="projects-container">
@@ -431,7 +431,7 @@
 
         function displayProjects(repos) {
             const sortedRepos = repos
-                .filter(repo => !repo.private && !repo.fork && !excludedRepos.includes(repo.name))
+                .filter(repo => !repo.private && !excludedRepos.includes(repo.name))
                 .sort((a, b) => new Date(b.updated_at) - new Date(a.updated_at));
 
             const projectsContainer = document.getElementById('projects-container');
