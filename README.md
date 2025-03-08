@@ -1,6 +1,6 @@
 # Aprameya Kannan Portfolio
 
-A modern, responsive portfolio website showcasing my experience as an aspiring devloper.
+A modern, responsive portfolio website showcasing my experience as an aspiring developer.
 
 ## Features
 
