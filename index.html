@@ -12,18 +12,18 @@
             text-align: center;
             margin: 0;
             padding: 0;
-            line-height: 1.8; /* Increased line-height for better readability */
+            line-height: 1.8; 
         }
         header, footer {
             background-color: #2d2438;
-            padding: 30px; /* Increased padding for better spacing */
+            padding: 30px; 
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
         .container {
             width: 90%;
             max-width: 800px;
-            margin: 30px auto; /* Increased margin for better spacing */
-            padding: 30px; /* Increased padding for better spacing */
+            margin: 30px auto; 
+            padding: 30px;
         }
         .profile-picture {
             width: 150px; 
@@ -44,20 +44,19 @@
         }
         .project, .experience, .skills {
             background-color: #2d2438;
-            padding: 25px; /* Increased padding for better spacing */
+            padding: 25px; 
             border-radius: 12px;
-            margin-bottom: 25px; /* Increased margin for better spacing */
+            margin-bottom: 25px;
             border: 1px solid #9d4edd;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
         .project h3, .experience h3, .skills h3 {
             color: #c77dff;
             margin-bottom: 15px;
-            font-size: 1.6em; /* Increased font size for better readability */
-        }
+            font-size: 1.6em; 
         .project p, .experience p, .skills p {
             color: #e2d9f3;
-            line-height: 1.8; /* Increased line-height for better readability */
+            line-height: 1.8; 
             margin-bottom: 15px;
         }
         .project a, .experience a {
@@ -295,7 +294,7 @@
                 return await response.json();
             } catch (error) {
                 console.error('Error loading config:', error);
-                return { TOKEN: '', OPENAI_KEY: '' }; // Fallback config
+                return { TOKEN: '', OPENAI_KEY: '' };
             }
         }
 
@@ -424,7 +423,7 @@
             } finally {
                 const loadingElement = document.querySelector('.loading');
                 if (loadingElement) {
-                    loadingElement.style.display = 'none'; // Hide loading spinner
+                    loadingElement.style.display = 'none';
                 }
             }
         }
