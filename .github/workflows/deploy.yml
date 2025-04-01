@@ -2,7 +2,7 @@ name: Deploy to AWS
 
 on:
   push:
-    branches: [ aigitworkflow ]
+    branches: [ production(aws) ]
 
 jobs:
   deploy:
