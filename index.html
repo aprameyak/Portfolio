@@ -1,460 +1,485 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aprameya Kannan</title>
-    <style>
-        body {
-            background-color: #1a1625;
-            color: #e2d9f3;
-            font-family: Arial, sans-serif;
-            text-align: center;
-            margin: 0;
-            padding: 0;
-            line-height: 1.8; 
-        }
-        header, footer {
-            background-color: #2d2438;
-            padding: 30px; 
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-        .container {
-            width: 90%;
-            max-width: 800px;
-            margin: 30px auto; 
-            padding: 30px;
-        }
-        .profile-picture {
-            width: 150px; 
-            height: 150px; 
-            border-radius: 50%; 
-            overflow: hidden;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin: 20px auto;
-            border: 3px solid #9d4edd;
-            box-shadow: 0 0 15px rgba(157, 78, 221, 0.3);
-        }
-        .profile-picture img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        .project, .experience, .skills {
-            background-color: #2d2438;
-            padding: 25px; 
-            border-radius: 12px;
-            margin-bottom: 25px;
-            border: 1px solid #9d4edd;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-        .project h3, .experience h3, .skills h3 {
-            color: #c77dff;
-            margin-bottom: 15px;
-            font-size: 1.6em; 
-        .project p, .experience p, .skills p {
-            color: #e2d9f3;
-            line-height: 1.8; 
-            margin-bottom: 15px;
-        }
-        .project a, .experience a {
-            color: #c77dff;
-            text-decoration: none;
-            margin-right: 15px;
-            padding: 5px 10px;
-            border-radius: 5px;
-            transition: all 0.3s ease;
-        }
-        .project a:hover, .experience a:hover {
-            background-color: #9d4edd;
-            color: white;
-        }
-        .skills ul {
-            list-style-type: none;
-            padding: 0;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 10px;
-        }
-        .skills li {
-            background-color: #3d3151;
-            color: #e2d9f3;
-            padding: 8px 16px;
-            border-radius: 20px;
-            font-size: 14px;
-            border: 1px solid #9d4edd;
-            transition: all 0.3s ease;
-        }
-        .skills li:hover {
-            background-color: #9d4edd;
-            transform: translateY(-2px);
-        }
-        .contact img {
-            width: 40px;
-            height: 40px;
-            margin: 10px;
-            transition: transform 0.3s ease;
-        }
-        .contact img:hover {
-            transform: scale(1.1);
-        }
-        .project-meta {
-            color: #b8a9d9;
-            font-size: 0.9em;
-            border-top: 1px solid #3d3151;
-            padding-top: 10px;
-            margin-top: 10px;
-        }
-        .loading {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-        }
-        
-        .loading-spinner {
-            border: 4px solid #3d3151;
-            border-top: 4px solid #9d4edd;
-            border-radius: 50%;
-            width: 40px;
-            height: 40px;
-            animation: spin 1s linear infinite;
-        }
-        
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-
-        @media (max-width: 768px) {
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Aprameya Kannan</title>
+        <style>
             body {
-                font-size: 16px;
+                background-color: #1a1625;
+                color: #e2d9f3;
+                font-family: Arial, sans-serif;
+                text-align: center;
+                margin: 0;
+                padding: 0;
+                line-height: 1.8; 
             }
-            
+            header, footer {
+                background-color: #2d2438;
+                padding: 30px; 
+                box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            }
             .container {
-                width: 95%;
-                padding: 15px;
+                width: 90%;
+                max-width: 800px;
+                margin: 30px auto; 
+                padding: 30px;
+            }
+            .profile-picture {
+                width: 150px; 
+                height: 150px; 
+                border-radius: 50%; 
+                overflow: hidden;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin: 20px auto;
+                border: 3px solid #9d4edd;
+                box-shadow: 0 0 15px rgba(157, 78, 221, 0.3);
+            }
+            .profile-picture img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+            .project, .experience, .skills {
+                background-color: #2d2438;
+                padding: 25px; 
+                border-radius: 12px;
+                margin-bottom: 25px;
+                border: 1px solid #9d4edd;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            }
+            .project h3, .experience h3, .skills h3 {
+                color: #c77dff;
+                margin-bottom: 15px;
+                font-size: 1.6em; 
+            }
+            .project p, .experience p, .skills p {
+                color: #e2d9f3;
+                line-height: 1.8; 
+                margin-bottom: 15px;
+            }
+            .project a, .experience a {
+                color: #c77dff;
+                text-decoration: none;
+                margin-right: 15px;
+                padding: 5px 10px;
+                border-radius: 5px;
+                transition: all 0.3s ease;
+            }
+            .project a:hover, .experience a:hover {
+                background-color: #9d4edd;
+                color: white;
+            }
+            .skills ul {
+                list-style-type: none;
+                padding: 0;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 10px;
+            }
+            .skills li {
+                background-color: #3d3151;
+                color: #e2d9f3;
+                padding: 8px 16px;
+                border-radius: 20px;
+                font-size: 14px;
+                border: 1px solid #9d4edd;
+                transition: all 0.3s ease;
+            }
+            .skills li:hover {
+                background-color: #9d4edd;
+                transform: translateY(-2px);
+            }
+            .contact img {
+                width: 40px;
+                height: 40px;
+                margin: 10px;
+                transition: transform 0.3s ease;
+            }
+            .contact img:hover {
+                transform: scale(1.1);
+            }
+            .project-meta {
+                color: #b8a9d9;
+                font-size: 0.9em;
+                border-top: 1px solid #3d3151;
+                padding-top: 10px;
+                margin-top: 10px;
+            }
+            .loading {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 20px;
             }
             
-            .project, .experience, .skills {
-                padding: 15px;
+            .loading-spinner {
+                border: 4px solid #3d3151;
+                border-top: 4px solid #9d4edd;
+                border-radius: 50%;
+                width: 40px;
+                height: 40px;
+                animation: spin 1s linear infinite;
             }
-        }
-    </style>
-</head>
-<body>
-    <header>
-        <h1>Aprameya Kannan</h1>
-        <div class="profile-picture">
-            <img src="https://aprameyak-portfolio-assets.s3.us-east-1.amazonaws.com/profilepic.jpg" alt="Profile Picture">
-        </div>
-    </header>
-    
-    <section class="container">
-        <h2>I am a student at the</h2>
-        <h1>University of Maryland.</h1>
-        <h3>Passionate about the future of technology:</h3>
-        <p>Focusing on software development, cloud computing, and artificial intelligence.</p>
-    </section>
+            
+            @keyframes spin {
+                0% { transform: rotate(0deg); }
+                100% { transform: rotate(360deg); }
+            }
 
-    <section class="container">
-        <h2>Projects</h2>
-        <div id="projects-container">
-            <div class="project">
-                <h3>GitaGPT</h3>
-                <div class="project-links">
-                    <a href="https://github.com/aprameyak/GitaGPT" target="_blank">GitHub</a>
-                </div>
-                <p>An advanced AI chatbot leveraging FAISS vector database for semantic search across Bhagavad Gita verses. Features a sophisticated ETL pipeline that transforms verses into SBERT embeddings, integrates with GPT-4 for contextual response generation, and serves responses through a FastAPI backend with citation tracking.</p>
-                <p><strong>Tech Stack:</strong> Python, FastAPI, FAISS, SBERT, OpenAI GPT-4, Next.js, React.js, Axios, ETL Pipeline</p>
+            @media (max-width: 768px) {
+                body {
+                    font-size: 16px;
+                }
+                
+                .container {
+                    width: 95%;
+                    padding: 15px;
+                }
+                
+                .project, .experience, .skills {
+                    padding: 15px;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <h1>Aprameya Kannan</h1>
+            <nav>
+                <ul style="list-style: none; padding: 0;">
+                    <li style="display: inline; margin: 0 15px;"><a href="#about">About</a></li>
+                    <li style="display: inline; margin: 0 15px;"><a href="#projects">Projects</a></li>
+                    <li style="display: inline; margin: 0 15px;"><a href="#experience">Experience</a></li>
+                    <li style="display: inline; margin: 0 15px;"><a href="#skills">Skills</a></li>
+                    <li style="display: inline; margin: 0 15px;"><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="profile-picture">
+                <img src="https://aprameyak-portfolio-assets.s3.us-east-1.amazonaws.com/profilepic.jpg" alt="Profile Picture">
             </div>
-    
-            <div class="project">
-                <h3>FitSync</h3>
-                <div class="project-links">
-                    <a href="https://github.com/aprameyak/FitSync" target="_blank">GitHub</a>
-                </div>
-                <p>A comprehensive fitness platform implementing real-time data synchronization, complex BMR calculations, and AI-powered workout recommendations. Features progressive overload tracking algorithms and integrates with GPT for personalized fitness guidance through a microservices architecture.</p>
-                <p><strong>Tech Stack:</strong> React.js, MaterialUI, Node.js, Express.js, MongoDB, Firebase Auth, TypeScript, OpenAI GPT, Microservices</p>
-            </div>
-    
-            <div class="project">
-                <h3>Play2Learn</h3>
-                <div class="project-links">
-                    <a href="https://github.com/aprameyak/Play2Learn" target="_blank">GitHub</a>
-                    <a href="https://play2learn-ten.vercel.app/" target="_blank">Live Demo</a>
-                </div>
-                <p>An educational gaming platform utilizing serverless architecture with AWS Lambda for dynamic content generation. Implements complex state management for three distinct arcade-style games, integrates GPT-4 for adaptive question generation, and features real-time scoring systems.</p>
-                <p><strong>Tech Stack:</strong> React.js, Next.js, TypeScript, Node.js, AWS Lambda, AWS API Gateway, OpenAI GPT-4, Firebase Auth, GitHub Actions, Vercel</p>
-            </div>
-    
-            <div class="project">
-                <h3>ResuMaker</h3>
-                <div class="project-links">
-                    <a href="https://github.com/aprameyak/ResuMaker" target="_blank">GitHub</a>
-                    <a href="https://resumaker-six.vercel.app/" target="_blank">Live Demo</a>
-                </div>
-                <p>A dynamic resume generation system featuring AI-enhanced content optimization, real-time form validation, and complex state management for multi-section resume building. Implements TypeScript for type-safe development and server-side rendering for optimal performance.</p>
-                <p><strong>Tech Stack:</strong> Next.js, TypeScript, Tailwind CSS, OpenAI API, Vercel, Server-Side Rendering</p>
-            </div>
-    
-            <div class="project">
-                <h3>FlashcardGenerator</h3>
-                <div class="project-links">
-                    <a href="https://github.com/aprameyak/FlashcardGenerator" target="_blank">GitHub</a>
-                    <a href="https://flashcards-dusky-nine.vercel.app/" target="_blank">Live Demo</a>
-                </div>
-                <p>An AI-powered study tool that transforms text input into optimized flashcards using GPT-3.5. Features intelligent content parsing, automated question generation, and spaced repetition algorithms for enhanced learning effectiveness.</p>
-                <p><strong>Tech Stack:</strong> React.js, Next.js, TypeScript, OpenAI GPT-3.5, Vercel, Custom Algorithms</p>
-            </div>
-    
-            <div class="project">
-                <h3>ComputerVisionRekognition</h3>
-                <div class="project-links">
-                    <a href="https://github.com/aprameyak/ComputerVisionRekognition" target="_blank">GitHub</a>
-                </div>
-                <p>An advanced image analysis system leveraging AWS Rekognition for object detection and labeling. Implements secure S3 integration, IAM role management, and automated confidence scoring for detected objects with local execution capabilities.</p>
-                <p><strong>Tech Stack:</strong> Python, AWS Rekognition, AWS S3, AWS IAM, AWS SDK, Security Protocols</p>
-            </div>
-    
-            <div class="project">
-                <h3>CarSafetyClassifier</h3>
-                <div class="project-links">
-                    <a href="https://github.com/aprameyak/CarSafetyClassifier" target="_blank">GitHub</a>
-                </div>
-                <p>A machine learning classification system achieving 94.6% accuracy through ensemble methods combining random forest (100 decision trees) and k-nearest neighbors algorithms. Features comprehensive data preprocessing and statistical analysis visualization.</p>
-                <p><strong>Tech Stack:</strong> Python, Scikit-learn, Pandas, NumPy, Seaborn, Matplotlib, Machine Learning Algorithms</p>
-            </div>
-    
-            <div class="project">
-                <h3>Notes App</h3>
-                <div class="project-links">
-                    <a href="https://github.com/aprameyak/NotesApp" target="_blank">GitHub</a>
-                    <a href="https://main.d1ztm9vf7wa50r.amplifyapp.com/" target="_blank">Live Demo</a>
-                </div>
-                <p>A full-stack note-taking application utilizing AWS Amplify's comprehensive cloud services. Implements secure user authentication, GraphQL API for data operations, and cloud storage for media files with real-time synchronization.</p>
-                <p><strong>Tech Stack:</strong> React.js, AWS Amplify, GraphQL API, AWS Storage, AWS Auth, AWS UI Components</p>
-            </div>
-    
-            <div class="project">
-                <h3>WordleClone</h3>
-                <div class="project-links">
-                    <a href="https://github.com/aprameyak/WordleClone" target="_blank">GitHub</a>
-                </div>
-                <p>A sophisticated word game implementation featuring FastAPI backend integration with OpenAI for word selection, complex state management for game logic, and real-time feedback systems with color-coded response algorithms.</p>
-                <p><strong>Tech Stack:</strong> React.js, Python, FastAPI, OpenAI API, Custom Game Logic, CSS Animations</p>
-            </div>
-    
-            <div class="project">
-                <h3>ScoreMe</h3>
-                <div class="project-links">
-                    <a href="https://github.com/aprameyak/ScoreMe" target="_blank">GitHub</a>
-                </div>
-                <p>A machine learning-based exam score prediction system utilizing statistical analysis and predictive modeling. Features data preprocessing, model training on student performance datasets, and Flask API integration for real-time predictions.</p>
-                <p><strong>Tech Stack:</strong> Python, Flask, Scikit-learn, Pandas, Machine Learning Models</p>
-            </div>
-    
-            <div class="project">
-                <h3>StockPriceEmailer</h3>
-                <div class="project-links">
-                    <a href="https://github.com/aprameyak/StockPriceEmailer" target="_blank">GitHub</a>
-                </div>
-                <p>An automated financial notification system using AWS Lambda and SES. Implements scheduled execution, secure API integration with Yahoo Finance, and IAM role-based security for AWS service access.</p>
-                <p><strong>Tech Stack:</strong> Node.js, AWS Lambda, AWS SES, AWS IAM, Yahoo Finance API, Security Protocols</p>
-            </div>
-    
-            <div class="project">
-                <h3>NASA Image Search</h3>
-                <div class="project-links">
-                    <a href="https://github.com/aprameyak/NasaImageLibrary" target="_blank">GitHub</a>
-                </div>
-                <p>A TypeScript-based image search application featuring carousel navigation, date-range filtering, and integration with NASA's Image API. Implements React Router for navigation and custom image loading optimization.</p>
-                <p><strong>Tech Stack:</strong> React.js, TypeScript, React Router, NASA Images API, Custom Carousel Implementation</p>
-            </div>
-    
-            <div class="project">
-                <h3>Pathos</h3>
-                <div class="project-links">
-                    <a href="https://github.com/aprameyak/Pathos" target="_blank">GitHub</a>
-                </div>
-                <p>A Chrome extension for real-time emotion recognition using facial analysis algorithms. Integrates with DeepFace for facial expression classification and implements custom UI for emotion feedback display.</p>
-                <p><strong>Tech Stack:</strong> React.js, JavaScript, Chrome Extension APIs, Python, Flask, DeepFace, OpenCV, NumPy</p>
-            </div>
-    
-            <div class="project">
-                <h3>StockUp</h3>
-                <div class="project-links">
-                    <a href="https://github.com/aprameyak/StockUp" target="_blank">GitHub</a>
-                    <a href="https://pantryapp-iota.vercel.app/" target="_blank">Live Demo</a>
-                </div>
-                <p>A real-time pantry management system implementing CRUD operations with Firebase Firestore. Features instant updates through cloud synchronization and responsive design for mobile accessibility.</p>
-                <p><strong>Tech Stack:</strong> JavaScript, HTML5, CSS3, Firebase Firestore, Google Cloud Platform, Vercel</p>
-            </div>
-    
-            <div class="project">
-                <h3>TodoList</h3>
-                <div class="project-links">
-                    <a href="https://github.com/aprameyak/TodoList" target="_blank">GitHub</a>
-                </div>
-                <p>A full-stack task management application featuring SQLite database integration, Flask REST API implementation, and responsive frontend design with React components.</p>
-                <p><strong>Tech Stack:</strong> React.js, Python, Flask, SQLite, HTML, CSS</p>
-            </div>
-    
-            <div class="project">
-                <h3>Breaking Bad Quote Generator</h3>
-                <div class="project-links">
-                    <a href="https://github.com/aprameyak/BreakingBadQuoteGenerator" target="_blank">GitHub</a>
-                    <a href="https://breakingbadquotes-puce.vercel.app/" target="_blank">Live Demo</a>
-                </div>
-                <p>An interactive quote generation application featuring API integration, dynamic content rendering, and responsive design principles for optimal user experience.</p>
-                <p><strong>Tech Stack:</strong> React.js, JavaScript, Breaking Bad API, Vercel</p>
-            </div>
-        </div>
-    </section>
-    
-    
+        </header>
+        
+        
+        <section class="container" id="about">
+            <h2>I am a student at the</h2>
+            <h1>University of Maryland.</h1>
+            <h3>Passionate about the future of technology:</h3>
+            <p>Focusing on software development, cloud computing, and artificial intelligence.</p>
+        </section>
 
-    <section class="container">
-        <h2>Experience</h2>
-        <div class="experience">
-            <h3>Lockheed Martin - Incoming Information Technology Intern</h3>
-            <p>I will be joining Lockheed Martin as an Information Technology Intern for the upcoming summer. </p>
-        </div>
-        <div class="experience">
-            <h3>Application Development Club - Software Engineer</h3>
-            <p>Developed a React Native and Expo mobile application for Warriors Legacy Care using TypeScript and NativeWind to enhance veteran support services. Implemented a GitHub feature branch workflow in a distributed team, optimizing version control and collaboration through structured source control practices, with project management facilitated by Kanban and Jira. Engineered a scalable backend API using Python and Flask, hosted on AWS EC2, with a PostgreSQL database on AWS RDS to ensure reliable data storage and seamless integration with the mobile application.</p>
-        </div>
-        <div class="experience">
-            <h3>Climate Computing Research - Student Researcher</h3>
-            <p>Analyzed large-scale climate datasets using Python and Bash scripting in a Linux environment to extract key insights. Developed high-performance climate models on Derecho, leveraging big data analytics to enhance weather prediction accuracy.</p>
-        </div>
-        <div class="experience">
-            <h3>Syntag - Software Engineer</h3>
-            <p>Deployed scalable NLP-based AI receptionist agents using Azure AKS (Azure Kubernetes Service), leveraging the Deepngram transcriber for real-time transcription and processing. Designed and implemented a Python FastAPI backend to effectively distribute load from WebSocket API requests, preventing throttling and ensuring a seamless user experience even under high traffic. Redesigned the user interface with a focus on both aesthetics and functionality, utilizing Tailwind CSS for rapid, responsive styling and TypeScript with React.js to accurately translate a Figma wireframe into a polished, user-friendly web application.</p>
-        </div>
-        <div class="experience">
-            <h3>Minvest - Software Development Engineer</h3>
-            <p>Tested React.js, ChakraUI, and TypeScript, using organized Git source control actions to communicate progress on AGILE sprint deadlines. Leveraged Amazon Web Services (AWS) cloud infrastructure with ECR, ECS, and EC2, to decrease costs by 30% while hosting decoupled components as Docker images. Designed an interactive frontend that updated user metadata through a point system as part of a gamification initiative, resulting in a 40% boost in user engagement. Initialized a web application paper trading simulator, integrating a Python Flask API to retrieve and consistently update public stock data and user metadata.</p>
-        </div>
-        <div class="experience">
-            <h3>CodePath - Technical Interview Prep Student</h3>
-            <p>Completed an intensive 10-week Technical Interview Prep program, with a focus on strengthening problem-solving skills and preparing for technical interviews at top tech companies. The program emphasized fundamental concepts such as arrays, linked lists, trees, graphs, dynamic programming, and sorting algorithms, with all solutions implemented and optimized in Python. It included weekly coding assignments, timed mock interviews, and collaborative peer-learning sessions, developing the ability to tackle complex technical problems effectively under time constraints.</p>
-        </div>
-        <div class="experience">
-            <h3>Headstarter - Software Engineering Fellow</h3>
-            <p>Collaborated with a team of engineers, designers, and AI experts to develop AI-powered software solutions. Contributed to the design and optimization of algorithms to improve efficiency and performance. Utilized Python, JavaScript, and cloud-based platforms to build scalable, reliable software systems. Worked with cross-functional teams to integrate AI solutions into real-world use cases. Participated in code reviews and fostered a culture of continuous improvement and learning. Enhanced problem-solving skills and deepened understanding of AI in software development.</p>
-        </div>
-    </section>
+        <section class="container" id="projects">
+            <h2>Projects</h2>
+            <div id="projects-container">
+                <div class="project">
+                    <h3>GitRecap</h3>
+                    <div class="project-links">
+                        <a href="https://github.com/aprameyak/GitRecap" target="_blank">GitHub</a>
+                        <a href="https://git-recap-flax.vercel.app/" target="_blank">Live Demo</a>
+                    </div>
+                    <p>A dynamic analytics dashboard that visualizes GitHub user activity with interactive charts and detailed statistics, providing Spotify Wrapped-style insights into coding patterns. Features include weekly commit patterns visualization, language distribution analysis, sentiment analysis of commit messages, developer personality classification, and contribution calendar heatmaps. The backend implements sophisticated data processing with rate limiting handling, commit sentiment analysis using TextBlob, and comprehensive GitHub API integration for detailed repository analytics.</p>
+                    <p><strong>Tech Stack:</strong> Python, Flask, TextBlob, Next.js 14, React, TypeScript, TailwindCSS, Chart.js, React Calendar Heatmap, GitHub REST API, Natural Language Processing</p>
+                </div>
+                
+                
+                <div class="project">
+                    <h3>GitaGPT</h3>
+                    <div class="project-links">
+                        <a href="https://github.com/aprameyak/GitaGPT" target="_blank">GitHub</a>
+                    </div>
+                    <p>An advanced AI chatbot leveraging FAISS vector database for semantic search across Bhagavad Gita verses. Features a sophisticated ETL pipeline that transforms verses into SBERT embeddings, integrates with GPT-4 for contextual response generation, and serves responses through a FastAPI backend with citation tracking.</p>
+                    <p><strong>Tech Stack:</strong> Python, FastAPI, FAISS, SBERT, OpenAI GPT-4, Next.js, React.js, Axios, ETL Pipeline</p>
+                </div>
+        
+                <div class="project">
+                    <h3>FitSync</h3>
+                    <div class="project-links">
+                        <a href="https://github.com/aprameyak/FitSync" target="_blank">GitHub</a>
+                    </div>
+                    <p>A comprehensive fitness platform implementing real-time data synchronization, complex BMR calculations, and AI-powered workout recommendations. Features progressive overload tracking algorithms and integrates with GPT for personalized fitness guidance through a microservices architecture.</p>
+                    <p><strong>Tech Stack:</strong> React.js, MaterialUI, Node.js, Express.js, MongoDB, Firebase Auth, TypeScript, OpenAI GPT, Microservices</p>
+                </div>
+        
+                <div class="project">
+                    <h3>Play2Learn</h3>
+                    <div class="project-links">
+                        <a href="https://github.com/aprameyak/Play2Learn" target="_blank">GitHub</a>
+                        <a href="https://play2learn-ten.vercel.app/" target="_blank">Live Demo</a>
+                    </div>
+                    <p>An educational gaming platform utilizing serverless architecture with AWS Lambda for dynamic content generation. Implements complex state management for three distinct arcade-style games, integrates GPT-4 for adaptive question generation, and features real-time scoring systems.</p>
+                    <p><strong>Tech Stack:</strong> React.js, Next.js, TypeScript, Node.js, AWS Lambda, AWS API Gateway, OpenAI GPT-4, Firebase Auth, GitHub Actions, Vercel</p>
+                </div>
+        
+                <div class="project">
+                    <h3>ResuMaker</h3>
+                    <div class="project-links">
+                        <a href="https://github.com/aprameyak/ResuMaker" target="_blank">GitHub</a>
+                        <a href="https://resumaker-six.vercel.app/" target="_blank">Live Demo</a>
+                    </div>
+                    <p>A dynamic resume generation system featuring AI-enhanced content optimization, real-time form validation, and complex state management for multi-section resume building. Implements TypeScript for type-safe development and server-side rendering for optimal performance.</p>
+                    <p><strong>Tech Stack:</strong> Next.js, TypeScript, Tailwind CSS, OpenAI API, Vercel</p>
+                </div>
+        
+                <div class="project">
+                    <h3>FlashcardGenerator</h3>
+                    <div class="project-links">
+                        <a href="https://github.com/aprameyak/FlashcardGenerator" target="_blank">GitHub</a>
+                        <a href="https://flashcards-dusky-nine.vercel.app/" target="_blank">Live Demo</a>
+                    </div>
+                    <p>An AI-powered study tool that transforms text input into optimized flashcards using GPT-3.5. Features intelligent content parsing, automated question generation, and spaced repetition algorithms for enhanced learning effectiveness.</p>
+                    <p><strong>Tech Stack:</strong> React.js, Next.js, TypeScript, OpenAI GPT-3.5, Vercel</p>
+                </div>
+        
+                <div class="project">
+                    <h3>ComputerVisionRekognition</h3>
+                    <div class="project-links">
+                        <a href="https://github.com/aprameyak/ComputerVisionRekognition" target="_blank">GitHub</a>
+                    </div>
+                    <p>An advanced image analysis system leveraging AWS Rekognition for object detection and labeling. Implements secure S3 integration, IAM role management, and automated confidence scoring for detected objects with local execution capabilities.</p>
+                    <p><strong>Tech Stack:</strong> Python, AWS Rekognition, AWS S3, AWS IAM, AWS SDK</p>
+                </div>
+        
+                <div class="project">
+                    <h3>CarSafetyClassifier</h3>
+                    <div class="project-links">
+                        <a href="https://github.com/aprameyak/CarSafetyClassifier" target="_blank">GitHub</a>
+                    </div>
+                    <p>A machine learning classification system achieving 94.6% accuracy through ensemble methods combining random forest (100 decision trees) and k-nearest neighbors algorithms. Features comprehensive data preprocessing and statistical analysis visualization.</p>
+                    <p><strong>Tech Stack:</strong> Python, Scikit-learn, Pandas, NumPy, Seaborn, Matplotlib, Machine Learning Algorithms</p>
+                </div>
+        
+                <div class="project">
+                    <h3>Notes App</h3>
+                    <div class="project-links">
+                        <a href="https://github.com/aprameyak/NotesApp" target="_blank">GitHub</a>
+                        <a href="https://main.d1ztm9vf7wa50r.amplifyapp.com/" target="_blank">Live Demo</a>
+                    </div>
+                    <p>A full-stack note-taking application utilizing AWS Amplify's comprehensive cloud services. Implements secure user authentication, GraphQL API for data operations, and cloud storage for media files with real-time synchronization.</p>
+                    <p><strong>Tech Stack:</strong> React.js, AWS Amplify, GraphQL API, AWS Storage, AWS Auth, AWS UI Components</p>
+                </div>
+        
+                <div class="project">
+                    <h3>WordleClone</h3>
+                    <div class="project-links">
+                        <a href="https://github.com/aprameyak/WordleClone" target="_blank">GitHub</a>
+                    </div>
+                    <p>A sophisticated word game implementation featuring FastAPI backend integration with OpenAI for word selection, complex state management for game logic, and real-time feedback systems with color-coded response algorithms.</p>
+                    <p><strong>Tech Stack:</strong> React.js, Python, FastAPI, OpenAI API, Custom Game Logic, CSS Animations</p>
+                </div>
+        
+                <div class="project">
+                    <h3>ScoreMe</h3>
+                    <div class="project-links">
+                        <a href="https://github.com/aprameyak/ScoreMe" target="_blank">GitHub</a>
+                    </div>
+                    <p>A machine learning-based exam score prediction system utilizing statistical analysis and predictive modeling. Features data preprocessing, model training on student performance datasets, and Flask API integration for real-time predictions.</p>
+                    <p><strong>Tech Stack:</strong> Python, Flask, Scikit-learn, Pandas, Machine Learning Models</p>
+                </div>
+        
+                <div class="project">
+                    <h3>StockPriceEmailer</h3>
+                    <div class="project-links">
+                        <a href="https://github.com/aprameyak/StockPriceEmailer" target="_blank">GitHub</a>
+                    </div>
+                    <p>An automated financial notification system using AWS Lambda and SES. Implements scheduled execution, secure API integration with Yahoo Finance, and IAM role-based security for AWS service access.</p>
+                    <p><strong>Tech Stack:</strong> Node.js, AWS Lambda, AWS SES, AWS IAM, Yahoo Finance API</p>
+                </div>
+        
+                <div class="project">
+                    <h3>NASA Image Search</h3>
+                    <div class="project-links">
+                        <a href="https://github.com/aprameyak/NasaImageLibrary" target="_blank">GitHub</a>
+                    </div>
+                    <p>A TypeScript-based image search application featuring carousel navigation, date-range filtering, and integration with NASA's Image API. Implements React Router for navigation and custom image loading optimization.</p>
+                    <p><strong>Tech Stack:</strong> React.js, TypeScript, React Router, NASA Images API</p>
+                </div>
+        
+                <div class="project">
+                    <h3>Pathos</h3>
+                    <div class="project-links">
+                        <a href="https://github.com/aprameyak/Pathos" target="_blank">GitHub</a>
+                    </div>
+                    <p>A Chrome extension for real-time emotion recognition using facial analysis algorithms. Integrates with DeepFace for facial expression classification and implements custom UI for emotion feedback display.</p>
+                    <p><strong>Tech Stack:</strong> React.js, JavaScript, Chrome Extension APIs, Python, Flask, DeepFace, OpenCV, NumPy</p>
+                </div>
+        
+                <div class="project">
+                    <h3>StockUp</h3>
+                    <div class="project-links">
+                        <a href="https://github.com/aprameyak/StockUp" target="_blank">GitHub</a>
+                        <a href="https://pantryapp-iota.vercel.app/" target="_blank">Live Demo</a>
+                    </div>
+                    <p>A real-time pantry management system implementing CRUD operations with Firebase Firestore. Features instant updates through cloud synchronization and responsive design for mobile accessibility.</p>
+                    <p><strong>Tech Stack:</strong> JavaScript, HTML5, CSS3, Firebase Firestore, Google Cloud Platform, Vercel</p>
+                </div>
+        
+                <div class="project">
+                    <h3>TodoList</h3>
+                    <div class="project-links">
+                        <a href="https://github.com/aprameyak/TodoList" target="_blank">GitHub</a>
+                    </div>
+                    <p>A full-stack task management application featuring SQLite database integration, Flask REST API implementation, and responsive frontend design with React components.</p>
+                    <p><strong>Tech Stack:</strong> React.js, Python, Flask, SQLite, HTML, CSS</p>
+                </div>
+        
+                <div class="project">
+                    <h3>Breaking Bad Quote Generator</h3>
+                    <div class="project-links">
+                        <a href="https://github.com/aprameyak/BreakingBadQuoteGenerator" target="_blank">GitHub</a>
+                        <a href="https://breakingbadquotes-puce.vercel.app/" target="_blank">Live Demo</a>
+                    </div>
+                    <p>An interactive quote generation application featuring API integration, dynamic content rendering, and responsive design principles for optimal user experience.</p>
+                    <p><strong>Tech Stack:</strong> React.js, JavaScript, Breaking Bad API, Vercel</p>
+                </div>
+            </div>
+        </section>
+        
+        
 
-    <section class="container skills">
-        <h2>Skills</h2>
-        <ul>
-            <li>TypeScript</li>
-            <li>JavaScript</li>
-            <li>Python</li>
-            <li>Java</li>
-            <li>HTML5</li>
-            <li>CSS3</li>
-            <li>SQL</li>
-            <li>MATLAB</li>
-            <li>Bash</li>
-            <li>React.js</li>
-            <li>Next.js</li>
-            <li>Tailwind CSS</li>
-            <li>MaterialUI</li>
-            <li>ChakraUI</li>
-            <li>Node.js</li>
-            <li>Express.js</li>
-            <li>FastAPI</li>
-            <li>Flask</li>
-            <li>RESTful APIs</li>
-            <li>WebSocket APIs</li>
-            <li>GraphQL</li>
-            <li>AWS ECS</li>
-            <li>AWS EC2</li>
-            <li>AWS ECR</li>
-            <li>AWS Lambda</li>
-            <li>AWS S3</li>
-            <li>AWS IAM</li>
-            <li>AWS CloudFormation</li>
-            <li>AWS SES</li>
-            <li>AWS EventBridge</li>
-            <li>AWS API Gateway</li>
-            <li>AWS DynamoDB</li>
-            <li>AWS CodePipeline</li>
-            <li>AWS Amplify</li>
-            <li>AWS Cognito</li>
-            <li>AWS Rekognition</li>
-            <li>AWS RDS</li>
-            <li>AWS VPC</li>
-            <li>Docker</li>
-            <li>CI/CD Pipelines</li>
-            <li>MongoDB</li>
-            <li>MySQL</li>
-            <li>SQLite</li>
-            <li>Oracle</li>
-            <li>Firebase Firestore</li>
-            <li>OpenAI GPT Integration</li>
-            <li>FAISS Vector Database</li>
-            <li>Vector Databases</li>
-            <li>SBERT</li>
-            <li>Scikit-learn</li>
-            <li>NumPy</li>
-            <li>Pandas</li>
-            <li>Matplotlib</li>
-            <li>Seaborn</li>
-            <li>Large Language Models (LLM)</li>
-            <li>Retrieval-Augmented Generation (RAG)</li>
-            <li>Prompt Engineering</li>
-            <li>Artificial Intelligence (AI)</li>
-            <li>Machine Learning</li>
-            <li>Feature Engineering</li>
-            <li>Data Structures and Algorithms (DSA)</li>
-            <li>Object-Oriented Programming (OOP)</li>
-            <li>Git</li>
-            <li>GitHub</li>
-            <li>Visual Studio Code</li>
-            <li>Postman</li>
-            <li>Figma</li>
-            <li>Agile Methodologies</li>
-            <li>Scrum</li>
-            <li>Jira</li>
-            <li>Kanban</li>
-            <li>Project Management</li>
-            <li>Infrastructure as Code (IaC)</li>
-            <li>Serverless Computing</li>
-            <li>Site Reliability Engineering</li>
-            <li>Load Balancing</li>
-            <li>Network Administration</li>
-            <li>OSI Model</li>
-            <li>Mobile Application Development</li>
-            <li>Back-End Web Development</li>
-            <li>Object-Relational Mapping (ORM)</li>
-            <li>Relational Databases</li>
-            <li>Integration Testing</li>
-            <li>Unit Testing</li>
-            <li>Workflow Automation</li>
-            <li>Linux</li>
-            <li>Windows</li>
-            <li>MacOS</li>
-            <li>Microsoft Office Suite</li>
-            <li>Chrome DevTools</li>
-            <li>Browser Extensions Development</li>
-        </ul>
-    </section>
-    
+        <section class="container" id="experience">
+            <h2>Experience</h2>
+            <div class="experience">
+                <h3>Application Development Club - Software Engineer</h3>
+                <p>Developed a React Native and Expo mobile application for Warriors Legacy Care using TypeScript and NativeWind to enhance veteran support services. Implemented a GitHub feature branch workflow in a distributed team, optimizing version control and collaboration through structured source control practices, with project management facilitated by Kanban and Jira. Engineered a scalable backend API using Python and Flask, hosted on AWS EC2, with a PostgreSQL database on AWS RDS to ensure reliable data storage and seamless integration with the mobile application.</p>
+            </div>
+            <div class="experience">
+                <h3>Climate Computing Research - Student Researcher</h3>
+                <p>Analyzed large-scale climate datasets using Python and Bash scripting in a Linux environment to extract key insights. Developed high-performance climate models on Derecho, leveraging big data analytics to enhance weather prediction accuracy.</p>
+            </div>
+            <div class="experience">
+                <h3>Syntag - Software Engineer</h3>
+                <p>Deployed scalable NLP-based AI receptionist agents using Azure AKS (Azure Kubernetes Service), leveraging the Deepngram transcriber for real-time transcription and processing. Designed and implemented a Python FastAPI backend to effectively distribute load from WebSocket API requests, preventing throttling and ensuring a seamless user experience even under high traffic. Redesigned the user interface with a focus on both aesthetics and functionality, utilizing Tailwind CSS for rapid, responsive styling and TypeScript with React.js to accurately translate a Figma wireframe into a polished, user-friendly web application.</p>
+            </div>
+            <div class="experience">
+                <h3>Minvest - Software Development Engineer</h3>
+                <p>Tested React.js, ChakraUI, and TypeScript, using organized Git source control actions to communicate progress on AGILE sprint deadlines. Leveraged Amazon Web Services (AWS) cloud infrastructure with ECR, ECS, and EC2, to decrease costs by 30% while hosting decoupled components as Docker images. Designed an interactive frontend that updated user metadata through a point system as part of a gamification initiative, resulting in a 40% boost in user engagement. Initialized a web application paper trading simulator, integrating a Python Flask API to retrieve and consistently update public stock data and user metadata.</p>
+            </div>
+            <div class="experience">
+                <h3>CodePath - Technical Interview Prep Student</h3>
+                <p>Completed an intensive 10-week Technical Interview Prep program, with a focus on strengthening problem-solving skills and preparing for technical interviews at top tech companies. The program emphasized fundamental concepts such as arrays, linked lists, trees, graphs, dynamic programming, and sorting algorithms, with all solutions implemented and optimized in Python. It included weekly coding assignments, timed mock interviews, and collaborative peer-learning sessions, developing the ability to tackle complex technical problems effectively under time constraints.</p>
+            </div>
+            <div class="experience">
+                <h3>Headstarter - Software Engineering Fellow</h3>
+                <p>Collaborated with a team of engineers, designers, and AI experts to develop AI-powered software solutions. Contributed to the design and optimization of algorithms to improve efficiency and performance. Utilized Python, JavaScript, and cloud-based platforms to build scalable, reliable software systems. Worked with cross-functional teams to integrate AI solutions into real-world use cases. Participated in code reviews and fostered a culture of continuous improvement and learning. Enhanced problem-solving skills and deepened understanding of AI in software development.</p>
+            </div>
+        </section>
 
-    <footer>
-        <p>Feel free to reach out to me:</p>
-        <div class="contact">
-            <a href="https://github.com/aprameyak" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" alt="GitHub"></a>
-            <a href="https://www.linkedin.com/in/aprameyakannan" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/0/0e/LinkedIn_Logo_2023.png" alt="LinkedIn"></a>
-            <a href="mailto:aprameyakannan@gmail.com"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/Email_icon.svg" alt="Email"></a>
-        </div>
-        <p>&copy; 2025 Aprameya Kannan. All rights reserved.</p>
-    </footer>
-</body>
+        <section class="container skills" id="skills">
+            <h2>Skills</h2>
+            <ul>
+                <li>TypeScript</li>
+                <li>JavaScript</li>
+                <li>Python</li>
+                <li>Java</li>
+                <li>HTML5</li>
+                <li>CSS3</li>
+                <li>SQL</li>
+                <li>MATLAB</li>
+                <li>Bash</li>
+                <li>React.js</li>
+                <li>Next.js</li>
+                <li>Tailwind CSS</li>
+                <li>MaterialUI</li>
+                <li>ChakraUI</li>
+                <li>Node.js</li>
+                <li>Express.js</li>
+                <li>FastAPI</li>
+                <li>Flask</li>
+                <li>RESTful APIs</li>
+                <li>WebSocket APIs</li>
+                <li>GraphQL</li>
+                <li>AWS ECS</li>
+                <li>AWS EC2</li>
+                <li>AWS ECR</li>
+                <li>AWS Lambda</li>
+                <li>AWS S3</li>
+                <li>AWS IAM</li>
+                <li>AWS CloudFormation</li>
+                <li>AWS SES</li>
+                <li>AWS EventBridge</li>
+                <li>AWS API Gateway</li>
+                <li>AWS DynamoDB</li>
+                <li>AWS CodePipeline</li>
+                <li>AWS Amplify</li>
+                <li>AWS Cognito</li>
+                <li>AWS Rekognition</li>
+                <li>AWS RDS</li>
+                <li>AWS VPC</li>
+                <li>Docker</li>
+                <li>CI/CD Pipelines</li>
+                <li>MongoDB</li>
+                <li>MySQL</li>
+                <li>SQLite</li>
+                <li>Oracle</li>
+                <li>Firebase Firestore</li>
+                <li>OpenAI GPT Integration</li>
+                <li>FAISS Vector Database</li>
+                <li>Vector Databases</li>
+                <li>SBERT</li>
+                <li>Scikit-learn</li>
+                <li>NumPy</li>
+                <li>Pandas</li>
+                <li>Matplotlib</li>
+                <li>Seaborn</li>
+                <li>Large Language Models (LLM)</li>
+                <li>Retrieval-Augmented Generation (RAG)</li>
+                <li>Prompt Engineering</li>
+                <li>Artificial Intelligence (AI)</li>
+                <li>Machine Learning</li>
+                <li>Feature Engineering</li>
+                <li>Data Structures and Algorithms (DSA)</li>
+                <li>Object-Oriented Programming (OOP)</li>
+                <li>Git</li>
+                <li>GitHub</li>
+                <li>Visual Studio Code</li>
+                <li>Postman</li>
+                <li>Figma</li>
+                <li>Agile Methodologies</li>
+                <li>Scrum</li>
+                <li>Jira</li>
+                <li>Kanban</li>
+                <li>Project Management</li>
+                <li>Infrastructure as Code (IaC)</li>
+                <li>Serverless Computing</li>
+                <li>Site Reliability Engineering</li>
+                <li>Load Balancing</li>
+                <li>Network Administration</li>
+                <li>OSI Model</li>
+                <li>Mobile Application Development</li>
+                <li>Back-End Web Development</li>
+                <li>Object-Relational Mapping (ORM)</li>
+                <li>Relational Databases</li>
+                <li>Integration Testing</li>
+                <li>Unit Testing</li>
+                <li>Workflow Automation</li>
+                <li>Linux</li>
+                <li>Windows</li>
+                <li>MacOS</li>
+                <li>Microsoft Office Suite</li>
+                <li>Chrome DevTools</li>
+                <li>Browser Extensions Development</li>
+            </ul>
+        </section>
+        
+        <section id="contact" class="container" >
+            <h2>Contact</h2>
+            <p>I'm always open to new opportunities and collaborations.</p>
+            <div class="contact-info">
+                <p>📧 Email: <a href="mailto:aprameyakannan@gmail.com">aprameyakannan@gmail.com</a></p>
+                <p>📍 Location: Plainsboro, New Jersey, USA</p>
+                <div class="social-links">
+                    <a href="https://github.com/aprameyak" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" alt="GitHub"></a>
+                    <a href="https://www.linkedin.com/in/aprameyakannan" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/0/0e/LinkedIn_Logo_2023.png" alt="LinkedIn"></a>
+                    <a href="mailto:aprameyakannan@gmail.com"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/Email_icon.svg" alt="Email"></a>
+                </div>
+            </div>
+        </section>
+        
+        <footer>
+            <p>&copy; 2025 Aprameya Kannan. All rights reserved.</p>
+        </footer>
+    </body>
 </html>
