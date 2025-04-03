@@ -1,29 +1,36 @@
-# Aprameya Kannan Portfolio
+# 🌐 Aprameyak Portfolio  
 
-A modern, responsive portfolio website showcasing my experience as an aspiring developer.
+![AWS S3](https://img.shields.io/badge/Hosting-AWS%20S3-orange?logo=amazon-aws)  
+![Vercel](https://img.shields.io/badge/Hosting-Vercel-black?logo=vercel)  
+![GitHub Actions](https://img.shields.io/badge/CI%2FCD-GitHub%20Actions-blue?logo=github-actions)  
+![JavaScript](https://img.shields.io/badge/JavaScript-ES6-yellow?logo=javascript)  
+![OpenAI API](https://img.shields.io/badge/OpenAI-GPT%204-blue?logo=openai)  
+![GitHub API](https://img.shields.io/badge/GitHub-API-black?logo=github)  
 
-## Features
+## 📌 About  
 
-- **Dynamic Project Showcase**: Automatically fetches and displays GitHub projects using GitHub API
-- **AI-Enhanced Content**: Uses OpenAI GPT to generate concise project descriptions and tech stacks
-- **Responsive Design**: Clean, modern interface that works across all devices
-- **Automated Updates**: Projects section automatically updates when new repositories are added
+A **modern, responsive portfolio website** showcasing my experience as an aspiring developer. Built with **pure HTML, CSS, and JavaScript**, featuring **two setups** for deployment.  
 
-## Technical Architecture
+🔗 **Live Demo:** [aprameyak.vercel.app](https://aprameyak.vercel.app/)  
 
-### Frontend
-- Pure HTML/CSS for optimal performance
-- Vanilla JavaScript for dynamic content
-- Marked.js for markdown processing
+## 🚀 Features  
 
-### Infrastructure
-- **Hosting**: AWS S3 Static Website Hosting
-- **CI/CD**: GitHub Actions for automated deployment
-- **APIs**: 
-  - GitHub API for repository data
-  - OpenAI API for content enhancement
+✅ **Dynamic Project Showcase:** Automatically fetches and displays GitHub projects using the GitHub API *(AWS S3 version)*  
+✅ **AI-Enhanced Content:** Uses OpenAI GPT to generate concise project descriptions and tech stacks *(AWS S3 version)*  
+✅ **Responsive Design:** Clean, modern interface optimized for all devices  
+✅ **Automated Updates:** The projects section updates automatically when new repositories are added *(AWS S3 version)*  
 
-### Security
-- AWS IAM role-based access
-- Secure credential management via GitHub Secrets
-- API key rotation and best practices
+## 🏗️ Deployment Setups  
+
+### **1️⃣ Hardcoded Version (Vercel CI/CD)**  
+
+- Predefined static portfolio with manually updated content  
+- Deployed automatically via **Vercel CI/CD**  
+
+### **2️⃣ Dynamic Version (AWS S3 + GitHub API + OpenAI API)**  
+
+- **Dynamic fetching** of GitHub repositories  
+- AI-generated project descriptions and tech stack information  
+- Hosted on **AWS S3 Static Website Hosting**  
+- Uses **AWS IAM** for secure access  
+- Automated deployment via **GitHub Actions**  
