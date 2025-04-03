@@ -1,4 +1,4 @@
-# 🌐 Aprameyak Portfolio  
+# 🌐 Portfolio  
 
 ![AWS S3](https://img.shields.io/badge/Hosting-AWS%20S3-orange?logo=amazon-aws)  
 ![Vercel](https://img.shields.io/badge/Hosting-Vercel-black?logo=vercel)  
