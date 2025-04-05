@@ -11,7 +11,7 @@
 
 A **modern, responsive portfolio website** showcasing my experience as an aspiring developer. Built with **pure HTML, CSS, and JavaScript**, featuring **two setups** for deployment.
 
-**Live Demo:** [aprameyak.vercel.app](https://aprameyak.vercel.app/)
+**Live Demo:** [View here](https://aprameyak.vercel.app/)
 
 ## Features
 
