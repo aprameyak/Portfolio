@@ -1,36 +1,36 @@
-# Portfolio
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-![AWS S3](https://img.shields.io/badge/AWS%20S3-orange?logo=amazon-aws&logoColor=white&style=for-the-badge)
-![Vercel](https://img.shields.io/badge/Vercel-000000?logo=vercel&logoColor=white&style=for-the-badge)
-![GitHub Actions](https://img.shields.io/badge/GitHub%20Actions-2088FF?logo=github-actions&logoColor=white&style=for-the-badge)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=black&style=for-the-badge)
-![OpenAI](https://img.shields.io/badge/OpenAI%20API-412991?logo=openai&logoColor=white&style=for-the-badge)
-![GitHub API](https://img.shields.io/badge/GitHub%20API-000000?logo=github&logoColor=white&style=for-the-badge)
+## Getting Started
 
-## About
+First, run the development server:
 
-A **modern, responsive portfolio website** showcasing my experience as an aspiring developer. Built with **pure HTML, CSS, and JavaScript**, featuring **two setups** for deployment.
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
+```
 
-**Live Demo:** [View here](https://aprameyak.vercel.app/)
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-## Features
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-- **Dynamic Project Showcase:** Automatically fetches and displays GitHub projects using the GitHub API *(AWS S3 version)*  
-- **AI-Enhanced Content:** Uses OpenAI GPT to generate concise project descriptions and tech stacks *(AWS S3 version)*  
-- **Responsive Design:** Clean, modern interface optimized for all devices  
-- **Automated Updates:** The projects section updates automatically when new repositories are added *(AWS S3 version)*
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-## Deployment Setups
+## Learn More
 
-### 1. Hardcoded Version (Vercel CI/CD)
+To learn more about Next.js, take a look at the following resources:
 
-- Predefined static portfolio with manually updated content  
-- Deployed automatically via **Vercel CI/CD**
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-### 2. Dynamic Version (AWS S3 + GitHub API + OpenAI API)
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-- Dynamic fetching of GitHub repositories  
-- AI-generated project descriptions and tech stack information  
-- Hosted on **AWS S3 Static Website Hosting**  
-- Uses **AWS IAM** for secure access  
-- Automated deployment via **GitHub Actions**
+## Deploy on Vercel
+
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
