@@ -12,31 +12,43 @@ interface Project {
 
 const projects: Project[] = [
   {
-    title: "GitRecap",
-    description: "A dynamic analytics dashboard that visualizes GitHub user activity and repository statistics in real-time.",
-    githubLink: "https://github.com/aprameyak/GitRecap",
-    demoLink: "https://gitrecap.vercel.app",
-    techStack: ["React", "TypeScript", "D3.js", "GitHub API"]
-  },
-  {
     title: "GitaGPT",
     description: "An AI chatbot that leverages vector database for semantic search across Bhagavad Gita verses.",
     githubLink: "https://github.com/aprameyak/GitaGPT",
     demoLink: "https://gitagpt.vercel.app",
-    techStack: ["Next.js", "OpenAI", "Pinecone", "TailwindCSS"]
+    techStack: ["Next.js", "OpenAI", "FAISS", "TailwindCSS", "Python", "FastAPI"]
   },
   {
-    title: "FitSync",
-    description: "A fitness platform with real-time data synchronization and AI-powered workout recommendations.",
-    githubLink: "https://github.com/aprameyak/FitSync",
-    techStack: ["React", "Node.js", "MongoDB", "TensorFlow.js"]
+    title: "ScoreMe",
+    description: "Machine learning to predict exam scores",
+    githubLink: "https://github.com/aprameyak/ScoreMe",
+    techStack: ["Python", "Machine Learning", "Jupyter", "Pandas", "NumPy", "Scikit-learn"]
+  },
+  {
+    title: "StockPriceEmailer",
+    description: "Automation for stock traders",
+    githubLink: "https://github.com/aprameyak/StockPriceEmailer",
+    techStack: ["JavaScript", "Node.js", "APIs", "Automation"]
+  },
+  {
+    title: "Pathos",
+    description: "A hackathon project from Hack NYU 2025 that simplifies emotions for neurodivergent individuals. Features an intuitive interface for emotion recognition and management, making emotional understanding more accessible.",
+    githubLink: "https://github.com/aprameyak/Pathos",
+    techStack: ["JavaScript", "React", "Node.js"]
   },
   {
     title: "Play2Learn",
     description: "An educational gaming platform utilizing serverless architecture with AWS Lambda for dynamic content generation. Implements complex state management for three distinct arcade-style games, integrates GPT-4 for adaptive question generation, and features real-time scoring systems.",
     githubLink: "https://github.com/aprameyak/Play2Learn",
     demoLink: "https://play2learn-ten.vercel.app/",
-    techStack: ["React.js", "Next.js", "TypeScript", "Node.js", "AWS Lambda", "OpenAI GPT-4", "Firebase Auth"]
+    techStack: ["React.js", "Next.js", "TypeScript", "Node.js", "AWS Lambda", "OpenAI GPT-4", "Firebase Auth", "TailwindCSS"]
+  },
+  {
+    title: "GitRecap",
+    description: "A dynamic analytics dashboard that visualizes GitHub user activity and repository statistics in real-time.",
+    githubLink: "https://github.com/aprameyak/GitRecap",
+    demoLink: "https://gitrecap.vercel.app",
+    techStack: ["React", "TypeScript", "D3.js", "GitHub API", "Vercel", "TailwindCSS"]
   },
   {
     title: "ResuMaker",
@@ -50,13 +62,13 @@ const projects: Project[] = [
     description: "An AI-powered study tool that transforms text input into optimized flashcards using GPT-3.5. Features intelligent content parsing, automated question generation, and spaced repetition algorithms for enhanced learning effectiveness.",
     githubLink: "https://github.com/aprameyak/FlashcardGenerator",
     demoLink: "https://flashcards-dusky-nine.vercel.app/",
-    techStack: ["React.js", "Next.js", "TypeScript", "OpenAI GPT-3.5", "Vercel"]
+    techStack: ["React.js", "Next.js", "TypeScript", "OpenAI GPT-3.5", "Vercel", "TailwindCSS"]
   },
   {
     title: "ComputerVisionRekognition",
     description: "An advanced image analysis system leveraging AWS Rekognition for object detection and labeling. Implements secure S3 integration, IAM role management, and automated confidence scoring for detected objects with local execution capabilities.",
     githubLink: "https://github.com/aprameyak/ComputerVisionRekognition",
-    techStack: ["Python", "AWS Rekognition", "AWS S3", "AWS IAM", "AWS SDK"]
+    techStack: ["Python", "AWS Rekognition", "AWS S3", "AWS IAM", "AWS SDK", "Boto3", "OpenCV"]
   },
   {
     title: "UserManagementSystem",
@@ -69,7 +81,7 @@ const projects: Project[] = [
     title: "CarSafetyClassifier",
     description: "A machine learning classification system achieving 94.6% accuracy through ensemble methods combining random forest (100 decision trees) and k-nearest neighbors algorithms. Features comprehensive data preprocessing and statistical analysis visualization.",
     githubLink: "https://github.com/aprameyak/CarSafetyClassifier",
-    techStack: ["Python", "Scikit-learn", "Pandas", "NumPy", "Seaborn", "Matplotlib"]
+    techStack: ["Python", "Scikit-learn", "Pandas", "NumPy", "Seaborn", "Matplotlib", "Jupyter"]
   },
   {
     title: "NotesApp",
@@ -83,14 +95,32 @@ const projects: Project[] = [
     description: "A real-time pantry management system implementing CRUD operations with Firebase Firestore. Features instant updates through cloud synchronization and responsive design for mobile accessibility.",
     githubLink: "https://github.com/aprameyak/StockUp",
     demoLink: "https://pantryapp-iota.vercel.app/",
-    techStack: ["JavaScript", "HTML5", "CSS3", "Firebase Firestore", "Google Cloud Platform"]
+    techStack: ["JavaScript", "HTML5", "CSS3", "Firebase Firestore", "Google Cloud Platform", "Firebase Auth"]
   },
   {
     title: "BreakingBadQuoteGenerator",
     description: "An interactive quote generation application featuring API integration, dynamic content rendering, and responsive design principles for optimal user experience.",
     githubLink: "https://github.com/aprameyak/BreakingBadQuoteGenerator",
     demoLink: "https://breakingbadquotes-puce.vercel.app/",
-    techStack: ["React.js", "JavaScript", "Breaking Bad API", "Vercel"]
+    techStack: ["React.js", "JavaScript", "Breaking Bad API", "Vercel", "CSS3"]
+  },
+  {
+    title: "SeaShooter",
+    description: "A submarine-themed arcade game inspired by Space Invaders, built with Java AWT and Swing. Features smooth 2D animation with double buffering, responsive keyboard controls, enemy waves with varied movement patterns, and increasing difficulty scaling.",
+    githubLink: "https://github.com/aprameyak/SeaShooter",
+    techStack: ["Java", "AWT", "Swing", "Game Development", "Object-Oriented Design", "Graphics2D"]
+  },
+  {
+    title: "DataStructures",
+    description: "A comprehensive implementation of core data structures with clean, object-oriented design. Includes Graph, Linked Lists, ArrayList, Binary Tree, Queue, Stack, Map, Set, and Heap implementations with common operations built from scratch for educational clarity.",
+    githubLink: "https://github.com/aprameyak/DataStructures",
+    techStack: ["Java", "Data Structures", "Object-Oriented Design", "Algorithms", "JUnit Testing"]
+  },
+  {
+    title: "BlogApp",
+    description: "A full-featured blog application built with Django's MVC architecture. Features blog post management, comment system, built-in admin interface, and SEO-friendly URLs. Implements clean and structured interface for content management.",
+    githubLink: "https://github.com/aprameyak/BlogApp",
+    techStack: ["Python", "Django", "MVC Architecture", "HTML", "CSS", "SQLite", "Django Templates"]
   }
 ];
 
