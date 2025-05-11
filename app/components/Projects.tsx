@@ -25,7 +25,7 @@ const projects: Project[] = [
     techStack: ["Python", "Machine Learning", "Jupyter", "Pandas", "NumPy", "Scikit-learn"]
   },
   {
-    title: "StockPriceEmailer",
+    title: "Stock Price Emailer",
     description: "Automation for stock traders",
     githubLink: "https://github.com/aprameyak/StockPriceEmailer",
     techStack: ["JavaScript", "Node.js", "APIs", "Automation"]
@@ -58,66 +58,66 @@ const projects: Project[] = [
     techStack: ["Next.js", "TypeScript", "Tailwind CSS", "OpenAI API", "Vercel"]
   },
   {
-    title: "FlashcardGenerator",
+    title: "Flashcard Generator",
     description: "An AI-powered study tool that transforms text input into optimized flashcards using GPT-3.5. Features intelligent content parsing, automated question generation, and spaced repetition algorithms for enhanced learning effectiveness.",
     githubLink: "https://github.com/aprameyak/FlashcardGenerator",
     demoLink: "https://flashcards-dusky-nine.vercel.app/",
     techStack: ["React.js", "Next.js", "TypeScript", "OpenAI GPT-3.5", "Vercel", "TailwindCSS"]
   },
   {
-    title: "ComputerVisionRekognition",
+    title: "CV Rekognition",
     description: "An advanced image analysis system leveraging AWS Rekognition for object detection and labeling. Implements secure S3 integration, IAM role management, and automated confidence scoring for detected objects with local execution capabilities.",
     githubLink: "https://github.com/aprameyak/ComputerVisionRekognition",
     techStack: ["Python", "AWS Rekognition", "AWS S3", "AWS IAM", "AWS SDK", "Boto3", "OpenCV"]
   },
   {
-    title: "UserManagementSystem",
+    title: "User Management System",
     description: "A comprehensive user management system featuring secure authentication, role-based access control, and user profile management capabilities. Implements secure password hashing, JWT authentication, and real-time data updates.",
     githubLink: "https://github.com/aprameyak/UserManagementSystem",
     demoLink: "https://user-management-system-phi.vercel.app/",
     techStack: ["React.js", "Python", "AWS API Gateway", "AWS Lambda", "AWS DynamoDB"]
   },
   {
-    title: "CarSafetyClassifier",
+    title: "Car Safety Classifier",
     description: "A machine learning classification system achieving 94.6% accuracy through ensemble methods combining random forest (100 decision trees) and k-nearest neighbors algorithms. Features comprehensive data preprocessing and statistical analysis visualization.",
     githubLink: "https://github.com/aprameyak/CarSafetyClassifier",
     techStack: ["Python", "Scikit-learn", "Pandas", "NumPy", "Seaborn", "Matplotlib", "Jupyter"]
   },
   {
-    title: "NotesApp",
+    title: "Notes App",
     description: "A full-stack note-taking application utilizing AWS Amplify's comprehensive cloud services. Implements secure user authentication, GraphQL API for data operations, and cloud storage for media files with real-time synchronization.",
     githubLink: "https://github.com/aprameyak/NotesApp",
     demoLink: "https://main.d1ztm9vf7wa50r.amplifyapp.com/",
     techStack: ["React.js", "AWS Amplify", "GraphQL API", "AWS Storage", "AWS Auth"]
   },
   {
-    title: "StockUp",
+    title: "Stock Up",
     description: "A real-time pantry management system implementing CRUD operations with Firebase Firestore. Features instant updates through cloud synchronization and responsive design for mobile accessibility.",
     githubLink: "https://github.com/aprameyak/StockUp",
     demoLink: "https://pantryapp-iota.vercel.app/",
     techStack: ["JavaScript", "HTML5", "CSS3", "Firebase Firestore", "Google Cloud Platform", "Clerk Auth"]
   },
   {
-    title: "BreakingBadQuoteGenerator",
+    title: "Breaking Bad Quote Generator",
     description: "An interactive quote generation application featuring API integration, dynamic content rendering, and responsive design principles for optimal user experience.",
     githubLink: "https://github.com/aprameyak/BreakingBadQuoteGenerator",
     demoLink: "https://breakingbadquotes-puce.vercel.app/",
     techStack: ["React.js", "JavaScript", "Breaking Bad API", "Vercel", "CSS3"]
   },
   {
-    title: "SeaShooter",
+    title: "Sea Shooter",
     description: "A submarine-themed arcade game inspired by Space Invaders, built with Java AWT and Swing. Features smooth 2D animation with double buffering, responsive keyboard controls, enemy waves with varied movement patterns, and increasing difficulty scaling.",
     githubLink: "https://github.com/aprameyak/SeaShooter",
     techStack: ["Java", "AWT", "Swing", "Game Development", "Object-Oriented Design", "Graphics2D"]
   },
   {
-    title: "DataStructures",
+    title: "Data Structures",
     description: "A comprehensive implementation of core data structures with clean, object-oriented design. Includes Graph, Linked Lists, ArrayList, Binary Tree, Queue, Stack, Map, Set, and Heap implementations with common operations built from scratch for educational clarity.",
     githubLink: "https://github.com/aprameyak/DataStructures",
     techStack: ["Java", "Data Structures", "Object-Oriented Design", "Algorithms", "JUnit Testing"]
   },
   {
-    title: "BlogApp",
+    title: "Blog App",
     description: "A full-featured blog application built with Django's MVC architecture. Features blog post management, comment system, built-in admin interface, and SEO-friendly URLs. Implements clean and structured interface for content management.",
     githubLink: "https://github.com/aprameyak/BlogApp",
     techStack: ["Python", "Django", "MVC Architecture", "HTML", "CSS", "SQLite", "Django Templates"]
