@@ -95,7 +95,7 @@ const projects: Project[] = [
     description: "A real-time pantry management system implementing CRUD operations with Firebase Firestore. Features instant updates through cloud synchronization and responsive design for mobile accessibility.",
     githubLink: "https://github.com/aprameyak/StockUp",
     demoLink: "https://pantryapp-iota.vercel.app/",
-    techStack: ["JavaScript", "HTML5", "CSS3", "Firebase Firestore", "Google Cloud Platform", "Firebase Auth"]
+    techStack: ["JavaScript", "HTML5", "CSS3", "Firebase Firestore", "Google Cloud Platform", "Clerk Auth"]
   },
   {
     title: "BreakingBadQuoteGenerator",
