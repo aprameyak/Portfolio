@@ -1,36 +1,42 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Portfolio
 
-## Getting Started
+![Next.js](https://img.shields.io/badge/Next.js-000000?logo=nextdotjs&logoColor=white&style=for-the-badge)
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=white&style=for-the-badge)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind-06B6D4?logo=tailwindcss&logoColor=white&style=for-the-badge)
+![Framer Motion](https://img.shields.io/badge/Framer_Motion-0055FF?logo=framer&logoColor=white&style=for-the-badge)
+![Vercel](https://img.shields.io/badge/Vercel-000000?logo=vercel&logoColor=white&style=for-the-badge)
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## About
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+**Portfolio** is a modern, responsive portfolio website built with **Next.js, TypeScript, and Tailwind CSS**. It features smooth animations, interactive UI elements, and a clean, professional design. The site showcases projects, skills, and experience with dynamic content loading and optimized performance.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Live Demo: [https://aprameyak.vercel.app](https://aprameyak.vercel.app)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## Features
 
-To learn more about Next.js, take a look at the following resources:
+- Responsive design with mobile-first approach
+- Smooth page transitions and scroll animations
+- Interactive UI elements with hover effects
+- Dynamic content loading with TypeScript type safety
+- Modern purple theme with gradient accents
+- SEO optimized with Next.js metadata
+- Performance optimized with Next.js Image component
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Technology Stack
 
-## Deploy on Vercel
+- **Framework**: Next.js 14
+- **Language**: TypeScript 5.3
+- **Styling**: Tailwind CSS 3.4
+- **Animations**: Framer Motion 12.14
+- **Deployment**: Vercel
+- **Font**: Inter (Google Fonts)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Deployment
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Visit the live site at [https://aprameyak.vercel.app](https://aprameyak.vercel.app)
