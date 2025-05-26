@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { motion } from 'framer-motion';
 
 interface Project {
   title: string;
@@ -13,22 +14,35 @@ interface Project {
 const projects: Project[] = [
   {
     title: "GitaGPT",
-    description: "An AI chatbot that leverages vector database for semantic search across Bhagavad Gita verses.",
+    description: "A full-stack RAG chatbot leveraging GPT-4, FAISS, and FastAPI to answer semantic queries over 700+ Bhagavad Gita verses. Features include an ETL pipeline for scripture data embedding, sub-300ms similarity retrieval, and a RESTful API integrated with OpenAI GPT-4 for context-aware answers. Deployed with Next.js on Vercel and backend on Render with secure environment variable handling.",
     githubLink: "https://github.com/aprameyak/GitaGPT",
     demoLink: "https://gitagpt.vercel.app",
-    techStack: ["Next.js", "OpenAI", "FAISS", "TailwindCSS", "Python", "FastAPI"]
+    techStack: ["Python", "FastAPI", "Next.js", "FAISS", "OpenAI API", "Vercel", "Render"]
+  },
+  {
+    title: "FitSync",
+    description: "A comprehensive fitness tracking application built with the MERN stack, featuring workout logging, nutrition tracking, and training goals with real-time sync. Implements JWT authentication, progressive overload tracking, BMR-based calorie analysis, and personalized AI coaching using OpenAI GPT. Deployed with CI/CD pipelines on Render and Vercel.",
+    githubLink: "https://github.com/aprameyak/FitSync",
+    demoLink: "https://fitsync.vercel.app",
+    techStack: ["TypeScript", "Next.js", "Node.js", "Express.js", "MongoDB", "OpenAI API"]
+  },
+  {
+    title: "TrackNest",
+    description: "A lightweight backend project built with Java Spring Boot and PostgreSQL that provides CRUD endpoints for managing users and their associated music tracks. Features clean architecture, JPA-based entity relationships, and real database integration — ideal as a boilerplate for music cataloging or backend microservices.",
+    githubLink: "https://github.com/aprameyak/TrackNest",
+    techStack: ["Java", "Spring Boot", "PostgreSQL", "JPA", "Maven", "Postman", "Hibernate", "REST API"]
   },
   {
     title: "ScoreMe",
-    description: "Machine learning to predict exam scores",
+    description: "A machine learning-powered web application that predicts student exam scores with 98.8% accuracy using linear regression. Features include real-time score predictions through a Flask API, comprehensive data analysis with Pandas and Matplotlib, and an interactive React.js frontend for dynamic user input and feedback. The model is trained on Kaggle student performance data and efficiently deployed using Pickle serialization.",
     githubLink: "https://github.com/aprameyak/ScoreMe",
-    techStack: ["Python", "Machine Learning", "Jupyter", "Pandas", "NumPy", "Scikit-learn"]
+    techStack: ["Python", "Flask", "React.js", "Scikit-learn", "Pandas", "Matplotlib", "Seaborn"]
   },
   {
     title: "Stock Price Emailer",
-    description: "Automation for stock traders",
+    description: "A serverless application that delivers automated daily stock price updates using AWS services. Features include real-time stock data fetching via Yahoo Finance API, automated email delivery through AWS SES, and scheduled execution using AWS EventBridge. Implements secure IAM policies and Lambda functions with custom layers for efficient dependency management. The system runs autonomously on a 24-hour schedule, providing reliable stock price monitoring for specified tickers.",
     githubLink: "https://github.com/aprameyak/StockPriceEmailer",
-    techStack: ["JavaScript", "Node.js", "APIs", "Automation"]
+    techStack: ["Node.js", "AWS Lambda", "AWS SES", "AWS EventBridge", "AWS IAM", "Yahoo Finance API"]
   },
   {
     title: "Pathos",
@@ -127,55 +141,147 @@ const projects: Project[] = [
 const Projects = () => {
   const [hoveredProject, setHoveredProject] = useState<string | null>(null);
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2
+      }
+    }
+  };
+
+  const projectVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.6,
+        ease: "easeOut"
+      }
+    }
+  };
+
+  const techStackVariants = {
+    hidden: { opacity: 0, scale: 0.8 },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      transition: {
+        duration: 0.3
+      }
+    }
+  };
+
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 className="text-4xl font-bold text-center mb-12 gradient-text">Featured Projects</h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    <motion.div 
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      viewport={{ once: true }}
+      className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
+    >
+      <motion.h2 
+        initial={{ opacity: 0, y: -20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+        className="text-4xl font-bold text-center mb-12 gradient-text"
+      >
+        Featured Projects
+      </motion.h2>
+      <motion.div 
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+      >
         {projects.map((project, index) => (
-          <div
+          <motion.div
             key={index}
-            className="bg-surface rounded-xl p-6 hover-card transition-all duration-300"
+            variants={projectVariants}
+            whileHover={{ 
+              scale: 1.02,
+              transition: { duration: 0.2 }
+            }}
+            className="bg-surface/80 rounded-xl p-6 hover:shadow-xl hover:shadow-primary/5 transition-all duration-300 backdrop-blur-sm flex flex-col h-full border border-primary/5 hover:border-primary/10"
             onMouseEnter={() => setHoveredProject(project.title)}
             onMouseLeave={() => setHoveredProject(null)}
           >
-            <h3 className="text-2xl font-bold mb-4 gradient-text">{project.title}</h3>
-            <p className="text-text mb-6">{project.description}</p>
-            <div className="flex flex-wrap gap-2 mb-6">
-              {project.techStack.map((tech, i) => (
-                <span
-                  key={i}
-                  className="px-3 py-1 text-sm bg-primary/10 text-primary rounded-full"
-                >
-                  {tech}
-                </span>
-              ))}
+            <div className="flex-grow">
+              <motion.h3 
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.3 }}
+                className="text-2xl font-bold mb-4 bg-gradient-to-r from-primary to-primary-light bg-clip-text text-transparent"
+              >
+                {project.title}
+              </motion.h3>
+              <motion.p 
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.3, delay: 0.1 }}
+                className="text-text-muted mb-6"
+              >
+                {project.description}
+              </motion.p>
+              <motion.div 
+                className="flex flex-wrap gap-2 mb-6"
+                variants={techStackVariants}
+              >
+                {project.techStack.map((tech, i) => (
+                  <motion.span
+                    key={i}
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.3, delay: i * 0.1 }}
+                    className="px-3 py-1 text-sm bg-primary/5 text-primary-light rounded-full hover:bg-primary/10 transition-colors"
+                  >
+                    {tech}
+                  </motion.span>
+                ))}
+              </motion.div>
             </div>
-            <div className="flex gap-4">
-              <a
+            <motion.div 
+              className="flex gap-4 mt-auto pt-4 border-t border-primary/5"
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.3, delay: 0.2 }}
+            >
+              <motion.a
                 href={project.githubLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex-1 text-center px-4 py-2 bg-primary text-white rounded-lg hover:bg-primary-dark transition-colors duration-300"
-                aria-label={`View ${project.title} on GitHub`}
+                className="text-text-muted hover:text-primary transition-colors flex items-center gap-2"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
               >
+                <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                  <path fillRule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0012 2z" clipRule="evenodd"/>
+                </svg>
                 GitHub
-              </a>
+              </motion.a>
               {project.demoLink && (
-                <a
+                <motion.a
                   href={project.demoLink}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex-1 text-center px-4 py-2 bg-surface-light text-text rounded-lg hover:bg-surface transition-colors duration-300"
-                  aria-label={`View ${project.title} demo`}
+                  className="text-text-muted hover:text-primary transition-colors flex items-center gap-2"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
                 >
+                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                  </svg>
                   Demo
-                </a>
+                </motion.a>
               )}
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         ))}
-      </div>
-    </div>
+      </motion.div>
+    </motion.div>
   );
 };
 

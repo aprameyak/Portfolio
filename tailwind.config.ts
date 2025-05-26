@@ -9,18 +9,24 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        primary: {
-          DEFAULT: '#9d4edd',
-          light: '#c77dff',
-          dark: '#7b2cbf',
-        },
-        background: '#1a1a1a',
-        surface: '#2d2438',
-        'surface-light': '#3d3448',
-        text: '#ffffff',
+        background: '#13111C',
+        surface: '#1C1B23',
+        'surface-light': '#2A2833',
+        primary: '#9d4edd',
+        'primary-light': '#b589df',
+        'primary-dark': '#7B2CBF',
+        'primary-hover': '#a35ee4',
+        accent: '#FF7C7C',
+        text: '#E2E8F0',
+        'text-muted': '#94A3B8'
       },
       animation: {
-        'spin-slow': 'spin 3s linear infinite',
+        'spin-slow': 'spin 8s linear infinite',
+        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+      },
+      backgroundImage: {
+        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+        'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
     },
   },
