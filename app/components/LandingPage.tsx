@@ -167,34 +167,6 @@ export default function LandingPage({ onComplete }: LandingPageProps) {
           </motion.span>
         </motion.p>
 
-        <motion.div 
-          className="flex flex-wrap gap-6 justify-center mb-12"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: isReady ? 1 : 0, y: isReady ? 0 : 20 }}
-          transition={{ duration: 0.5, ease: "easeOut" }}
-        >
-          {[
-            { text: "AWS Certified", icon: "🏆", delay: 0 },
-            { text: "Full Stack Dev", icon: "💻", delay: 0.2 },
-            { text: "AI/ML", icon: "🤖", delay: 0.4 },
-            { text: "Cloud Native", icon: "☁️", delay: 0.6 }
-          ].map((item, index) => (
-            <FloatingElement key={index} delay={item.delay} duration={10 + index * 2}>
-              <motion.div
-                whileHover={{ 
-                  scale: 1.1,
-                  backgroundColor: 'rgba(157, 78, 221, 0.15)',
-                }}
-                transition={{ type: "spring", stiffness: 400, damping: 10 }}
-                className="bg-surface/30 backdrop-blur-lg px-6 py-3 rounded-full flex items-center gap-3 cursor-pointer border border-primary/5 hover:border-primary/20"
-              >
-                <span className="text-2xl">{item.icon}</span>
-                <span className="text-lg text-text-muted">{item.text}</span>
-              </motion.div>
-            </FloatingElement>
-          ))}
-        </motion.div>
-
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: isReady ? 1 : 0, y: isReady ? 0 : 20 }}
