@@ -6,6 +6,7 @@ interface ExperienceItem {
   title: string;
   company: string;
   period: string;
+  location: string;
   description: string[];
   technologies?: string[];
 }
@@ -15,10 +16,11 @@ const experiences: ExperienceItem[] = [
     title: "Software Engineer Intern",
     company: "Lockheed Martin",
     period: "May 2025 -- Present",
+    location: "Bethesda, Maryland",
     description: [
-      "Built a full-stack team health dashboard using JavaScript and REST APIs to replace Tableau workflows, improving sprint planning efficiency.",
-      "Integrated 3+ performance metrics APIs, reducing dashboard data latency by 45% and enhancing visualization reliability.",
-      "Collaborated with enterprise operations teams and the Lean-Agile Center of Excellence to design a team health dashboard aligned with organizational KPIs, Jira workflows, and GitLab pipelines."
+      "Building a full-stack team health dashboard using JavaScript and REST APIs to replace Tableau workflows, improving sprint planning efficiency",
+      "Integrating 3+ performance metrics APIs, reducing dashboard data latency by 45% and enhancing visualization reliability",
+      "Collaborating with enterprise operations teams and the Lean-Agile Center of Excellence to design a team health dashboard aligned with organizational KPIs, Jira workflows, and GitLab pipelines"
     ],
     technologies: ["JavaScript", "REST APIs", "Tableau", "Jira", "GitLab", "Agile"]
   },
@@ -26,46 +28,73 @@ const experiences: ExperienceItem[] = [
     title: "Software Engineer",
     company: "Warriors Legacy Care",
     period: "Feb 2025 -- May 2025",
+    location: "College Park, Maryland",
     description: [
-      "Modularized 20+ React Native components and centralized Axios API logic, improving reusability and maintainability across key app features by 40%.",
-      "Automated CI/CD pipeline using GitHub Actions, Docker, and Pytest, cutting backend deployment time by 90%.",
-      "Developed Flask REST API with 10+ routes and SQLAlchemy models to manage veteran health records in AWS RDS."
+      "Developed a user-friendly mobile application using React Native and Expo to enhance veterans' access to essential resources",
+      "Designed and deployed a scalable backend API using Python with Flask on AWS EC2, integrating PostgreSQL on AWS RDS",
+      "Collaborated with a distributed team using Git/GitHub feature branch workflows and Jira for project management"
     ],
-    technologies: ["React Native", "Flask", "Docker", "GitHub Actions", "Pytest", "AWS RDS", "SQLAlchemy"]
+    technologies: ["React Native", "Flask", "Docker", "AWS RDS", "PostgreSQL", "AWS EC2", "TypeScript", "Python"]
+  },
+  {
+    title: "Climate Computing Researcher",
+    company: "First Year Innovation and Research Experience",
+    period: "Jan 2025 -- May 2025",
+    location: "College Park, Maryland",
+    description: [
+      "Conducted independent research in climate computing, focusing on data analysis and computational methods",
+      "Collaborated with peers on scientific problem-solving using technology and computational approaches",
+      "Gained expertise in Linux systems and Python programming for climate data processing"
+    ],
+    technologies: ["Python", "Linux", "Data Analysis", "Research Computing"]
+  },
+  {
+    title: "Software Engineer",
+    company: "SynTag",
+    period: "October 2024 -- November 2024",
+    location: "College Park, Maryland",
+    description: [
+      "Developed NLP-powered virtual receptionist agents hosted on Azure Kubernetes Service using FastAPI and WebSocket",
+      "Designed and implemented a responsive landing page using TypeScript, React.js, and Tailwind CSS",
+      "Built and deployed AI models for handling customer inquiries and appointment scheduling"
+    ],
+    technologies: ["React", "FastAPI", "Azure Kubernetes Service", "NLP", "AI/ML", "TypeScript", "Python"]
+  },
+  {
+    title: "Technical Interview Prep Fellow",
+    company: "CodePath",
+    period: "August 2024 -- November 2024",
+    location: "Remote",
+    description: [
+      "Completed intensive technical interview preparation focusing on data structures and algorithms",
+      "Solved weekly coding challenges and participated in live technical practice sessions",
+      "Mastered fundamental computer science concepts and problem-solving techniques"
+    ],
+    technologies: ["Python", "Data Structures", "Algorithms", "Object-Oriented Programming"]
   },
   {
     title: "Software Engineer",
     company: "Minvest Finance",
-    period: "Jul 2024 -- Nov 2024",
+    period: "July 2024 -- November 2024",
+    location: "Sterling, Virginia",
     description: [
-      "Developed a full-stack paper trading simulator using Flask and React.js with real-time stock data, iterated with team feedback.",
-      "Improved trade execution flow and UI responsiveness using React.js hooks and state optimizations, increasing user task completion speed by ~30%.",
-      "Deployed Dockerized microservices to AWS ECS, EC2, and ECR, reducing downtime risk with scalable infrastructure.",
-      "Shipped gamified trading simulator to beta testers, doubling engagement by integrating real-time stock APIs and dynamic React UI components."
+      "Architected scalable cloud infrastructure using AWS services (EC2, ECS, ECR) and Docker for a Gen Z investing platform",
+      "Developed full-stack features using React.js, Flask, and real-time stock data APIs",
+      "Enhanced user engagement through interactive portfolio simulation and educational features"
     ],
-    technologies: ["React.js", "Flask", "Docker", "AWS ECS", "AWS EC2", "AWS ECR", "Microservices"]
-  },
-  {
-    title: "Section Leader",
-    company: "Stanford University",
-    period: "2022 - 2023",
-    description: [
-      "Led weekly live sessions for 30+ students for CS106A, teaching core topics like logic, control flow, and recursion in Python.",
-      "Guided students through open-ended project development and real-time coding assignments while addressing complex topics."
-    ],
-    technologies: ["Python", "Teaching", "Computer Science Fundamentals"]
+    technologies: ["React.js", "Flask", "Docker", "AWS ECS", "AWS EC2", "AWS ECR", "TypeScript", "Python"]
   },
   {
     title: "Software Engineer",
-    company: "Syntag",
-    period: "2021 - 2022",
+    company: "Headstarter AI",
+    period: "July 2024 -- September 2024",
+    location: "Remote",
     description: [
-      "Developed an AI-powered receptionist platform using React and FastAPI, targeting small businesses like barbershops seeking cost-effective automation solutions",
-      "Implemented modern, user-friendly web interfaces to enhance customer acquisition and engagement",
-      "Built and deployed NLP-based conversational agents using Azure Kubernetes Service (AKS) for scalable performance",
-      "Collaborated on the development of AI models for handling customer inquiries, appointment scheduling, and basic business operations"
+      "Built AI-powered applications using Next.js, React, and Firebase",
+      "Collaborated on weekly projects focusing on artificial intelligence and web development",
+      "Developed and deployed a capstone project showcasing AI integration in web applications"
     ],
-    technologies: ["React", "FastAPI", "Azure Kubernetes Service", "NLP", "AI/ML", "Node.js", "Python"]
+    technologies: ["Next.js", "React", "Firebase", "AI", "TypeScript", "Python"]
   }
 ];
 
@@ -144,14 +173,24 @@ const Experience = () => {
                   {exp.period}
                 </motion.span>
               </div>
-              <motion.p 
-                className="text-text-muted text-lg"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.3, delay: 0.2 }}
-              >
-                {exp.company}
-              </motion.p>
+              <div className="flex justify-between items-center">
+                <motion.p 
+                  className="text-text-muted text-lg"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 0.3, delay: 0.2 }}
+                >
+                  {exp.company}
+                </motion.p>
+                <motion.p
+                  className="text-sm text-text-muted"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 0.3, delay: 0.2 }}
+                >
+                  {exp.location}
+                </motion.p>
+              </div>
             </div>
             <motion.ul 
               className="list-disc list-inside space-y-2 mb-4"
