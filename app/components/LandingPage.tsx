@@ -3,6 +3,7 @@
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef, useEffect, useState } from 'react';
 import Link from 'next/link';
+import Hero3D from './Hero3D';
 
 interface FloatingElementProps {
   children: React.ReactNode;
@@ -14,7 +15,11 @@ interface LandingPageProps {
   onComplete?: () => void;
 }
 
-const FloatingElement = ({ children, delay = 0, duration = 20 }: FloatingElementProps) => {
+const FloatingElement: React.FC<FloatingElementProps> = ({ 
+  children, 
+  delay = 0,
+  duration = 20
+}) => {
   return (
     <motion.div
       animate={{
@@ -38,12 +43,12 @@ export default function LandingPage({ onComplete }: LandingPageProps) {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [isReady, setIsReady] = useState(false);
   const [typedText, setTypedText] = useState("");
-  const fullText = "Crafting Digital Experiences with Code & Innovation";
+  const [showContinuePrompt, setShowContinuePrompt] = useState(false);
+  const fullText = "Crafting Digital Experiences with Code";
   const { scrollY } = useScroll();
   const y = useTransform(scrollY, [0, 1000], [0, 400]);
 
   useEffect(() => {
-    // Typing animation
     let currentIndex = 0;
     const typingInterval = setInterval(() => {
       if (currentIndex <= fullText.length) {
@@ -52,20 +57,18 @@ export default function LandingPage({ onComplete }: LandingPageProps) {
       } else {
         clearInterval(typingInterval);
         setIsReady(true);
-        onComplete?.();
+        setShowContinuePrompt(true);
       }
     }, 50);
 
     return () => clearInterval(typingInterval);
-  }, [fullText, onComplete]);
+  }, [fullText]);
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
       const { clientX, clientY } = e;
       const centerX = window.innerWidth / 2;
       const centerY = window.innerHeight / 2;
-      
-      // Calculate distance from center (normalized)
       setMousePosition({
         x: (clientX - centerX) / centerX,
         y: (clientY - centerY) / centerY,
@@ -76,56 +79,43 @@ export default function LandingPage({ onComplete }: LandingPageProps) {
     return () => window.removeEventListener('mousemove', handleMouseMove);
   }, []);
 
-  const parallaxValue = 20; // Adjust this value to control parallax intensity
+  useEffect(() => {
+    const handleInteraction = () => {
+      if (isReady) {
+        onComplete?.();
+      }
+    };
+
+    const handleKeyPress = (e: KeyboardEvent) => {
+      if (isReady) {
+        handleInteraction();
+      }
+    };
+
+    window.addEventListener('click', handleInteraction);
+    window.addEventListener('keypress', handleKeyPress);
+
+    return () => {
+      window.removeEventListener('click', handleInteraction);
+      window.removeEventListener('keypress', handleKeyPress);
+    };
+  }, [isReady, onComplete]);
 
   return (
-    <div className="relative min-h-screen flex items-center justify-center overflow-hidden" ref={containerRef}>
-      {/* Background gradient circles */}
-      <motion.div
-        className="absolute w-[500px] h-[500px] rounded-full bg-gradient-to-br from-primary/20 via-primary-light/10 to-primary/20 blur-3xl"
-        animate={{
-          x: mousePosition.x * parallaxValue,
-          y: mousePosition.y * parallaxValue,
-          scale: [1, 1.1, 1],
-        }}
-        transition={{
-          scale: {
-            duration: 2,
-            repeat: Infinity,
-            repeatType: "reverse",
-            ease: "easeInOut"
-          },
-          x: { type: "spring", stiffness: 50, damping: 20 },
-          y: { type: "spring", stiffness: 50, damping: 20 },
-        }}
-        style={{
-          top: '20%',
-          left: '30%',
-        }}
-      />
-      <motion.div
-        className="absolute w-[300px] h-[300px] rounded-full bg-gradient-to-tr from-primary-light/20 via-primary/10 to-primary-dark/20 blur-3xl"
-        animate={{
-          x: mousePosition.x * -parallaxValue,
-          y: mousePosition.y * -parallaxValue,
-          scale: [1, 1.2, 1],
-        }}
-        transition={{
-          scale: {
-            duration: 2.5,
-            repeat: Infinity,
-            repeatType: "reverse",
-            ease: "easeInOut",
-            delay: 0.5,
-          },
-          x: { type: "spring", stiffness: 50, damping: 20 },
-          y: { type: "spring", stiffness: 50, damping: 20 },
-        }}
-        style={{
-          bottom: '20%',
-          right: '30%',
-        }}
-      />
+    <div 
+      ref={containerRef} 
+      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background cursor-pointer"
+    >
+      <Hero3D />
+      
+      <motion.div 
+        className="absolute inset-0 z-0"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 0.1 }}
+        transition={{ duration: 1 }}
+      >
+        <div className="absolute inset-0 bg-gradient-to-b from-primary/5 via-transparent to-transparent" />
+      </motion.div>
 
       <motion.div 
         className="relative z-10 text-center px-4 max-w-4xl mx-auto"
@@ -166,39 +156,6 @@ export default function LandingPage({ onComplete }: LandingPageProps) {
             |
           </motion.span>
         </motion.p>
-
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: isReady ? 1 : 0, y: isReady ? 0 : 20 }}
-          transition={{ delay: 2, duration: 1, ease: "easeOut" }}
-          className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
-        >
-          <motion.div 
-            animate={{ 
-              y: [0, 10, 0],
-            }}
-            transition={{
-              duration: 2,
-              repeat: Infinity,
-              repeatType: "reverse",
-              ease: "easeInOut"
-            }}
-          >
-            <Link href="#about" className="text-text-muted hover:text-primary-light transition-colors duration-300">
-              <svg 
-                className="w-8 h-8"
-                fill="none"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
-              </svg>
-            </Link>
-          </motion.div>
-        </motion.div>
       </motion.div>
     </div>
   );

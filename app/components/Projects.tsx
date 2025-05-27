@@ -46,9 +46,9 @@ const projects: Project[] = [
   },
   {
     title: "Pathos",
-    description: "A hackathon project from Hack NYU 2025 that simplifies emotions for neurodivergent individuals. Features an intuitive interface for emotion recognition and management, making emotional understanding more accessible.",
+    description: "A sophisticated real-time emotion recognition system built as a Chrome extension, leveraging multiple state-of-the-art facial recognition models (VGG-Face, FaceNet, DeepID, ArcFace). Features include real-time screen capture and analysis, emotion classification across 7 categories, and canvas-based visualization overlays. Implements an asynchronous architecture with Flask backend for processing and Chrome Extension APIs (Manifest V3) for seamless integration. Uses RequestAnimationFrame for smooth rendering and efficient Base64 encoding for image transfer.",
     githubLink: "https://github.com/aprameyak/Pathos",
-    techStack: ["JavaScript", "React", "Node.js"]
+    techStack: ["React.js", "Python", "Flask", "DeepFace", "Chrome Extension API", "OpenCV", "Canvas API", "NumPy"]
   },
   {
     title: "Play2Learn",
@@ -59,17 +59,17 @@ const projects: Project[] = [
   },
   {
     title: "GitRecap",
-    description: "A dynamic analytics dashboard that visualizes GitHub user activity and repository statistics in real-time.",
+    description: "A Spotify Wrapped-style analytics dashboard for GitHub profiles, built for HooHacks 2025. Features include weekly commit pattern visualization, language distribution analysis, commit time heatmaps, and developer personality classification (Night Owl, Weekend Warrior, etc.). Implements real-time GitHub API integration with rate limiting, interactive Chart.js visualizations, and sentiment analysis of commit messages. The dashboard provides comprehensive insights including contribution calendars, top repositories by stars, and 24-hour activity patterns.",
     githubLink: "https://github.com/aprameyak/GitRecap",
     demoLink: "https://gitrecap.vercel.app",
-    techStack: ["React", "TypeScript", "D3.js", "GitHub API", "Vercel", "TailwindCSS"]
+    techStack: ["Next.js", "Flask", "Python", "Chart.js", "GitHub API", "TextBlob", "TailwindCSS", "React Calendar Heatmap"]
   },
   {
     title: "ResuMaker",
-    description: "A dynamic resume generation system featuring AI-enhanced content optimization, real-time form validation, and complex state management for multi-section resume building. Implements TypeScript for type-safe development and server-side rendering for optimal performance.",
+    description: "A dynamic web application that streamlines professional resume creation with AI-powered assistance. Features include dynamic form fields for experience and education, AI-enhanced work description generation using OpenAI API, serverless architecture with Next.js API routes, and comprehensive form validation. The application helps users craft impactful bullet points for their job roles while maintaining a responsive and user-friendly interface.",
     githubLink: "https://github.com/aprameyak/ResuMaker",
     demoLink: "https://resumaker-six.vercel.app/",
-    techStack: ["Next.js", "TypeScript", "Tailwind CSS", "OpenAI API", "Vercel"]
+    techStack: ["Next.js", "TypeScript", "Tailwind CSS", "OpenAI API", "Vercel", "React.js", "API Routes"]
   },
   {
     title: "Flashcard Generator",
@@ -135,6 +135,24 @@ const projects: Project[] = [
     description: "A full-featured blog application built with Django's MVC architecture. Features blog post management, comment system, built-in admin interface, and SEO-friendly URLs. Implements clean and structured interface for content management.",
     githubLink: "https://github.com/aprameyak/BlogApp",
     techStack: ["Python", "Django", "MVC Architecture", "HTML", "CSS", "SQLite", "Django Templates"]
+  },
+  {
+    title: "House Price Predictor",
+    description: "A machine learning project using linear regression to predict housing prices with feature engineering and data preprocessing pipeline. Implements categorical variable handling, feature scaling, and comprehensive data cleaning. Features include binary categorical field mapping, furnishing status conversion, and model evaluation using R² score metrics.",
+    githubLink: "https://github.com/aprameyak/HousePricePrediction",
+    techStack: ["Python", "Pandas", "NumPy", "Scikit-learn", "Matplotlib"]
+  },
+  {
+    title: "Visualizing Music Streams",
+    description: "A data analysis project exploring correlations between track scores and playlist counts across major streaming platforms (Apple Music, Amazon Music, Deezer) using Pearson's correlation coefficient. Features comprehensive data preprocessing, missing value handling, and statistical analysis visualized through Matplotlib line plots. The analysis provides insights into how track popularity correlates with playlist exposure across different streaming services.",
+    githubLink: "https://github.com/aprameyak/VisualizingMusicStreams",
+    techStack: ["Python", "Pandas", "SciPy", "Matplotlib", "Statistical Analysis", "Data Visualization"]
+  },
+  {
+    title: "CurrencyX Analyzer",
+    description: "A sophisticated financial analysis tool for USD/TRY exchange rates utilizing advanced statistical modeling. Features include GARCH(1,1) volatility modeling, EWMA volatility estimation, and trading strategy simulation with performance metrics (Sharpe/Sortino Ratios). Implements real-time data fetching via Yahoo Finance API and comprehensive visualization of market trends, volatility clustering, and forecasted values.",
+    githubLink: "https://github.com/aprameyak/CurrencyXAnalyzer",
+    techStack: ["Python", "Pandas", "yfinance", "ARCH", "Matplotlib", "Seaborn", "NumPy", "Statistical Modeling"]
   }
 ];
 
@@ -203,18 +221,31 @@ const Projects = () => {
             variants={projectVariants}
             whileHover={{ 
               scale: 1.02,
-              transition: { duration: 0.2 }
+              transition: { duration: 0.3 }
             }}
-            className="bg-surface/80 rounded-xl p-6 hover:shadow-xl hover:shadow-primary/5 transition-all duration-300 backdrop-blur-sm flex flex-col h-full border border-primary/5 hover:border-primary/10"
+            className="group relative bg-surface/80 rounded-xl p-6 hover:shadow-xl hover:shadow-primary/5 transition-all duration-300 backdrop-blur-sm border border-transparent hover:border-primary/10 overflow-hidden"
             onMouseEnter={() => setHoveredProject(project.title)}
             onMouseLeave={() => setHoveredProject(null)}
           >
-            <div className="flex-grow">
+            {/* Animated gradient border */}
+            <motion.div 
+              className="absolute inset-0 bg-gradient-to-r from-primary/20 via-primary-light/20 to-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+              animate={{
+                backgroundPosition: ["0% 0%", "100% 100%"],
+              }}
+              transition={{
+                duration: 3,
+                repeat: Infinity,
+                repeatType: "reverse"
+              }}
+            />
+            
+            <div className="relative z-10">
               <motion.h3 
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.3 }}
-                className="text-2xl font-bold mb-4 bg-gradient-to-r from-primary to-primary-light bg-clip-text text-transparent"
+                className="text-2xl font-bold mb-4 bg-gradient-to-r from-primary to-primary-light bg-clip-text text-transparent group-hover:from-primary-light group-hover:to-primary transition-all duration-300"
               >
                 {project.title}
               </motion.h3>
@@ -222,7 +253,7 @@ const Projects = () => {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.3, delay: 0.1 }}
-                className="text-text-muted mb-6"
+                className="text-text-muted mb-6 line-clamp-3 group-hover:line-clamp-none transition-all duration-300"
               >
                 {project.description}
               </motion.p>
@@ -236,7 +267,12 @@ const Projects = () => {
                     initial={{ opacity: 0, scale: 0.8 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.3, delay: i * 0.1 }}
-                    className="px-3 py-1 text-sm bg-primary/5 text-primary-light rounded-full hover:bg-primary/10 transition-colors"
+                    whileHover={{ 
+                      scale: 1.1,
+                      y: -2,
+                      transition: { duration: 0.2 }
+                    }}
+                    className="px-3 py-1 text-sm bg-primary/5 text-primary-light rounded-full hover:bg-primary/10 transition-all duration-300 transform hover:shadow-lg hover:shadow-primary/20"
                   >
                     {tech}
                   </motion.span>
@@ -253,28 +289,34 @@ const Projects = () => {
                 href={project.githubLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-text-muted hover:text-primary transition-colors flex items-center gap-2"
+                className="text-text-muted hover:text-primary transition-colors flex items-center gap-2 group"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                <svg className="w-6 h-6 transition-transform duration-300 group-hover:rotate-12" fill="currentColor" viewBox="0 0 24 24">
                   <path fillRule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0012 2z" clipRule="evenodd"/>
                 </svg>
-                GitHub
+                <span className="relative">
+                  GitHub
+                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+                </span>
               </motion.a>
               {project.demoLink && (
                 <motion.a
                   href={project.demoLink}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-text-muted hover:text-primary transition-colors flex items-center gap-2"
+                  className="text-text-muted hover:text-primary transition-colors flex items-center gap-2 group"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
-                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-6 h-6 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                   </svg>
-                  Demo
+                  <span className="relative">
+                    Demo
+                    <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+                  </span>
                 </motion.a>
               )}
             </motion.div>
