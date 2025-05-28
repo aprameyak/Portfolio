@@ -28,9 +28,16 @@ const projects: Project[] = [
   },
   {
     title: "TrackNest",
-    description: "A lightweight backend project built with Java Spring Boot and PostgreSQL that provides CRUD endpoints for managing users and their associated music tracks. Features clean architecture, JPA-based entity relationships, and real database integration — ideal as a boilerplate for music cataloging or backend microservices.",
+    description: "A production-ready backend service built with Java, Spring Boot, and PostgreSQL that provides robust CRUD endpoints for managing users and their associated music tracks. Features clean architecture, JPA-based entity relationships with @OneToMany + @ManyToOne mappings, Docker containerization, and cloud deployment on Render with a publicly accessible API. Implements JSON serialization with cycle prevention, modular architecture (Controller → Service → Repository), and cloud-hosted PostgreSQL for persistent storage.",
     githubLink: "https://github.com/aprameyak/TrackNest",
-    techStack: ["Java", "Spring Boot", "PostgreSQL", "JPA", "Maven", "Postman", "Hibernate", "REST API"]
+    demoLink: "https://tracknest-i73t.onrender.com",
+    techStack: ["Java", "Spring Boot", "PostgreSQL", "JPA/Hibernate", "Maven", "Docker", "Postman", "Render"]
+  },
+  {
+    title: "OutageOrNot",
+    description: "A full-stack application that predicts power outage risks across U.S. states using real-time weather data and AI analysis. Built with Python, Flask, Next.js, and OpenAI, it combines National Weather Service data with machine learning to provide instant power outage risk assessments. Features include real-time weather data fetching, AI-powered risk analysis using GPT models, state-based location targeting, and comprehensive weather data analysis including temperature trends, wind conditions, precipitation probability, and severe weather alerts.",
+    githubLink: "https://github.com/aprameyak/OutageOrNot",
+    techStack: ["Python", "Flask", "Next.js", "React", "Tailwind CSS", "OpenAI API", "National Weather Service API", "TypeScript"]
   },
   {
     title: "ScoreMe",
