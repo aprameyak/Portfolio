@@ -21,7 +21,7 @@ const skillCategories: SkillCategory[] = [
   },
   {
     name: "Cloud & DevOps",
-    skills: ["AWS", "Docker", "Git/GitHub", "Jira", "Postman", "Azure", "GCP"],
+    skills: ["AWS", "Docker", "Git", "Jira", "Postman", "Azure", "GCP", "GitHub", "GitLab"],
     icon: "☁️"
   },
   {
@@ -33,6 +33,11 @@ const skillCategories: SkillCategory[] = [
     name: "Certifications",
     skills: ["AWS Certified Solutions Architect", "AWS Certified Cloud Practitioner"],
     icon: "🏆"
+  },
+  {
+    name: "Project Management",
+    skills: ["Agile", "Scrum", "SAFe", "Jira", "Confluence" ],
+    icon: "🛠️"
   }
 ];
 
