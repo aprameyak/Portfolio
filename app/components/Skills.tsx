@@ -11,17 +11,22 @@ interface SkillCategory {
 const skillCategories: SkillCategory[] = [
   {
     name: "Programming Languages",
-    skills: ["Python", "JavaScript", "TypeScript", "Java", "SQL", "Bash", "HTML/CSS"],
+    skills: ["Python", "JavaScript", "TypeScript", "Java", "SQL", "Bash", "HTML/CSS", "JSON", "XML"],
     icon: "💻"
   },
   {
+    name: "Databases",
+    skills: ["DynamoDB", "MongoDB", "PostgreSQL", "SQLite", "Supabase", "Firebase"],
+    icon: "🗃️"
+  },
+  {
     name: "Frameworks",
-    skills: ["React.js", "Next.js", "Node.js", "Express.js", "Flask", "FastAPI", "LangChain", "Tailwind CSS", "JUnit"],
+    skills: ["React.js", "Next.js", "Node.js", "Express.js", "Flask", "FastAPI", "SpringBoot", "LangChain", "Tailwind CSS", "JUnit", "Jest", "Pytest"],
     icon: "🛠️"
   },
   {
-    name: "Cloud & DevOps",
-    skills: ["AWS", "Docker", "Git", "Jira", "Postman", "Azure", "GCP", "GitHub", "GitLab"],
+    name: "DevOps",
+    skills: ["AWS", "Docker", "Git", "Azure", "GCP", "GitHub", "GitLab", "Vercel", "Render", "CI/CD", "Postman"],
     icon: "☁️"
   },
   {
@@ -36,8 +41,8 @@ const skillCategories: SkillCategory[] = [
   },
   {
     name: "Project Management",
-    skills: ["Agile", "Scrum", "SAFe", "Jira", "Confluence" ],
-    icon: "🛠️"
+    skills: ["Agile", "Scrum", "Kanban", "SAFe", "Jira", "Confluence", "Trello", "Linear", "Notion"],
+    icon: "📊"
   }
 ];
 
