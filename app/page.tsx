@@ -76,11 +76,11 @@ export default function Home() {
           <section id="about" className="min-h-screen">
             <About />
           </section>
-          <section id="projects" className="min-h-screen">
-            <Projects />
-          </section>
           <section id="experience" className="min-h-screen">
             <Experience />
+          </section>
+          <section id="projects" className="min-h-screen">
+            <Projects />
           </section>
           <section id="skills" className="min-h-screen">
             <Skills />

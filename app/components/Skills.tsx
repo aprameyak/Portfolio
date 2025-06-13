@@ -35,11 +35,6 @@ const skillCategories: SkillCategory[] = [
     icon: "📚"
   },
   {
-    name: "Certifications",
-    skills: ["AWS Certified Solutions Architect", "AWS Certified Cloud Practitioner"],
-    icon: "🏆"
-  },
-  {
     name: "Project Management",
     skills: ["Agile", "Scrum", "Kanban", "SAFe", "Jira", "Confluence", "Trello", "Linear", "Notion"],
     icon: "📊"
