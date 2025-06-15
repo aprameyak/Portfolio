@@ -32,6 +32,7 @@ const projects: Project[] = [
     title: "GitaGPT",
     description: "Built an AI chatbot that answers questions about the Bhagavad Gita with 98% accuracy. Used advanced AI techniques (RAG, GPT-4) to process 700+ verses and deliver context-aware responses in under 300ms.",
     githubLink: "https://github.com/aprameyak/GitaGPT",
+    demoLink: "https://gita-gpt-two.vercel.app/",
     techStack: ["Python", "FastAPI", "Next.js", "FAISS", "OpenAI API", "Vercel", "Render"]
   },
   {
