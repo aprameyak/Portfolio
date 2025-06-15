@@ -39,7 +39,7 @@ const projects: Project[] = [
     title: "ResuMaker",
     description: "Built an AI-powered resume builder that helps users create professional resumes in minutes. Uses GPT to generate impactful job descriptions and provides real-time feedback on resume strength.",
     githubLink: "https://github.com/aprameyak/ResuMaker",
-    demoLink: "https://resumaker-six.vercel.app",
+    demoLink: "https://resumaker-tan.vercel.app/",
     techStack: ["Next.js", "TypeScript", "Tailwind CSS", "OpenAI API", "Vercel", "API Routes"]
   },
   {
