@@ -12,8 +12,6 @@
 
 **Portfolio** is a modern, responsive portfolio website built with **Next.js, TypeScript, and Tailwind CSS**. It features smooth animations, interactive UI elements, and a clean, professional design. The site showcases projects, skills, and experience with dynamic content loading and optimized performance.
 
-Live Demo: [https://aprameyak.vercel.app](https://aprameyak.vercel.app)
-
 ---
 
 ## Features
