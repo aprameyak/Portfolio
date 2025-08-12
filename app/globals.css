@@ -1,0 +1,68 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary: #9d4edd;
+  --primary-light: #c77dff;
+  --primary-dark: #7b2cbf;
+  --surface: #1C1B23;
+  --surface-light: #2A2833;
+  --background: #13111C;
+  --text: #E2E8F0;
+}
+
+@layer base {
+  body {
+    @apply bg-background text-text antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold;
+  }
+
+  p {
+    @apply text-text/90;
+  }
+}
+
+@layer components {
+  .gradient-text {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary-light to-primary;
+  }
+
+  .hover-card {
+    @apply hover:shadow-lg hover:shadow-primary/20 hover:-translate-y-1 transition-all;
+  }
+
+  .btn {
+    @apply px-4 py-2 rounded-lg transition-colors duration-300;
+  }
+
+  .btn-primary {
+    @apply bg-primary text-white hover:bg-primary-dark;
+  }
+
+  .btn-outline {
+    @apply border-2 border-primary text-primary hover:bg-primary hover:text-white;
+  }
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { @apply bg-surface; }
+::-webkit-scrollbar-thumb { @apply bg-primary/50 rounded-full hover:bg-primary; }
+
+/* Focus styles */
+:focus-visible { @apply outline-none ring-2 ring-primary ring-offset-2 ring-offset-background; }
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
