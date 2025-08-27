@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence, Variants } from 'framer-motion';
 import Header from './components/Header';
 import LandingPage from './components/LandingPage';
 import About from './components/About';
@@ -25,7 +25,7 @@ export default function Home() {
     return () => clearTimeout(loadTimer);
   }, []);
 
-  const mainContentVariants = {
+  const mainContentVariants: Variants = {
     hidden: { opacity: 0, y: 50 },
     visible: { 
       opacity: 1, 

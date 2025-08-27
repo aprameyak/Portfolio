@@ -11,7 +11,7 @@ declare module 'maath/random/dist/maath-random.esm' {
 }
 
 function Stars(props: any) {
-  const ref = useRef<any>();
+  const ref = useRef<any>(null);
   const [sphere] = useState(() => random.inSphere(new Float32Array(3000), { radius: 1.2 }));
   const [rotationSpeed] = useState(() => ({
     x: Math.random() * 0.2 + 0.1,
