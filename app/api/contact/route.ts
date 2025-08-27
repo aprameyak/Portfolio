@@ -1,96 +1,60 @@
 import { NextResponse } from 'next/server';
 import { SESClient, SendEmailCommand } from '@aws-sdk/client-ses';
 
-// Initialize SES client
 const sesClient = new SESClient({
   region: process.env.AWS_REGION || 'us-east-1',
-  credentials: {
-    accessKeyId: process.env.AWS_ACCESS_KEY_ID || '',
-    secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY || '',
-  },
+  credentials: process.env.AWS_ACCESS_KEY_ID && process.env.AWS_SECRET_ACCESS_KEY ? {
+    accessKeyId: process.env.AWS_ACCESS_KEY_ID,
+    secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
+  } : undefined,
 });
 
-// Simple email validation
 function isValidEmail(email: string): boolean {
   const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
   return emailRegex.test(email);
-}
-
-// Basic spam detection
-function isSpam(message: string): boolean {
-  const spamWords = [
-    'viagra', 'casino', 'lottery', 'bitcoin', 'crypto',
-    'investment', 'loan', 'mortgage', 'free money',
-    'earn fast', 'work from home', 'make money fast',
-    'click here', 'buy now', 'discount', 'offer',
-    'limited time', 'act now', 'urgent', 'important message'
-  ];
-  
-  return spamWords.some(word => message.toLowerCase().includes(word));
 }
 
 export async function POST(request: Request) {
   try {
     const { email, message } = await request.json();
 
-    // Basic validation
-    if (!email || !message) {
-      return NextResponse.json(
-        { error: 'Email and message are required' },
-        { status: 400 }
-      );
+    if (!email) {
+      return NextResponse.json({ error: 'Email is required' }, { status: 400 });
     }
-
-    // Validate email format
     if (!isValidEmail(email)) {
-      return NextResponse.json(
-        { error: 'Invalid email format' },
-        { status: 400 }
-      );
+      return NextResponse.json({ error: 'Invalid email format' }, { status: 400 });
     }
 
-    // Check for spam
-    if (isSpam(message)) {
-      return NextResponse.json(
-        { error: 'Message contains spam content' },
-        { status: 400 }
-      );
+    const sourceEmail = process.env.VERIFIED_SENDER_EMAIL || '';
+    const toEmail = process.env.CONTACT_TO_EMAIL || process.env.VERIFIED_SENDER_EMAIL || '';
+    if (!sourceEmail || !toEmail) {
+      return NextResponse.json({ error: 'Email environment variables are not configured' }, { status: 500 });
     }
 
-    // Prepare email content
-    const emailParams = {
-      Source: process.env.VERIFIED_SENDER_EMAIL || '',
-      Destination: {
-        ToAddresses: ['aprameyakannan@gmail.com'],
-      },
-      Message: {
-        Subject: {
-          Data: 'New Resume Request',
-        },
-        Body: {
-          Text: {
-            Data: `
-New Resume Request
+    const text = `
+Resume Request
 
 From: ${email}
-Message: ${message}
+Message: ${message || '(none)'}
 
-This is an automated message from your portfolio website.
-            `,
-          },
-        },
+This message was sent from your portfolio contact form.
+`;
+
+    const command = new SendEmailCommand({
+      Source: sourceEmail,
+      Destination: { ToAddresses: [toEmail] },
+      Message: {
+        Subject: { Data: 'New Resume Request' },
+        Body: { Text: { Data: text } },
       },
-    };
+      ReplyToAddresses: [email],
+    });
 
-    // Send email
-    const command = new SendEmailCommand(emailParams);
     await sesClient.send(command);
-
     return NextResponse.json({ success: true });
-  } catch (error: any) {
-    return NextResponse.json(
-      { error: 'Failed to send email' },
-      { status: 500 }
-    );
+  } catch (error) {
+    return NextResponse.json({ error: 'Failed to send email' }, { status: 500 });
   }
-} 
+}
+
+

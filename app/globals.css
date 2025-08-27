@@ -6,15 +6,15 @@
   --primary: #9d4edd;
   --primary-light: #c77dff;
   --primary-dark: #7b2cbf;
-  --surface: #2d2438;
-  --surface-light: #3d3448;
-  --background: #1a1a1a;
-  --text: #ffffff;
+  --surface: #1C1B23;
+  --surface-light: #2A2833;
+  --background: #13111C;
+  --text: #E2E8F0;
 }
 
 @layer base {
   body {
-    @apply bg-background text-text;
+    @apply bg-background text-text antialiased;
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -32,7 +32,7 @@
   }
 
   .hover-card {
-    @apply hover:shadow-lg hover:shadow-primary/20 hover:-translate-y-1;
+    @apply hover:shadow-lg hover:shadow-primary/20 hover:-translate-y-1 transition-all;
   }
 
   .btn {
@@ -46,41 +46,15 @@
   .btn-outline {
     @apply border-2 border-primary text-primary hover:bg-primary hover:text-white;
   }
-
-  .section-fade {
-    @apply opacity-0 translate-y-10 transition-all duration-700;
-  }
-
-  .section-fade.visible {
-    @apply opacity-100 translate-y-0;
-  }
-
-  .loading {
-    @apply fixed inset-0 flex items-center justify-center bg-background;
-  }
-
-  .loading-spinner {
-    @apply w-12 h-12 border-4 border-primary border-t-transparent rounded-full animate-spin;
-  }
 }
 
-/* Custom scrollbar */
-::-webkit-scrollbar {
-  width: 8px;
-}
-
-::-webkit-scrollbar-track {
-  @apply bg-surface;
-}
-
-::-webkit-scrollbar-thumb {
-  @apply bg-primary/50 rounded-full hover:bg-primary;
-}
+/* Scrollbar */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { @apply bg-surface; }
+::-webkit-scrollbar-thumb { @apply bg-primary/50 rounded-full hover:bg-primary; }
 
 /* Focus styles */
-:focus-visible {
-  @apply outline-none ring-2 ring-primary ring-offset-2 ring-offset-background;
-}
+:focus-visible { @apply outline-none ring-2 ring-primary ring-offset-2 ring-offset-background; }
 
 /* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
@@ -92,9 +66,3 @@
   }
 }
 
-/* Media queries */
-@media (max-width: 640px) {
-  .container {
-    @apply px-4;
-  }
-}
