@@ -30,7 +30,6 @@ const About = () => {
       viewport={{ once: true }}
       className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 sm:pt-32 relative min-h-[80vh] flex items-center"
     >
-      {/* Animated background */}
       <div className="absolute inset-0 -z-10 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-primary/5 via-transparent to-transparent" />
         <motion.div
