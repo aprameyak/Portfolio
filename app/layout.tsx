@@ -11,8 +11,8 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Aprameya Kannan | Full Stack Developer & Cloud Architect",
-  description: "Full Stack Developer and AWS Certified Solutions Architect specializing in cloud-native applications, AI/ML, and modern web development. Building enterprise solutions at Lockheed Martin.",
+  title: "Aprameya Kannan",
+  description: "Aprameya Kannan's Portfolio",
   keywords: [
     "Full Stack Developer",
     "Software Engineer",
@@ -23,6 +23,8 @@ export const metadata: Metadata = {
     "Python Developer",
     "AI/ML Engineer",
     "Lockheed Martin",
+    "Booz Allen Hamilton",
+    "Stanford University",
     "Enterprise Applications",
     "Cloud Native",
     "TypeScript",
@@ -44,7 +46,7 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "https://aprameyak.vercel.app",
     title: "Aprameya Kannan | Full Stack Developer & Cloud Architect",
-    description: "Full Stack Developer and AWS Certified Solutions Architect specializing in cloud-native applications, AI/ML, and modern web development. Building enterprise solutions at Lockheed Martin.",
+    description: "Full Stack Developer and AWS Certified Solutions Architect specializing in cloud-native applications, AI/ML, and modern web development. Building enterprise solutions at Lockheed Martin and Booz Allen Hamilton.",
     siteName: "Aprameya Kannan Portfolio",
     images: [
       {
@@ -58,7 +60,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Aprameya Kannan | Full Stack Developer & Cloud Architect",
-    description: "Full Stack Developer and AWS Certified Solutions Architect specializing in cloud-native applications, AI/ML, and modern web development. Building enterprise solutions at Lockheed Martin.",
+    description: "Full Stack Developer and AWS Certified Solutions Architect specializing in cloud-native applications, AI/ML, and modern web development. Building enterprise solutions at Lockheed Martin and Booz Allen Hamilton.",
     images: ["/og-image.png"]
   },
   robots: {
