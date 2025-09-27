@@ -5,7 +5,6 @@ import { Canvas, useFrame } from '@react-three/fiber';
 import { Points, PointMaterial } from '@react-three/drei';
 import * as random from 'maath/random/dist/maath-random.esm';
 
-// Add type declaration for maath
 declare module 'maath/random/dist/maath-random.esm' {
   export function inSphere(array: Float32Array, options: { radius: number }): Float32Array;
 }
@@ -55,7 +54,7 @@ export default function AnimatedBackground() {
       <Canvas
         camera={{ position: [0, 0, 1] }}
         style={{ background: 'transparent' }}
-        dpr={[1, 2]} // Optimize for different screen densities
+        dpr={[1, 2]}
       >
         <Stars />
       </Canvas>

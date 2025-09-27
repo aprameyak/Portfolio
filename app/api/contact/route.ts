@@ -1,7 +1,6 @@
 import { NextResponse } from 'next/server';
 import { SESClient, SendEmailCommand } from '@aws-sdk/client-ses';
 
-// Initialize SES client
 const sesClient = new SESClient({
   region: process.env.AWS_REGION || 'us-east-1',
   credentials: {
@@ -10,13 +9,11 @@ const sesClient = new SESClient({
   },
 });
 
-// Simple email validation
 function isValidEmail(email: string): boolean {
   const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
   return emailRegex.test(email);
 }
 
-// Basic spam detection
 function isSpam(message: string): boolean {
   const spamWords = [
     'viagra', 'casino', 'lottery', 'bitcoin', 'crypto',
@@ -33,7 +30,6 @@ export async function POST(request: Request) {
   try {
     const { email, message } = await request.json();
 
-    // Basic validation
     if (!email || !message) {
       return NextResponse.json(
         { error: 'Email and message are required' },
@@ -41,7 +37,6 @@ export async function POST(request: Request) {
       );
     }
 
-    // Validate email format
     if (!isValidEmail(email)) {
       return NextResponse.json(
         { error: 'Invalid email format' },
@@ -49,7 +44,6 @@ export async function POST(request: Request) {
       );
     }
 
-    // Check for spam
     if (isSpam(message)) {
       return NextResponse.json(
         { error: 'Message contains spam content' },
@@ -57,7 +51,6 @@ export async function POST(request: Request) {
       );
     }
 
-    // Prepare email content
     const emailParams = {
       Source: process.env.VERIFIED_SENDER_EMAIL || '',
       Destination: {
@@ -82,7 +75,6 @@ This is an automated message from your portfolio website.
       },
     };
 
-    // Send email
     const command = new SendEmailCommand(emailParams);
     await sesClient.send(command);
 

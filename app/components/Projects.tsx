@@ -86,7 +86,6 @@ const Projects = () => {
             viewport={{ once: true }}
             className="relative"
           >
-            {/* Project Card */}
             <motion.div
               whileHover={{ 
                 scale: 1.02,
@@ -95,7 +94,6 @@ const Projects = () => {
               className="bg-surface/80 rounded-xl p-8 hover:shadow-xl hover:shadow-primary/5 transition-all duration-300 backdrop-blur-sm border border-primary/5 hover:border-primary/10"
             >
               <div className="flex flex-col space-y-4">
-                {/* Title and Links */}
                 <div className="flex justify-between items-start">
                   <motion.h3 
                     className="text-2xl font-bold bg-gradient-to-r from-primary to-primary-light bg-clip-text text-transparent"
@@ -127,7 +125,6 @@ const Projects = () => {
                   </div>
                 </div>
 
-                {/* Description */}
                 <motion.p 
                   className="text-text-muted"
                   initial={{ opacity: 0 }}
@@ -137,7 +134,6 @@ const Projects = () => {
                   {project.description}
                 </motion.p>
 
-                {/* Tech Stack */}
                 <motion.div 
                   className="flex flex-wrap gap-2 pt-4 border-t border-primary/5"
                   initial={{ opacity: 0 }}
