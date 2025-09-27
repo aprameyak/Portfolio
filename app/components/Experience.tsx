@@ -11,10 +11,22 @@ interface ExperienceItem {
 
 const experiences: ExperienceItem[] = [
   {
+    title: "DevOps Engineer",
+    company: "Booz Allen Hamilton",
+    description: "Architecting cloud infrastructure for CHIP and Medicaid project utilizing generative AI",
+    technologies: ["AWS", "RAG", "LLMs"]
+  },
+  {
     title: "Software Engineer Intern",
     company: "Lockheed Martin",
     description: "Building enterprise applications for team health dashboards and sprint planning",
     technologies: ["Next.js", "Python", "SQL"]
+  },
+  {
+    title: "Section Leader",
+    company: "Stanford University - Code in Place",
+    description: "Teaching assistant for CS106A programming fundamentals course",
+    technologies: ["Logic", "Python", "Control Flow"]
   },
   {
     title: "Software Engineer",
@@ -35,8 +47,8 @@ const experiences: ExperienceItem[] = [
     technologies: ["FastAPI", "TailwindCSS", "TypeScript"]
   },
   {
-    title: "CodePath",
-    company: "Teaching Assistant",
+    title: "Technical Fellow",
+    company: "CodePath",
     description: "Mastered data structures and algorithms for software development.",
     technologies: ["Python", "Data Structures", "Algorithms"]
   },
