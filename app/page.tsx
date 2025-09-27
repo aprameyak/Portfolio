@@ -17,7 +17,6 @@ export default function Home() {
   const [isInitialLoad, setIsInitialLoad] = useState(true);
 
   useEffect(() => {
-    // Initial page load animation
     const loadTimer = setTimeout(() => {
       setIsInitialLoad(false);
     }, 1000);

@@ -10,34 +10,9 @@ interface SkillCategory {
 
 const skillCategories: SkillCategory[] = [
   {
-    name: "Programming Languages",
-    skills: ["Python", "JavaScript", "TypeScript", "Java", "SQL", "Bash", "HTML/CSS", "JSON", "XML"],
+    name: "Technical Skills",
+    skills: ["Java", "JavaScript", "Python", "React", "Node", "Flask", "FastAPI", "PostgreSQL", "MongoDB", "AWS", "Git", "Docker", "Agile"],
     icon: "💻"
-  },
-  {
-    name: "Databases",
-    skills: ["DynamoDB", "MongoDB", "PostgreSQL", "SQLite", "Supabase", "Firebase"],
-    icon: "🗃️"
-  },
-  {
-    name: "Frameworks",
-    skills: ["React.js", "Next.js", "Node.js", "Express.js", "Flask", "FastAPI", "SpringBoot", "LangChain", "Tailwind CSS", "JUnit", "Jest", "Pytest"],
-    icon: "🛠️"
-  },
-  {
-    name: "DevOps",
-    skills: ["AWS", "Docker", "Git", "Azure", "GCP", "GitHub", "GitLab", "Vercel", "Render", "CI/CD", "Postman"],
-    icon: "☁️"
-  },
-  {
-    name: "Libraries & Tools",
-    skills: ["NumPy", "Pandas", "Scikit-learn", "Matplotlib", "Seaborn", "BeautifulSoup", "Selenium", "Mongoose", "Clerk"],
-    icon: "📚"
-  },
-  {
-    name: "Project Management",
-    skills: ["Agile", "Scrum", "Kanban", "SAFe", "Jira", "Confluence", "Trello", "Linear", "Notion"],
-    icon: "📊"
   }
 ];
 
@@ -92,7 +67,7 @@ const Skills = () => {
         Technical Expertise
       </motion.h2>
       <motion.div 
-        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+        className="flex justify-center"
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"

@@ -7,7 +7,6 @@ const Stars = () => {
   const [stars, setStars] = useState<Array<{ id: number; x: number; y: number; size: number; duration: number }>>([]);
 
   useEffect(() => {
-    // Generate stars
     const newStars = Array.from({ length: 100 }, (_, i) => ({
       id: i,
       x: Math.random() * 100,

@@ -57,7 +57,7 @@ export const generateMetadata = (
       },
     },
     verification: {
-      google: 'your-google-verification-code', // Add your Google verification code
+      google: 'your-google-verification-code',
     },
   };
 };
