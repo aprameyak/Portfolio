@@ -81,9 +81,9 @@ export default function Home() {
           <section id="projects" className="min-h-screen">
             <Projects />
           </section>
-          <section id="skills" className="min-h-screen">
+          {/* <section id="skills" className="min-h-screen">
             <Skills />
-          </section>
+          </section> */}
           <section id="contact" className="min-h-screen">
             <Contact />
           </section>
