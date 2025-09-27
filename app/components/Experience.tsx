@@ -85,7 +85,6 @@ const Experience = () => {
       </motion.h2>
 
       <div className="relative">
-        {/* Vertical Timeline Line */}
         <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 bg-gradient-to-b from-primary/20 via-primary to-primary/20" />
 
         <div className="space-y-16">
@@ -100,10 +99,8 @@ const Experience = () => {
                 index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'
               }`}
             >
-              {/* Timeline Dot */}
               <div className="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 rounded-full bg-primary z-10" />
 
-              {/* Content */}
               <div className={`w-1/2 ${index % 2 === 0 ? 'pr-12 text-right' : 'pl-12'}`}>
                 <motion.div
                   whileHover={{ 
