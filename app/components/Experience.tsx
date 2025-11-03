@@ -57,17 +57,15 @@ const experiences: ExperienceItem[] = [
 const Experience = () => {
   return (
     <motion.div 
-      className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8"
+      className="max-w-6xl mx-auto"
       initial={{ opacity: 0 }}
-      whileInView={{ opacity: 1 }}
-      viewport={{ once: true }}
+      animate={{ opacity: 1 }}
     >
       <motion.h2 
         className="text-4xl font-bold text-center mb-16 gradient-text"
         initial={{ opacity: 0, y: -20 }}
-        whileInView={{ opacity: 1, y: 0 }}
+        animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
-        viewport={{ once: true }}
       >
         Experience
       </motion.h2>
@@ -81,9 +79,8 @@ const Experience = () => {
             <motion.div
               key={index}
               initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              viewport={{ once: true }}
               className={`relative flex items-center ${
                 index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'
               }`}

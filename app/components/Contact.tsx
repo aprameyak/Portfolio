@@ -46,33 +46,29 @@ const Contact = () => {
 
   return (
     <motion.div 
-      className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8"
+      className="max-w-4xl mx-auto"
       initial={{ opacity: 0 }}
-      whileInView={{ opacity: 1 }}
-      viewport={{ once: true }}
+      animate={{ opacity: 1 }}
     >
       <motion.h2 
         className="text-4xl font-bold text-center mb-12 bg-gradient-to-r from-primary to-primary-light bg-clip-text text-transparent"
         initial={{ opacity: 0, y: -20 }}
-        whileInView={{ opacity: 1, y: 0 }}
+        animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
-        viewport={{ once: true }}
       >
         Contact
       </motion.h2>
       <motion.div 
         className="bg-surface/80 rounded-xl p-8 hover:shadow-xl hover:shadow-primary/5 transition-all duration-300 backdrop-blur-sm border border-primary/5 hover:border-primary/10"
         initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
+        animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
-        viewport={{ once: true }}
       >
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <motion.div
             initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            viewport={{ once: true }}
           >
             <h3 className="text-2xl font-bold mb-4 bg-gradient-to-r from-primary to-primary-light bg-clip-text text-transparent">Get in Touch</h3>
             <p className="text-text-muted mb-6">
@@ -107,9 +103,8 @@ const Contact = () => {
           <motion.div 
             className="flex flex-col justify-center items-center"
             initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            viewport={{ once: true }}
           >
             <motion.button
               onClick={() => setIsModalOpen(true)}

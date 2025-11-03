@@ -77,17 +77,15 @@ const skillVariants: Variants = {
 const Skills = () => {
   return (
     <motion.div 
-      className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8"
+      className="max-w-6xl mx-auto"
       initial={{ opacity: 0 }}
-      whileInView={{ opacity: 1 }}
-      viewport={{ once: true }}
+      animate={{ opacity: 1 }}
     >
       <motion.h2 
         className="text-4xl font-bold text-center mb-12 gradient-text"
         initial={{ opacity: 0, y: -20 }}
-        whileInView={{ opacity: 1, y: 0 }}
+        animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
-        viewport={{ once: true }}
       >
         Technical Expertise
       </motion.h2>
@@ -95,8 +93,7 @@ const Skills = () => {
         className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
         variants={containerVariants}
         initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
+        animate="visible"
       >
         {skillCategories.map((category, index) => (
           <motion.div

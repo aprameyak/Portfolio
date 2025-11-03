@@ -25,10 +25,9 @@ const About = () => {
   return (
     <motion.div 
       initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
+      animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8 }}
-      viewport={{ once: true }}
-      className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 sm:pt-32 relative min-h-[80vh] flex items-center"
+      className="max-w-4xl mx-auto relative min-h-[calc(100vh-200px)] flex items-center py-12"
     >
       {/* Animated background */}
       <div className="absolute inset-0 -z-10 overflow-hidden">
@@ -53,9 +52,8 @@ const About = () => {
       <div className="text-center relative w-full">
         <motion.div 
           initial={{ opacity: 0, scale: 0.8 }}
-          whileInView={{ opacity: 1, scale: 1 }}
+          animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.6, delay: 0.3 }}
-          viewport={{ once: true }}
           className="relative w-[180px] h-[180px] sm:w-[200px] sm:h-[200px] rounded-full overflow-hidden mx-auto mb-12"
           style={{
             transform: `perspective(1000px) rotateX(${mousePosition.y * 10}deg) rotateY(${mousePosition.x * 10}deg)`,
@@ -76,9 +74,8 @@ const About = () => {
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}
-          viewport={{ once: true }}
           className="space-y-6"
         >
           <motion.p 
@@ -94,9 +91,8 @@ const About = () => {
 
           <motion.p
             initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
+            animate={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.6 }}
-            viewport={{ once: true }}
             className="text-text-muted"
           >
             Currently building apps at Lockheed Martin
@@ -105,9 +101,8 @@ const About = () => {
         
         <motion.div
           initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.9 }}
-          viewport={{ once: true }}
           className="flex flex-wrap justify-center gap-4 mt-12"
         >
           <motion.a

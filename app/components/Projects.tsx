@@ -62,15 +62,13 @@ const Projects = () => {
   return (
     <motion.div 
       initial={{ opacity: 0 }}
-      whileInView={{ opacity: 1 }}
-      viewport={{ once: true }}
-      className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8"
+      animate={{ opacity: 1 }}
+      className="max-w-4xl mx-auto"
     >
       <motion.h2 
         initial={{ opacity: 0, y: -20 }}
-        whileInView={{ opacity: 1, y: 0 }}
+        animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
-        viewport={{ once: true }}
         className="text-4xl font-bold text-center mb-16 gradient-text"
       >
         Featured Projects
@@ -81,9 +79,8 @@ const Projects = () => {
           <motion.div
             key={index}
             initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: index * 0.1 }}
-            viewport={{ once: true }}
             className="relative"
           >
             {/* Project Card */}
