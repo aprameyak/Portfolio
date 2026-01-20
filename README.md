@@ -28,12 +28,11 @@
 
 ## Technology Stack
 
-- **Framework**: Next.js 14
-- **Language**: TypeScript 5.3
-- **Styling**: Tailwind CSS 3.4
-- **Animations**: Framer Motion 12.14
+- **Framework**: Next.js 
+- **Language**: TypeScript 
+- **Styling**: Tailwind CSS 
+- **Animations**: Framer Motion 
 - **Deployment**: Vercel
-- **Font**: Inter (Google Fonts)
 
 ## Deployment
 
