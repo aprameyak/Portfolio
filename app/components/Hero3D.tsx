@@ -120,15 +120,9 @@ const Hero3D = () => {
 
         ctx.beginPath();
         ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
-        
-        const gradient = ctx.createRadialGradient(
-          particle.x, particle.y, 0,
-          particle.x, particle.y, particle.size * 2
-        );
-        gradient.addColorStop(0, particle.color + particle.opacity + ')');
-        gradient.addColorStop(1, particle.color + '0)');
-        
-        ctx.fillStyle = gradient;
+
+        // Solid fill (no gradients)
+        ctx.fillStyle = particle.color + particle.opacity + ')';
         ctx.fill();
 
         particlesRef.current.slice(i + 1).forEach(particle2 => {
@@ -137,17 +131,11 @@ const Hero3D = () => {
           const distance2 = Math.sqrt(dx2 * dx2 + dy2 * dy2);
 
           if (distance2 < 100) {
-            const gradient = ctx.createLinearGradient(
-              particle.x, particle.y, 
-              particle2.x, particle2.y
-            );
-            
             const opacity = 0.2 * (1 - distance2 / 100);
-            gradient.addColorStop(0, particle.color + opacity + ')');
-            gradient.addColorStop(1, particle2.color + opacity + ')');
 
             ctx.beginPath();
-            ctx.strokeStyle = gradient;
+            // Solid stroke (no gradients)
+            ctx.strokeStyle = particle.color + opacity + ')';
             ctx.lineWidth = Math.min(opacity * 2, 0.5);
             ctx.moveTo(particle.x, particle.y);
             ctx.lineTo(particle2.x, particle2.y);

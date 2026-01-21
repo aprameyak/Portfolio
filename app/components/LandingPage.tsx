@@ -114,7 +114,7 @@ export default function LandingPage({ onComplete }: LandingPageProps) {
         animate={{ opacity: 0.1 }}
         transition={{ duration: 1 }}
       >
-        <div className="absolute inset-0 bg-gradient-to-b from-primary/5 via-transparent to-transparent" />
+        <div className="absolute inset-0 bg-primary/5" />
       </motion.div>
 
       <motion.div 
@@ -132,7 +132,7 @@ export default function LandingPage({ onComplete }: LandingPageProps) {
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
             <motion.span 
-              className="bg-gradient-to-r from-primary via-primary-light to-primary bg-clip-text text-transparent"
+              className="text-primary-light"
               whileHover={{ scale: 1.05 }}
               transition={{ type: "spring", stiffness: 400, damping: 10 }}
             >

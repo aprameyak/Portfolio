@@ -96,7 +96,7 @@ const Projects = () => {
               <div className="flex flex-col space-y-4">
                 <div className="flex justify-between items-start">
                   <motion.h3 
-                    className="text-2xl font-bold bg-gradient-to-r from-primary to-primary-light bg-clip-text text-transparent"
+                    className="text-2xl font-bold text-primary-light"
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ duration: 0.3 }}
@@ -134,24 +134,15 @@ const Projects = () => {
                   {project.description}
                 </motion.p>
 
-                <motion.div 
-                  className="flex flex-wrap gap-2 pt-4 border-t border-primary/5"
+                <motion.p
+                  className="pt-4 border-t border-primary/5 text-text/70 text-sm"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ duration: 0.3, delay: 0.2 }}
                 >
-                  {project.techStack.map((tech, i) => (
-                    <motion.span
-                      key={i}
-                      initial={{ opacity: 0, scale: 0.8 }}
-                      animate={{ opacity: 1, scale: 1 }}
-                      transition={{ duration: 0.3, delay: i * 0.1 }}
-                      className="px-3 py-1 text-sm bg-primary/5 text-primary-light rounded-full hover:bg-primary/10 transition-colors"
-                    >
-                      {tech}
-                    </motion.span>
-                  ))}
-                </motion.div>
+                  <span className="text-primary-light font-semibold">Tech Stack:</span>{' '}
+                  {project.techStack.join(', ')}
+                </motion.p>
               </div>
             </motion.div>
           </motion.div>

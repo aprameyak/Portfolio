@@ -9,7 +9,7 @@ interface ProjectProps {
 const Project = ({ title, githubLink, demoLink, description, techStack }: ProjectProps) => {
   return (
     <div className="bg-[#2d2438] p-6 rounded-xl border border-[#9d4edd] shadow-lg hover-card h-full flex flex-col relative overflow-hidden group">
-      <div className="absolute inset-0 bg-gradient-to-br from-[#9d4edd]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+      <div className="absolute inset-0 bg-[#9d4edd]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
       <div className="relative z-10">
         <h3 className="gradient-text text-xl sm:text-2xl mb-4 font-bold">{title}</h3>
         <div className="mb-4 flex flex-wrap gap-2">

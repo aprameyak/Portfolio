@@ -6,63 +6,58 @@ interface ExperienceItem {
   title: string;
   company: string;
   description: string;
-  technologies?: string[];
 }
 
 const experiences: ExperienceItem[] = [
   {
+    title: "Software Engineer Co-op",
+    company: "Lockheed Martin",
+    description: "Building enterprise applications for team health dashboards and sprint planning"
+  },
+  {
     title: "DevOps Engineer",
     company: "Booz Allen Hamilton",
-    description: "Architecting cloud infrastructure for CHIP and Medicaid project utilizing generative AI",
-    technologies: ["AWS", "RAG", "LLMs"]
+    description: "Architecting cloud infrastructure for CHIP and Medicaid project utilizing generative AI"
   },
   {
     title: "Software Engineer Intern",
     company: "Lockheed Martin",
-    description: "Building enterprise applications for team health dashboards and sprint planning",
-    technologies: ["Next.js", "Python", "SQL"]
+    description: "Building enterprise applications for team health dashboards and sprint planning"
   },
   {
     title: "Section Leader",
     company: "Stanford University - Code in Place",
-    description: "Teaching assistant for CS106A programming fundamentals course",
-    technologies: ["Logic", "Python", "Control Flow"]
+    description: "Teaching assistant for CS106A programming fundamentals course"
   },
   {
     title: "Software Engineer",
     company: "Warriors Legacy Care",
-    description: "Developed mobile applications for veterans' resource access and support",
-    technologies: ["Python", "React Native", "PostgreSQL"]
+    description: "Developed mobile applications for veterans' resource access and support"
   },
   {
     title: "Climate Computing Researcher",
     company: "First Year Innovation and Research Experience",
-    description: "Researched climate data analysis and computational methods",
-    technologies: ["Data Analysis", "Linux", "High Performance Computing"]
+    description: "Researched climate data analysis and computational methods"
   },
   {
     title: "Software Engineer",
     company: "SynTag",
-    description: "Built AI-powered virtual receptionist and customer service solutions",
-    technologies: ["FastAPI", "TailwindCSS", "TypeScript"]
+    description: "Built AI-powered virtual receptionist and customer service solutions"
   },
   {
     title: "Technical Fellow",
     company: "CodePath",
-    description: "Mastered data structures and algorithms for software development.",
-    technologies: ["Python", "Data Structures", "Algorithms"]
+    description: "Mastered data structures and algorithms for software development."
   },
   {
     title: "Software Engineer",
     company: "Minvest Finance",
-    description: "Architected cloud infrastructure for a Gen Z investing platform",
-    technologies: ["AWS", "Docker", "React.js"]
+    description: "Architected cloud infrastructure for a Gen Z investing platform"
   },
   {
     title: "Software Engineer",
     company: "Headstarter AI",
-    description: "Developed AI-powered applications with LLM integration",
-    technologies: ["Firebase", "LLMs", "JavaScript"]
+    description: "Developed AI-powered applications with LLM integration"
   }
 ];
 
@@ -85,7 +80,7 @@ const Experience = () => {
       </motion.h2>
 
       <div className="relative">
-        <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 bg-gradient-to-b from-primary/20 via-primary to-primary/20" />
+        <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 bg-primary/30" />
 
         <div className="space-y-16">
           {experiences.map((exp, index) => (
@@ -111,7 +106,7 @@ const Experience = () => {
                 >
                   <div className="mb-4">
                     <motion.h3 
-                      className="text-2xl font-bold bg-gradient-to-r from-primary to-primary-light bg-clip-text text-transparent mb-2"
+                      className="text-2xl font-bold text-primary-light mb-2"
                       initial={{ opacity: 0 }}
                       animate={{ opacity: 1 }}
                       transition={{ duration: 0.3 }}
@@ -135,26 +130,6 @@ const Experience = () => {
                       {exp.description}
                     </motion.p>
                   </div>
-                  {exp.technologies && (
-                    <motion.div 
-                      className="flex flex-wrap gap-2 pt-4 border-t border-primary/5"
-                      initial={{ opacity: 0 }}
-                      animate={{ opacity: 1 }}
-                      transition={{ duration: 0.3, delay: 0.3 }}
-                    >
-                      {exp.technologies.map((tech, i) => (
-                        <motion.span
-                          key={i}
-                          initial={{ opacity: 0, scale: 0.8 }}
-                          animate={{ opacity: 1, scale: 1 }}
-                          transition={{ duration: 0.3, delay: i * 0.1 }}
-                          className="px-3 py-1 text-sm bg-primary/5 text-primary-light rounded-full hover:bg-primary/10 transition-colors"
-                        >
-                          {tech}
-                        </motion.span>
-                      ))}
-                    </motion.div>
-                  )}
                 </motion.div>
               </div>
             </motion.div>

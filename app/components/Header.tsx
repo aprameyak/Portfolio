@@ -59,7 +59,7 @@ const Header = () => {
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between">
             <motion.div className="flex flex-col items-center sm:items-start mb-4 sm:mb-0">
               <motion.h1 
-                className="text-3xl sm:text-4xl font-bold bg-gradient-to-r from-primary via-primary-light to-primary bg-clip-text text-transparent"
+                className="text-3xl sm:text-4xl font-bold text-primary-light"
                 variants={itemVariants}
               >
                 Aprameya Kannan

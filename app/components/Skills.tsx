@@ -85,7 +85,7 @@ const Skills = () => {
           >
             <div className="flex items-center mb-4">
               <span className="text-2xl mr-2">{category.icon}</span>
-              <h3 className="text-xl font-bold bg-gradient-to-r from-primary to-primary-light bg-clip-text text-transparent">{category.name}</h3>
+              <h3 className="text-xl font-bold text-primary-light">{category.name}</h3>
             </div>
             <motion.div 
               className="flex flex-wrap gap-2"

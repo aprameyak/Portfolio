@@ -28,7 +28,7 @@
 
 @layer components {
   .gradient-text {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary-light to-primary;
+    @apply text-primary-light;
   }
 
   .hover-card {
