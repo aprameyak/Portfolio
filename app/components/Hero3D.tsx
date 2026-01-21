@@ -121,7 +121,6 @@ const Hero3D = () => {
         ctx.beginPath();
         ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
 
-        // Solid fill (no gradients)
         ctx.fillStyle = particle.color + particle.opacity + ')';
         ctx.fill();
 
@@ -134,7 +133,6 @@ const Hero3D = () => {
             const opacity = 0.2 * (1 - distance2 / 100);
 
             ctx.beginPath();
-            // Solid stroke (no gradients)
             ctx.strokeStyle = particle.color + opacity + ')';
             ctx.lineWidth = Math.min(opacity * 2, 0.5);
             ctx.moveTo(particle.x, particle.y);

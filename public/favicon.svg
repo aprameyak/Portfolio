@@ -8,11 +8,7 @@
       </feMerge>
     </filter>
   </defs>
-  
-  <!-- Background circle -->
   <circle cx="50" cy="50" r="45" fill="#9d4edd" opacity="0.9"/>
-  
-  <!-- Letter A -->
   <path d="M30 80 L50 20 L70 80 M35 65 L65 65" 
         stroke="white" 
         stroke-width="6" 
@@ -20,8 +16,6 @@
         stroke-linejoin="round"
         fill="none"
         filter="url(#glow)"/>
-  
-  <!-- Decorative elements -->
   <circle cx="25" cy="25" r="3" fill="white" opacity="0.7"/>
   <circle cx="75" cy="25" r="3" fill="white" opacity="0.7"/>
   <circle cx="25" cy="75" r="2" fill="white" opacity="0.5"/>

@@ -6,7 +6,6 @@ import LandingPage from './components/LandingPage';
 import About from './components/About';
 import Projects from './components/Projects';
 import Experience from './components/Experience';
-import Skills from './components/Skills';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import ProfileCard from './components/ProfileCard';
@@ -76,8 +75,11 @@ export default function Home() {
             <div className="flex-1 min-w-0">
               <div className="bg-surface/50 backdrop-blur-sm border border-primary/10 rounded-2xl shadow-xl shadow-primary/5 h-full">
                 <div className="h-full md:max-h-[calc(100vh-48px)] overflow-visible md:overflow-y-auto px-4 sm:px-8 py-10 space-y-20">
-                  <section id="intro">
-                    <div className="bg-surface/80 rounded-xl p-8 backdrop-blur-sm border border-primary/5">
+                  <section
+                    id="intro"
+                    className="min-h-screen md:min-h-[calc(100vh-48px)] flex items-center"
+                  >
+                    <div className="w-full bg-surface/80 rounded-xl p-8 backdrop-blur-sm border border-primary/5">
                       <h2 className="text-3xl sm:text-4xl font-bold text-primary-light mb-4">
                         Hi, I am Aprameya.
                       </h2>
@@ -86,18 +88,12 @@ export default function Home() {
                       </p>
                     </div>
                   </section>
-                  <section id="about">
-                    <About />
-                  </section>
                   <section id="experience">
                     <Experience />
                   </section>
                   <section id="projects">
                     <Projects />
                   </section>
-                  {/* <section id="skills">
-                    <Skills />
-                  </section> */}
                   <section id="contact">
                     <Contact />
                   </section>
