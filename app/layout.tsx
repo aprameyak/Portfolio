@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/next";
-import Stars from "./components/Stars";
+
 
 const inter = Inter({
   subsets: ["latin"],
@@ -144,11 +144,11 @@ export default function RootLayout({
   return (
     <html lang="en" className={`scroll-smooth ${inter.variable}`}>
       <head>
-        <meta name="theme-color" content="#13111C" />
+        <meta name="theme-color" content="#ffffff" />
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
       </head>
       <body className={`${inter.className} antialiased bg-background text-text relative`}>
-        <Stars />
+
         {children}
         <Analytics />
       </body>

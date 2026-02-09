@@ -20,7 +20,7 @@
 - Smooth page transitions and scroll animations
 - Interactive UI elements with hover effects
 - Dynamic content loading with TypeScript type safety
-- Modern purple theme with gradient accents
+- Modern minimalist white-and-black aesthetic
 - SEO optimized with Next.js metadata
 - Performance optimized with Next.js Image component
 

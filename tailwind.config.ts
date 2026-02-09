@@ -9,16 +9,16 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        background: '#13111C',
-        surface: '#1C1B23',
-        'surface-light': '#2A2833',
-        primary: '#9d4edd',
-        'primary-light': '#b589df',
-        'primary-dark': '#7B2CBF',
-        'primary-hover': '#a35ee4',
-        accent: '#FF7C7C',
-        text: '#E2E8F0',
-        'text-muted': '#94A3B8'
+        background: '#ffffff',
+        surface: '#ffffff',
+        'surface-light': '#f9f9f9',
+        primary: '#000000',
+        'primary-light': '#222222',
+        'primary-dark': '#000000',
+        'primary-hover': '#333333',
+        accent: '#000000',
+        text: '#000000',
+        'text-muted': '#666666'
       },
       animation: {
         'spin-slow': 'spin 8s linear infinite',

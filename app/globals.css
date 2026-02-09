@@ -3,13 +3,14 @@
 @tailwind utilities;
 
 :root {
-  --primary: #9d4edd;
-  --primary-light: #c77dff;
-  --primary-dark: #7b2cbf;
-  --surface: #2d2438;
-  --surface-light: #3d3448;
-  --background: #1a1a1a;
-  --text: #ffffff;
+  --primary: #000000;
+  --primary-light: #222222;
+  --primary-dark: #000000;
+  --surface: #ffffff;
+  --surface-light: #f9f9f9;
+  --background: #ffffff;
+  --text: #000000;
+  --border: rgba(0, 0, 0, 0.1);
 }
 
 @layer base {
@@ -17,7 +18,12 @@
     @apply bg-background text-text;
   }
 
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     @apply font-bold;
   }
 
@@ -64,7 +70,6 @@
   }
 }
 
-/* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
 }
@@ -77,12 +82,10 @@
   @apply bg-primary/50 rounded-full hover:bg-primary;
 }
 
-/* Focus styles */
 :focus-visible {
   @apply outline-none ring-2 ring-primary ring-offset-2 ring-offset-background;
 }
 
-/* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
   * {
     animation-duration: 0.01ms !important;
@@ -92,7 +95,6 @@
   }
 }
 
-/* Media queries */
 @media (max-width: 640px) {
   .container {
     @apply px-4;
