@@ -38,6 +38,7 @@ const projects: Project[] = [
         title: "GitRecap",
         description: "GitHub analytics dashboard visualizing coding patterns and productivity.",
         githubLink: "https://github.com/aprameyak/GitRecap",
+        demoLink: "https://gitrecap.vercel.app/"
     }
 ];
 
@@ -49,7 +50,7 @@ export function MinimalProjects() {
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
                     viewport={{ once: true }}
-                    className="text-xs tracking-[0.3em] mb-20 font-bold uppercase"
+                    className="text-xs tracking-[0.3em] mb-20 font-bold uppercase text-gray-400"
                 >
                     Projects
                 </motion.h2>
@@ -59,13 +60,13 @@ export function MinimalProjects() {
                             key={index}
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.5, delay: index * 0.1 }}
-                            viewport={{ once: true }}
-                            className="py-12 group"
+                            transition={{ duration: 1, ease: [0.16, 1, 0.3, 1], delay: index * 0.1 }}
+                            viewport={{ once: true, margin: "-100px" }}
+                            className="py-16 group relative"
                         >
-                            <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
+                            <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-8 relative z-10">
                                 <div className="flex-1">
-                                    <h3 className="text-3xl mb-4 tracking-tight group-hover:pl-4 transition-all duration-300">
+                                    <h3 className="text-4xl md:text-5xl mb-6 tracking-tight font-serif italic group-hover:translate-x-4 transition-transform duration-700 ease-[0.16,1,0.3,1]">
                                         <a href={project.githubLink} target="_blank" rel="noopener noreferrer" className="hover:opacity-50">
                                             {project.title}
                                         </a>
@@ -74,11 +75,11 @@ export function MinimalProjects() {
                                         {project.description}
                                     </p>
                                 </div>
-                                <div className="flex gap-6 items-center">
+                                <div className="flex gap-8 items-center pt-4 md:pt-0">
                                     {project.demoLink && (
-                                        <a href={project.demoLink} target="_blank" rel="noopener noreferrer" className="text-xs font-bold uppercase tracking-widest hover:underline underline-offset-8">Live Demo</a>
+                                        <a href={project.demoLink} target="_blank" rel="noopener noreferrer" className="text-[10px] font-bold uppercase tracking-[0.3em] border-b border-black/10 hover:border-black pb-1 transition-all">Demo</a>
                                     )}
-                                    <a href={project.githubLink} target="_blank" rel="noopener noreferrer" className="text-xs font-bold uppercase tracking-widest hover:underline underline-offset-8">Source</a>
+                                    <a href={project.githubLink} target="_blank" rel="noopener noreferrer" className="text-[10px] font-bold uppercase tracking-[0.3em] border-b border-black/10 hover:border-black pb-1 transition-all">Code</a>
                                 </div>
                             </div>
                         </motion.div>
