@@ -1,39 +1,34 @@
 # Portfolio
 
-![Next.js](https://img.shields.io/badge/Next.js-000000?logo=nextdotjs&logoColor=white&style=for-the-badge)
-![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=white&style=for-the-badge)
-![Tailwind CSS](https://img.shields.io/badge/Tailwind-06B6D4?logo=tailwindcss&logoColor=white&style=for-the-badge)
-![Framer Motion](https://img.shields.io/badge/Framer_Motion-0055FF?logo=framer&logoColor=white&style=for-the-badge)
-![Vercel](https://img.shields.io/badge/Vercel-000000?logo=vercel&logoColor=white&style=for-the-badge)
+<p align="left">
+  <img src="https://img.shields.io/badge/Next.js-000000?logo=nextdotjs&logoColor=white&style=flat-square" />
+  <img src="https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=white&style=flat-square" />
+  <img src="https://img.shields.io/badge/Tailwind_CSS-06B6D4?logo=tailwindcss&logoColor=white&style=flat-square" />
+  <img src="https://img.shields.io/badge/Framer_Motion-0055FF?logo=framer&logoColor=white&style=flat-square" />
+  <img src="https://img.shields.io/badge/Vercel-000000?logo=vercel&logoColor=white&style=flat-square" />
+</p>
 
 ---
 
 ## About
 
-**Portfolio** is a modern, responsive portfolio website built with **Next.js, TypeScript, and Tailwind CSS**. It features smooth animations, interactive UI elements, and a clean, professional design. The site showcases projects, skills, and experience with dynamic content loading and optimized performance.
+This is a modern, fully responsive portfolio built with **Next.js, TypeScript, and Tailwind CSS**.  
+It features smooth animations, interactive UI components, and optimized performance.
+
+The site highlights projects, technical skills, and professional experience with a clean and minimal design focused on usability and speed.
 
 ---
 
-## Features
+## Tech Stack
 
-- Responsive design with mobile-first approach
-- Smooth page transitions and scroll animations
-- Interactive UI elements with hover effects
-- Dynamic content loading with TypeScript type safety
-- Modern purple theme with gradient accents
-- SEO optimized with Next.js metadata
-- Performance optimized with Next.js Image component
+- **Framework:** Next.js  
+- **Language:** TypeScript  
+- **Styling:** Tailwind CSS  
+- **Animations:** Framer Motion  
+- **Deployment:** Vercel  
 
 ---
 
-## Technology Stack
+## Live Site
 
-- **Framework**: Next.js 
-- **Language**: TypeScript 
-- **Styling**: Tailwind CSS 
-- **Animations**: Framer Motion 
-- **Deployment**: Vercel
-
-## Deployment
-
-Visit the live site at [https://aprameyak.vercel.app](https://aprameyak.vercel.app)
+🔗 https://aprameyak.vercel.app
