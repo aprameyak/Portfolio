@@ -6,75 +6,70 @@ interface ExperienceItem {
   title: string;
   company: string;
   description: string;
-  technologies?: string[];
 }
 
 const experiences: ExperienceItem[] = [
   {
+    title: "Software Engineering Intern",
+    company: "Lockheed Martin",
+    description: "Developed enterprise web applications under the Lean-Agile Center of Excellence, including a MySQL Value Mapping app and a PostgreSQL Teams Mapping Tool adopted by 300+ Agile teams, reducing manual data processing by 25%"
+  },
+  {
+    title: "Technical Lead",
+    company: "MITRE",
+    description: "Led a 10+ member team to build a cybersecurity compliance platform with framework search, cross-framework mapping, automated alerts, RACI planning, and AI-assisted guidance"
+  },
+  {
     title: "DevOps Engineer",
     company: "Booz Allen Hamilton",
-    description: "Architecting cloud infrastructure for CHIP and Medicaid project utilizing generative AI",
-    technologies: ["AWS", "RAG", "LLMs"]
+    description: "Engineered an MCP server and RAG workflow on AWS EC2, managed IaC CloudFormation templates and IAM policies for 20+ engineers, and built CI/CD pipelines with CodePipeline and GitHub Actions"
   },
   {
-    title: "Software Engineer Intern",
-    company: "Lockheed Martin",
-    description: "Building enterprise applications for team health dashboards and sprint planning",
-    technologies: ["Next.js", "Python", "SQL"]
-  },
-  {
-    title: "Section Leader",
+    title: "Teaching Assistant",
     company: "Stanford University - Code in Place",
-    description: "Teaching assistant for CS106A programming fundamentals course",
-    technologies: ["Logic", "Python", "Control Flow"]
+    description: "Led sections for CS106A, a course with 30,000+ participants, covering data structures, algorithms, control flow, and Python"
   },
   {
     title: "Software Engineer",
     company: "Warriors Legacy Care",
-    description: "Developed mobile applications for veterans' resource access and support",
-    technologies: ["Python", "React Native", "PostgreSQL"]
+    description: "Developed mobile applications for veterans' resource access and support"
   },
   {
     title: "Climate Computing Researcher",
     company: "First Year Innovation and Research Experience",
-    description: "Researched climate data analysis and computational methods",
-    technologies: ["Data Analysis", "Linux", "High Performance Computing"]
+    description: "Researched climate data analysis and computational methods"
   },
   {
     title: "Software Engineer",
     company: "SynTag",
-    description: "Built AI-powered virtual receptionist and customer service solutions",
-    technologies: ["FastAPI", "TailwindCSS", "TypeScript"]
+    description: "Built AI-powered virtual receptionist and customer service solutions"
   },
   {
     title: "Technical Fellow",
     company: "CodePath",
-    description: "Mastered data structures and algorithms for software development.",
-    technologies: ["Python", "Data Structures", "Algorithms"]
+    description: "Mastered data structures and algorithms for software development"
   },
   {
     title: "Software Engineer",
     company: "Minvest Finance",
-    description: "Architected cloud infrastructure for a Gen Z investing platform",
-    technologies: ["AWS", "Docker", "React.js"]
+    description: "Architected cloud infrastructure for a Gen Z investing platform"
   },
   {
     title: "Software Engineer",
     company: "Headstarter AI",
-    description: "Developed AI-powered applications with LLM integration",
-    technologies: ["Firebase", "LLMs", "JavaScript"]
+    description: "Developed AI-powered applications with LLM integration"
   }
 ];
 
 const Experience = () => {
   return (
-    <motion.div 
+    <motion.div
       className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       viewport={{ once: true }}
     >
-      <motion.h2 
+      <motion.h2
         className="text-4xl font-bold text-center mb-16 gradient-text"
         initial={{ opacity: 0, y: -20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -103,31 +98,31 @@ const Experience = () => {
 
               <div className={`w-1/2 ${index % 2 === 0 ? 'pr-12 text-right' : 'pl-12'}`}>
                 <motion.div
-                  whileHover={{ 
+                  whileHover={{
                     scale: 1.02,
                     transition: { duration: 0.2 }
                   }}
                   className="bg-surface/80 rounded-xl p-6 hover:shadow-xl hover:shadow-primary/5 transition-all duration-300 backdrop-blur-sm border border-primary/5 hover:border-primary/10"
                 >
-                  <div className="mb-4">
-                    <motion.h3 
-                      className="text-2xl font-bold bg-gradient-to-r from-primary to-primary-light bg-clip-text text-transparent mb-2"
+                  <div className="mb-2">
+                    <motion.p
+                      className="text-xs font-semibold uppercase tracking-widest text-primary-light/60 mb-2"
                       initial={{ opacity: 0 }}
                       animate={{ opacity: 1 }}
                       transition={{ duration: 0.3 }}
                     >
-                      {exp.title}
-                    </motion.h3>
-                    <motion.p 
-                      className="text-text-muted text-lg mb-4"
+                      {exp.company}
+                    </motion.p>
+                    <motion.h3
+                      className="text-xl font-bold bg-gradient-to-r from-primary to-primary-light bg-clip-text text-transparent mb-3"
                       initial={{ opacity: 0 }}
                       animate={{ opacity: 1 }}
                       transition={{ duration: 0.3, delay: 0.1 }}
                     >
-                      {exp.company}
-                    </motion.p>
-                    <motion.p 
-                      className="text-text-muted mb-4"
+                      {exp.title}
+                    </motion.h3>
+                    <motion.p
+                      className="text-text-muted"
                       initial={{ opacity: 0 }}
                       animate={{ opacity: 1 }}
                       transition={{ duration: 0.3, delay: 0.2 }}
@@ -135,26 +130,6 @@ const Experience = () => {
                       {exp.description}
                     </motion.p>
                   </div>
-                  {exp.technologies && (
-                    <motion.div 
-                      className="flex flex-wrap gap-2 pt-4 border-t border-primary/5"
-                      initial={{ opacity: 0 }}
-                      animate={{ opacity: 1 }}
-                      transition={{ duration: 0.3, delay: 0.3 }}
-                    >
-                      {exp.technologies.map((tech, i) => (
-                        <motion.span
-                          key={i}
-                          initial={{ opacity: 0, scale: 0.8 }}
-                          animate={{ opacity: 1, scale: 1 }}
-                          transition={{ duration: 0.3, delay: i * 0.1 }}
-                          className="px-3 py-1 text-sm bg-primary/5 text-primary-light rounded-full hover:bg-primary/10 transition-colors"
-                        >
-                          {tech}
-                        </motion.span>
-                      ))}
-                    </motion.div>
-                  )}
                 </motion.div>
               </div>
             </motion.div>
@@ -165,4 +140,4 @@ const Experience = () => {
   );
 };
 
-export default Experience; 
+export default Experience;

@@ -40,14 +40,29 @@ function Stars(props: any) {
   );
 }
 
+function isWebGLAvailable(): boolean {
+  try {
+    const canvas = document.createElement('canvas');
+    return !!(
+      window.WebGLRenderingContext &&
+      (canvas.getContext('webgl') || canvas.getContext('experimental-webgl'))
+    );
+  } catch {
+    return false;
+  }
+}
+
 export default function AnimatedBackground() {
   const [mounted, setMounted] = useState(false);
+  const [webglAvailable, setWebglAvailable] = useState(true);
 
   useEffect(() => {
     setMounted(true);
+    setWebglAvailable(isWebGLAvailable());
   }, []);
 
   if (!mounted) return null;
+  if (!webglAvailable) return null;
 
   return (
     <div className="fixed inset-0 -z-10">
