@@ -12,22 +12,22 @@ const experiences: ExperienceItem[] = [
   {
     title: "Software Engineering Intern",
     company: "Lockheed Martin",
-    description: "Developed enterprise web applications under the Lean-Agile Center of Excellence, including a MySQL Value Mapping app and a PostgreSQL Teams Mapping Tool adopted by 300+ Agile teams, reducing manual data processing by 25%"
+    description: "Built enterprise web tools for Agile teams under the Lean-Agile Center of Excellence"
   },
   {
     title: "Technical Lead",
     company: "MITRE",
-    description: "Led a 10+ member team to build a cybersecurity compliance platform with framework search, cross-framework mapping, automated alerts, RACI planning, and AI-assisted guidance"
+    description: "Led a team building a cybersecurity compliance platform with AI-assisted guidance"
   },
   {
     title: "DevOps Engineer",
     company: "Booz Allen Hamilton",
-    description: "Engineered an MCP server and RAG workflow on AWS EC2, managed IaC CloudFormation templates and IAM policies for 20+ engineers, and built CI/CD pipelines with CodePipeline and GitHub Actions"
+    description: "Built MCP server, RAG pipeline, and CI/CD workflows on AWS"
   },
   {
     title: "Teaching Assistant",
     company: "Stanford University - Code in Place",
-    description: "Led sections for CS106A, a course with 30,000+ participants, covering data structures, algorithms, control flow, and Python"
+    description: "Led sections for CS106A covering data structures, algorithms, and Python"
   },
   {
     title: "Software Engineer",
