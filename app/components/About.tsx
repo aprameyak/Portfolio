@@ -49,13 +49,13 @@ const About = () => {
         />
       </div>
 
-      <div className="text-center relative w-full">
-        <motion.div 
+      <div className="relative w-full flex flex-col md:flex-row md:items-center md:gap-20">
+        <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
           whileInView={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.6, delay: 0.3 }}
           viewport={{ once: true }}
-          className="relative w-[180px] h-[180px] sm:w-[200px] sm:h-[200px] rounded-full overflow-hidden mx-auto mb-12"
+          className="relative w-[180px] h-[180px] sm:w-[220px] sm:h-[220px] rounded-full overflow-hidden mx-auto md:mx-0 mb-12 md:mb-0 flex-shrink-0"
           style={{
             transform: `perspective(1000px) rotateX(${mousePosition.y * 10}deg) rotateY(${mousePosition.x * 10}deg)`,
           }}
@@ -65,71 +65,73 @@ const About = () => {
             <Image
               src="https://aprameyak-portfolio-assets.s3.us-east-1.amazonaws.com/profilepic.jpg"
               alt="Profile Picture"
-              width={200}
-              height={200}
+              width={220}
+              height={220}
               className="w-full h-full object-cover transition-transform duration-300 hover:scale-110"
               priority
             />
           </div>
         </motion.div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          viewport={{ once: true }}
-          className="space-y-6"
-        >
-          <motion.p 
-            className="text-2xl text-center text-primary-light relative"
-            style={{
-              transform: `perspective(1000px) rotateX(${mousePosition.y * 5}deg) rotateY(${mousePosition.x * 5}deg)`,
-            }}
-          >
-            <span className="relative inline-block bg-gradient-to-r from-primary via-primary-light to-primary bg-clip-text text-transparent">
-              Studying Computer Science at the University of Maryland
-            </span>
-          </motion.p>
-
-          <motion.p
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.6 }}
+        <div className="flex-1 text-center md:text-left">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
             viewport={{ once: true }}
-            className="text-text-muted"
+            className="space-y-4"
           >
-            Currently building apps at Lockheed Martin
-          </motion.p>
-        </motion.div>
-        
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.9 }}
-          viewport={{ once: true }}
-          className="flex flex-wrap justify-center gap-4 mt-12"
-        >
-          <motion.a
-            href="https://github.com/aprameyak"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="px-6 py-2 bg-primary/10 hover:bg-primary/20 text-primary-light rounded-full transition-colors duration-300"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
+            <motion.p
+              className="text-2xl text-primary-light relative"
+              style={{
+                transform: `perspective(1000px) rotateX(${mousePosition.y * 5}deg) rotateY(${mousePosition.x * 5}deg)`,
+              }}
+            >
+              <span className="relative inline-block bg-gradient-to-r from-primary via-primary-light to-primary bg-clip-text text-transparent">
+                Studying Computer Science at the University of Maryland
+              </span>
+            </motion.p>
+
+            <motion.p
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ duration: 0.6, delay: 0.6 }}
+              viewport={{ once: true }}
+              className="text-text-muted text-lg"
+            >
+              Currently building apps at Lockheed Martin
+            </motion.p>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.9 }}
+            viewport={{ once: true }}
+            className="flex flex-wrap justify-center md:justify-start gap-4 mt-10"
           >
-            GitHub
-          </motion.a>
-          <motion.a
-            href="https://linkedin.com/in/aprameyak"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="px-6 py-2 bg-primary/10 hover:bg-primary/20 text-primary-light rounded-full transition-colors duration-300"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            LinkedIn
-          </motion.a>
-        </motion.div>
+            <motion.a
+              href="https://github.com/aprameyak"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-6 py-2 bg-primary/10 hover:bg-primary/20 text-primary-light rounded-full transition-colors duration-300"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              GitHub
+            </motion.a>
+            <motion.a
+              href="https://linkedin.com/in/aprameyak"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-6 py-2 bg-primary/10 hover:bg-primary/20 text-primary-light rounded-full transition-colors duration-300"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              LinkedIn
+            </motion.a>
+          </motion.div>
+        </div>
       </div>
     </motion.div>
   );

@@ -77,7 +77,7 @@ const Header = () => {
               className="flex justify-center sm:justify-end"
             >
               <ul className="flex flex-wrap justify-center gap-1 sm:gap-2 list-none p-0">
-                {['About', 'Projects', 'Experience', 'Skills', 'Contact'].map((item) => (
+                {['About', 'Experience', 'Projects', 'Skills', 'Contact'].map((item) => (
                   <motion.li 
                     key={item}
                     whileHover={{ scale: 1.05 }}
