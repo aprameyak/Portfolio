@@ -18,7 +18,8 @@ const config: Config = {
         'primary-hover': '#a35ee4',
         accent: '#FF7C7C',
         text: '#E2E8F0',
-        'text-muted': '#94A3B8'
+        'text-muted': '#94A3B8',
+        'purple-accent': '#C4B5FD',
       },
       animation: {
         'spin-slow': 'spin 8s linear infinite',

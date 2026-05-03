@@ -303,17 +303,6 @@ export function VideoCard({
         />
 
         <div className="relative px-4 sm:px-8 flex flex-col justify-center min-h-[162px] py-5">
-          {project.year && (
-            <div
-              className={cn(
-                "font-mono text-xs tracking-widest uppercase pb-1 transition-colors duration-[800ms]",
-                isHovered ? "text-muted-foreground" : "text-white/60",
-              )}
-            >
-              {project.year}
-            </div>
-          )}
-
           <div className="space-y-3">
             {project.projectName && (
               <h3

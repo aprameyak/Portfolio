@@ -247,7 +247,7 @@ export default function Home() {
               className={`w-2 h-8 rounded-full transition-all duration-500 ${
                 activeSection === section ||
                 (section === "work" && activeSection === "test")
-                  ? "bg-foreground"
+                  ? "bg-purple-accent"
                   : "bg-muted-foreground/30 hover:bg-muted-foreground/60"
               }`}
               aria-label={`Navigate to ${section}`}
@@ -267,7 +267,7 @@ export default function Home() {
           <div className="grid lg:grid-cols-5 gap-12 sm:gap-16 w-full">
             <div className="lg:col-span-3 space-y-6 sm:space-y-8">
               <div className="space-y-3 sm:space-y-2">
-                <div className="text-sm text-muted-foreground font-mono tracking-wider">
+                <div className="text-sm text-purple-accent font-mono tracking-wider">
                   PORTFOLIO / 2026
                 </div>
                 <h1 className="text-5xl sm:text-6xl lg:text-7xl font-light tracking-tight">
@@ -294,7 +294,7 @@ export default function Home() {
               <h2 className="text-3xl sm:text-4xl font-light">
                 Previous Experience
               </h2>
-              <div className="text-sm text-muted-foreground font-mono">
+              <div className="text-sm text-purple-accent font-mono">
                 2025 — 2026
               </div>
             </div>
@@ -426,7 +426,7 @@ export default function Home() {
             </div>
 
             <div className="space-y-6 sm:space-y-8">
-              <div className="text-sm text-muted-foreground font-mono">
+              <div className="text-sm text-purple-accent font-mono">
                 ELSEWHERE
               </div>
 
@@ -446,7 +446,7 @@ export default function Home() {
                   <Link
                     key={social.name}
                     href={social.url}
-                    className="group p-4 border border-border rounded-lg hover:border-muted-foreground/50 transition-all duration-300 glow-on-hover"
+                    className="group p-4 border border-border rounded-lg hover:border-purple-accent/50 transition-all duration-300 glow-on-hover"
                   >
                     <div className="space-y-2">
                       <div className="text-foreground group-hover:text-muted-foreground transition-colors duration-300">
