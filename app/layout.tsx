@@ -61,25 +61,10 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: "/faviconFiles/favicon-16x16.png", sizes: "16x16", type: "image/png" },
-      { url: "/faviconFiles/favicon-32x32.png", sizes: "32x32", type: "image/png" },
-      { url: "/faviconFiles/favicon.ico", sizes: "any" },
-    ],
-    apple: [
-      { url: "/faviconFiles/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
-    ],
-    other: [
-      {
-        rel: "android-chrome-192x192",
-        url: "/faviconFiles/android-chrome-192x192.png",
-      },
-      {
-        rel: "android-chrome-512x512",
-        url: "/faviconFiles/android-chrome-512x512.png",
-      },
+      { url: "/favicon.svg", type: "image/svg+xml" },
+      { url: "/favicon.ico", sizes: "any" },
     ],
   },
-  manifest: "/faviconFiles/site.webmanifest",
 }
 
 const jsonLd = {
