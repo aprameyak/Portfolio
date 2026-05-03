@@ -30,6 +30,7 @@ interface Project {
   year: string;
   thumbnail: string;
   video: string;
+  youtubeId?: string;
   githubUrl?: string;
   moreInfoUrl?: string;
   projectName?: string;
@@ -245,7 +246,14 @@ export function VideoCard({
           isHovered ? "h-[75vw] sm:h-[445px]" : "h-[202px]",
         )}
       >
-        {shouldLoadVideo ? (
+        {shouldLoadVideo && project.youtubeId ? (
+          <iframe
+            src={`https://www.youtube.com/embed/${project.youtubeId}?autoplay=1&mute=1&loop=1&playlist=${project.youtubeId}&controls=1&rel=0`}
+            className="absolute inset-0 h-full w-full"
+            allow="autoplay; encrypted-media"
+            allowFullScreen
+          />
+        ) : shouldLoadVideo ? (
           <>
             <video
               ref={videoRef}
@@ -266,7 +274,11 @@ export function VideoCard({
           </>
         ) : (
           <img
-            src={project.thumbnail || "/placeholder-user.jpg"}
+            src={
+              project.youtubeId
+                ? `https://img.youtube.com/vi/${project.youtubeId}/maxresdefault.jpg`
+                : project.thumbnail || "/placeholder-user.jpg"
+            }
             alt={project.projectName || "Project thumbnail"}
             className={cn(
               "absolute inset-0 h-full w-full object-cover transition-all duration-700",
