@@ -267,7 +267,7 @@ export function VideoCard({
               playsInline
               preload="metadata"
             >
-              <source src={project.video} type="video/mp4" />
+              <source src={project.video} type={project.video?.endsWith(".mov") ? "video/quicktime" : "video/mp4"} />
             </video>
             {videoControls}
           </>
