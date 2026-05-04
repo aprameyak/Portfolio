@@ -304,7 +304,6 @@ export default function Home() {
                 {[
                   {
                     id: 1,
-                    year: "2025",
                     projectName: "DataVision",
                     company: "Bitcamp Hackathon Project",
                     shortDescription:
@@ -325,7 +324,6 @@ export default function Home() {
                   },
                   {
                     id: 2,
-                    year: "2025",
                     projectName: "Nara",
                     company: "",
                     shortDescription: "",
@@ -336,7 +334,6 @@ export default function Home() {
                   },
                   {
                     id: 3,
-                    year: "2025",
                     projectName: "Pathos",
                     company: "",
                     shortDescription: "",
@@ -347,7 +344,6 @@ export default function Home() {
                   },
                   {
                     id: 4,
-                    year: "2025",
                     projectName: "PhilaWatch",
                     company: "",
                     shortDescription: "",
@@ -358,13 +354,22 @@ export default function Home() {
                   },
                   {
                     id: 5,
-                    year: "2025",
                     projectName: "IronMiner",
                     company: "",
                     shortDescription: "",
                     thumbnail: "",
                     video: "",
                     youtubeId: "3Ql8fDQyNjs",
+                    tech: [],
+                  },
+                  {
+                    id: 6,
+                    projectName: "Terrapin Marketplace",
+                    company: "",
+                    shortDescription: "",
+                    thumbnail: "",
+                    video: "",
+                    youtubeId: "os2qO5qwqQU",
                     tech: [],
                   },
                 ].map((project) => (

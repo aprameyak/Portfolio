@@ -27,7 +27,6 @@ function formatTime(seconds: number): string {
 
 interface Project {
   id: number;
-  year: string;
   thumbnail: string;
   video: string;
   youtubeId?: string;
