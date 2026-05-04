@@ -311,8 +311,7 @@ export default function Home() {
                     fullDescription:
                       "DataVision is an agentic data analysis platform built at the Bitcamp Hackathon. It uses LangGraph to orchestrate multiple AI agents powered by the Gemini API that collaboratively analyze uploaded datasets. The system automatically performs statistical analysis, generates and tests hypotheses, and produces real-time interactive visualizations. Users can ask natural language questions about their data and receive comprehensive analytical reports with supporting charts and statistical evidence.",
                     thumbnail: "",
-                    video: "",
-                    youtubeId: "DR2BjuHC1mY",
+                    video: "/videos/datavision_vid.mov",
                     githubUrl: "https://github.com/aadia1234/DataVision",
                     tech: [
                       "Python",
@@ -360,6 +359,15 @@ export default function Home() {
                     thumbnail: "",
                     video: "",
                     youtubeId: "3Ql8fDQyNjs",
+                    tech: [],
+                  },
+                  {
+                    id: 7,
+                    projectName: "MITRE SCOUT",
+                    company: "App Dev Club",
+                    shortDescription: "",
+                    thumbnail: "",
+                    video: "/videos/scout_vid.mov",
                     tech: [],
                   },
                   {
