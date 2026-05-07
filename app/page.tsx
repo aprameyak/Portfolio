@@ -305,21 +305,12 @@ export default function Home() {
                   {
                     id: 1,
                     projectName: "DataVision",
-                    company: "Bitcamp Hackathon Project",
-                    shortDescription:
-                      "Agentic data platform using LangGraph + Gemini API for automated statistical analysis, hypothesis testing & real-time visualization.",
-                    fullDescription:
-                      "DataVision is an agentic data analysis platform built at the Bitcamp Hackathon. It uses LangGraph to orchestrate multiple AI agents powered by the Gemini API that collaboratively analyze uploaded datasets. The system automatically performs statistical analysis, generates and tests hypotheses, and produces real-time interactive visualizations. Users can ask natural language questions about their data and receive comprehensive analytical reports with supporting charts and statistical evidence.",
+                    company: "",
+                    shortDescription: "",
                     thumbnail: "",
                     video: "/videos/datavision_vid.mov",
-                    githubUrl: "https://github.com/aadia1234/DataVision",
-                    tech: [
-                      "Python",
-                      "LangGraph",
-                      "Gemini API",
-                      "Data Visualization",
-                      "Statistics",
-                    ],
+                    githubUrl: "https://github.com/aprameyak/DataVision",
+                    tech: [],
                   },
                   {
                     id: 2,
@@ -327,8 +318,8 @@ export default function Home() {
                     company: "",
                     shortDescription: "",
                     thumbnail: "",
-                    video: "",
-                    youtubeId: "a8ESQUSft0c",
+                    video: "/videos/nara-video.mov",
+                    githubUrl: "https://github.com/aprameyak/Nara",
                     tech: [],
                   },
                   {
@@ -337,8 +328,8 @@ export default function Home() {
                     company: "",
                     shortDescription: "",
                     thumbnail: "",
-                    video: "",
-                    youtubeId: "Xaw7UK7DCSA",
+                    video: "/videos/pathos-video.mov",
+                    githubUrl: "https://github.com/aprameyak/Pathos",
                     tech: [],
                   },
                   {
@@ -347,8 +338,8 @@ export default function Home() {
                     company: "",
                     shortDescription: "",
                     thumbnail: "",
-                    video: "",
-                    youtubeId: "lhFYXprUik0",
+                    video: "/videos/philawatch-video.mov",
+                    githubUrl: "https://github.com/aprameyak/PhilaWatch",
                     tech: [],
                   },
                   {
@@ -357,8 +348,8 @@ export default function Home() {
                     company: "",
                     shortDescription: "",
                     thumbnail: "",
-                    video: "",
-                    youtubeId: "3Ql8fDQyNjs",
+                    video: "/videos/ironminer-video.mov",
+                    githubUrl: "https://github.com/aprameyak/IronMiner",
                     tech: [],
                   },
                   {
@@ -376,8 +367,8 @@ export default function Home() {
                     company: "",
                     shortDescription: "",
                     thumbnail: "",
-                    video: "",
-                    youtubeId: "os2qO5qwqQU",
+                    video: "/videos/terrapinmarketplace-video.mov",
+                    githubUrl: "https://github.com/aprameyak/cmsc335-final-project",
                     tech: [],
                   },
                 ].map((project) => (

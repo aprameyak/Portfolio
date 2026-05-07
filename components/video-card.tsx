@@ -267,7 +267,7 @@ export function VideoCard({
               playsInline
               preload="metadata"
             >
-              <source src={project.video} type={project.video?.endsWith(".mov") ? "video/quicktime" : "video/mp4"} />
+              <source src={project.video} type="video/mp4" />
             </video>
             {videoControls}
           </>
@@ -287,81 +287,90 @@ export function VideoCard({
         )}
       </div>
 
-      {/* Content block */}
+      {/* Content block — only rendered for projects with details or a GitHub link */}
+      {(project.company || project.shortDescription || project.githubUrl) && (
         <div
           className={cn(
             "relative z-30 overflow-hidden transition-[margin-top] duration-[800ms] ease-[cubic-bezier(0.4,0,0.2,1)]",
             isHovered ? "mt-0" : "-mt-[202px]",
           )}
         >
-        <div
-          className={cn(
-            "absolute inset-0 bg-background border-t border-border rounded-b-2xl sm:rounded-b-[2.5rem] transition-opacity duration-0",
-            isHovered ? "opacity-100 delay-[800ms]" : "opacity-0 delay-0",
-          )}
-        />
-
-        <div className="relative px-4 sm:px-8 flex flex-col justify-center min-h-[162px] py-5">
-          <div className="space-y-3">
-            {project.projectName && (
-              <h3
-                className={cn(
-                  "font-mono text-lg sm:text-xl uppercase font-medium leading-tight transition-colors duration-[800ms]",
-                  isHovered ? "text-foreground" : "text-white",
-                )}
-              >
-                {project.projectName}
-              </h3>
+          <div
+            className={cn(
+              "absolute inset-0 bg-background border-t border-border rounded-b-2xl sm:rounded-b-[2.5rem] transition-opacity duration-0",
+              isHovered ? "opacity-100 delay-[800ms]" : "opacity-0 delay-0",
             )}
-            {project.company && (
-              <div className="flex items-center gap-4 flex-wrap">
-                <p
+          />
+
+          <div className="relative px-4 sm:px-8 flex flex-col justify-center min-h-[162px] py-5">
+            <div className="space-y-3">
+              {project.projectName && (
+                <h3
                   className={cn(
-                    "font-mono text-sm tracking-[0.15em] uppercase leading-relaxed transition-colors duration-[800ms]",
-                    isHovered ? "text-muted-foreground" : "text-white/80",
+                    "font-mono text-lg sm:text-xl uppercase font-medium leading-tight transition-colors duration-[800ms]",
+                    isHovered ? "text-foreground" : "text-white",
                   )}
                 >
-                  {project.company}
-                </p>
-                {isHovered && project.tech && project.tech.length > 0 && (
-                  <div className="flex flex-wrap gap-2">
-                    {project.tech.map((tech, index) => (
-                      <span
-                        key={index}
-                        className="rounded-full border border-border bg-secondary px-2 py-1 text-xs text-muted-foreground"
-                      >
-                        {tech}
-                      </span>
-                    ))}
+                  {project.projectName}
+                </h3>
+              )}
+              {project.company && (
+                <div className="flex items-center gap-4 flex-wrap">
+                  <p
+                    className={cn(
+                      "font-mono text-sm tracking-[0.15em] uppercase leading-relaxed transition-colors duration-[800ms]",
+                      isHovered ? "text-muted-foreground" : "text-white/80",
+                    )}
+                  >
+                    {project.company}
+                  </p>
+                  {isHovered && project.tech && project.tech.length > 0 && (
+                    <div className="flex flex-wrap gap-2">
+                      {project.tech.map((tech, index) => (
+                        <span
+                          key={index}
+                          className="rounded-full border border-border bg-secondary px-2 py-1 text-xs text-muted-foreground"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              )}
+            </div>
+
+            {(project.shortDescription || project.githubUrl) && (
+              <div className="flex items-start justify-between gap-4 sm:gap-6 pt-4">
+                {project.shortDescription ? (
+                  <p
+                    className={cn(
+                      "flex-1 sm:flex-[0_0_70%] text-sm leading-tight transition-colors duration-[800ms]",
+                      isHovered
+                        ? "text-muted-foreground"
+                        : "text-white/70 line-clamp-2 md:line-clamp-none",
+                    )}
+                  >
+                    {project.shortDescription}
+                  </p>
+                ) : (
+                  <div className="flex-1" />
+                )}
+                {project.githubUrl && (
+                  <div className="flex shrink-0 items-center justify-end ml-auto">
+                    <ProjectActionButton
+                      icon={<GithubIcon className="size-5" />}
+                      label="GitHub"
+                      url={project.githubUrl}
+                      expanded={isHovered}
+                    />
                   </div>
                 )}
               </div>
             )}
           </div>
-
-          {project.shortDescription && (
-            <div className="flex items-start justify-between gap-4 sm:gap-6 pt-4">
-              <p
-                className={cn(
-                  "flex-1 sm:flex-[0_0_70%] text-sm leading-tight transition-colors duration-[800ms]",
-                  isHovered
-                    ? "text-muted-foreground"
-                    : "text-white/70 line-clamp-2 md:line-clamp-none",
-                )}
-              >
-                {project.shortDescription}
-              </p>
-              <div className="flex shrink-0 items-center justify-end ml-auto">
-                <ProjectActionButton
-                  icon={<GithubIcon className="size-5" />}
-                  url={project.githubUrl}
-                  expanded={isHovered}
-                />
-              </div>
-            </div>
-          )}
         </div>
-      </div>
+      )}
     </div>
   );
 }
