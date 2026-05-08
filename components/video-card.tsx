@@ -260,7 +260,7 @@ export function VideoCard({
               className={cn(
                 "absolute inset-0 h-full w-full transition-all duration-700",
                 isActive ? "object-contain lg:object-cover" : "object-cover",
-                !isActive && "grayscale brightness-10",
+                !isActive && "brightness-[2] saturate-0",
               )}
               loop
               muted
@@ -281,7 +281,7 @@ export function VideoCard({
             alt={project.projectName || "Project thumbnail"}
             className={cn(
               "absolute inset-0 h-full w-full object-cover transition-all duration-700",
-              !isActive && "grayscale brightness-10",
+              !isActive && "brightness-[2] saturate-0",
             )}
           />
         )}

@@ -10,7 +10,7 @@ const geist = Geist({
 })
 
 export const metadata: Metadata = {
-  title: "Aprameya Kannan | Full-Stack Developer",
+  title: "Aprameya Kannan",
   description: "Aprameya Kannan - Full-stack web developer specializing in TypeScript, React, Python, and AI integration. Portfolio showcasing full-stack applications, AI automation projects, and innovative web solutions.",
   keywords: [
     "Aprameya Kannan",
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
   authors: [{ name: "Aprameya Kannan" }],
   creator: "Aprameya Kannan",
   openGraph: {
-    title: "Aprameya Kannan | Full-Stack Developer",
+    title: "Aprameya Kannan",
     description: "Full-stack web developer specializing in TypeScript, React, Python, and AI integration.",
     url: "https://yourdomain.com",
     siteName: "Aprameya Kannan Portfolio",
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Aprameya Kannan | Full-Stack Developer",
+    title: "Aprameya Kannan",
     description: "Full-stack web developer specializing in TypeScript, React, Python, and AI integration.",
   },
   robots: {

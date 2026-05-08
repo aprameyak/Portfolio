@@ -267,10 +267,7 @@ export default function Home() {
           <div className="grid lg:grid-cols-5 gap-12 sm:gap-16 w-full">
             <div className="lg:col-span-3 space-y-6 sm:space-y-8">
               <div className="space-y-3 sm:space-y-2">
-                <div className="text-sm text-purple-accent font-mono tracking-wider">
-                  PORTFOLIO / 2026
-                </div>
-                <h1 className="text-5xl sm:text-6xl lg:text-7xl font-light tracking-tight">
+<h1 className="text-5xl sm:text-6xl lg:text-7xl font-light tracking-tight">
                   Aprameya
                   <br />
                   <span className="text-muted-foreground">Kannan</span>
@@ -356,6 +353,24 @@ export default function Home() {
                     shortDescription: "",
                     thumbnail: "",
                     video: "/videos/scout_vid.mov",
+                    tech: [],
+                  },
+                  {
+                    id: 8,
+                    projectName: "Booz Allen Hamilton",
+                    company: "App Dev Club",
+                    shortDescription: "",
+                    thumbnail: "",
+                    video: "/videos/bah-video.mp4",
+                    tech: [],
+                  },
+                  {
+                    id: 9,
+                    projectName: "Warriors Legacy Care",
+                    company: "App Dev Club",
+                    shortDescription: "",
+                    thumbnail: "",
+                    video: "/videos/wlc-video.mp4",
                     tech: [],
                   },
                   {
