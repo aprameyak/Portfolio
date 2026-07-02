@@ -252,7 +252,7 @@ export function VideoCard({
             allow="autoplay; encrypted-media"
             allowFullScreen
           />
-        ) : shouldLoadVideo ? (
+        ) : shouldLoadVideo && project.video ? (
           <>
             <video
               ref={videoRef}
@@ -280,7 +280,10 @@ export function VideoCard({
             }
             alt={project.projectName || "Project thumbnail"}
             className={cn(
-              "absolute inset-0 h-full w-full object-cover transition-all duration-700",
+              "absolute inset-0 h-full w-full transition-all duration-700",
+              !project.video && !project.youtubeId
+                ? "object-contain p-8"
+                : "object-cover",
               !isActive && "brightness-[2] saturate-0",
             )}
           />

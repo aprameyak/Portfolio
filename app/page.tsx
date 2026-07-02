@@ -297,6 +297,24 @@ export default function Home() {
               <div className="flex flex-col gap-4">
                 {[
                   {
+                    id: 10,
+                    projectName: "Software Engineer Intern · Summer 2026",
+                    company: "Microsoft",
+                    shortDescription: "",
+                    thumbnail: "/msftlogo.png",
+                    video: "",
+                    tech: [],
+                  },
+                  {
+                    id: 11,
+                    projectName: "Software Engineer Intern · Summer 2025",
+                    company: "Lockheed Martin",
+                    shortDescription: "",
+                    thumbnail: "/lmlogo.png",
+                    video: "",
+                    tech: [],
+                  },
+                  {
                     id: 1,
                     projectName: "DataVision",
                     company: "Bitcamp 2025",
@@ -349,7 +367,7 @@ export default function Home() {
                   {
                     id: 7,
                     projectName: "MITRE SCOUT",
-                    company: "App Dev Club",
+                    company: "App Dev Club · Spring 2026",
                     shortDescription: "",
                     thumbnail: "",
                     video: "/videos/scout_vid.mov",
@@ -358,7 +376,7 @@ export default function Home() {
                   {
                     id: 8,
                     projectName: "Booz Allen Hamilton",
-                    company: "App Dev Club",
+                    company: "App Dev Club · Fall 2025",
                     shortDescription: "",
                     thumbnail: "",
                     video: "/videos/bah-video.mp4",
@@ -367,7 +385,7 @@ export default function Home() {
                   {
                     id: 9,
                     projectName: "Warriors Legacy Care",
-                    company: "App Dev Club",
+                    company: "App Dev Club · Spring 2025",
                     shortDescription: "",
                     thumbnail: "",
                     video: "/videos/wlc-video.mp4",
