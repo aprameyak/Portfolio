@@ -1,0 +1,10 @@
+version: 2
+updates:
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    ignore:
+      - dependency-name: "brace-expansion"
+      - dependency-name: "@babel/core"
+      - dependency-name: "sharp"
