@@ -375,9 +375,9 @@ export default function Home() {
                   },
                   {
                     id: 8,
-                    projectName: "Booz Allen Hamilton",
+                    projectName: "Audit Assistant",
                     company: "App Dev Club · Fall 2025",
-                    shortDescription: "Enterprise solution development for consulting and government clients.",
+                    shortDescription: "Automated audit workflow tool for financial compliance and reporting.",
                     thumbnail: "",
                     video: "/videos/bah-video.mp4",
                     tech: [],
