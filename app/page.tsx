@@ -307,9 +307,9 @@ export default function Home() {
                   },
                   {
                     id: 11,
-                    projectName: "Software Engineer Intern · Summer 2025",
+                    projectName: "Lean Agile Center of Excellence",
                     company: "Lockheed Martin",
-                    shortDescription: "Full-stack development for defense and space solutions.",
+                    shortDescription: "Led agile transformation initiatives and process optimization for enterprise teams.",
                     thumbnail: "/lmlogo.png",
                     video: "",
                     tech: [],
