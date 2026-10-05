@@ -298,9 +298,9 @@ export default function Home() {
                 {[
                   {
                     id: 10,
-                    projectName: "Software Engineer Intern · Summer 2026",
+                    projectName: "M365 Copilot Growth, Value, and Gamification",
                     company: "Microsoft",
-                    shortDescription: "Cloud infrastructure and distributed systems development.",
+                    shortDescription: "Developed features for Microsoft 365 Copilot adoption and user engagement.",
                     thumbnail: "/msftlogo.png",
                     video: "",
                     tech: [],
