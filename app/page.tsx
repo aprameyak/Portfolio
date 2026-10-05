@@ -298,18 +298,18 @@ export default function Home() {
                 {[
                   {
                     id: 10,
-                    projectName: "M365 Copilot Growth, Value, and Gamification",
+                    projectName: "Software Engineer Intern",
                     company: "Microsoft",
-                    shortDescription: "Developed features for Microsoft 365 Copilot adoption and user engagement.",
+                    shortDescription: "M365 Copilot Growth, Value, and Gamification",
                     thumbnail: "/msftlogo.png",
                     video: "",
                     tech: [],
                   },
                   {
                     id: 11,
-                    projectName: "Lean Agile Center of Excellence",
+                    projectName: "Software Engineer Intern",
                     company: "Lockheed Martin",
-                    shortDescription: "Led agile transformation initiatives and process optimization for enterprise teams.",
+                    shortDescription: "Lean Agile Center of Excellence",
                     thumbnail: "/lmlogo.png",
                     video: "",
                     tech: [],
