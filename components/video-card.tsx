@@ -3,6 +3,7 @@
 import { useState, useRef, useEffect, useCallback } from "react";
 import { cn } from "@/lib/utils";
 import { Play, Pause, RotateCcw, RotateCw } from "lucide-react";
+import { ProjectActionButton } from "@/components/project-action-button";
 
 function GithubIcon({ className }: { className?: string }) {
   return (
@@ -16,7 +17,6 @@ function GithubIcon({ className }: { className?: string }) {
     </svg>
   );
 }
-import { ProjectActionButton } from "@/components/project-action-button";
 
 function formatTime(seconds: number): string {
   if (!Number.isFinite(seconds) || seconds < 0) return "0:00";
@@ -29,13 +29,10 @@ interface Project {
   id: number;
   thumbnail: string;
   video: string;
-  youtubeId?: string;
   githubUrl?: string;
-  moreInfoUrl?: string;
   projectName?: string;
   company?: string;
   shortDescription?: string;
-  fullDescription?: string;
   tech?: string[];
 }
 
@@ -91,11 +88,9 @@ export function VideoCard({
     video.currentTime = value * video.duration;
   }, []);
 
-  useEffect(() => {
-    if (isHovered) {
-      setShouldLoadVideo(true);
-    }
-  }, [isHovered]);
+  if (isHovered && !shouldLoadVideo) {
+    setShouldLoadVideo(true);
+  }
 
   useEffect(() => {
     if (isHovered && videoRef.current && shouldLoadVideo) {
@@ -238,21 +233,13 @@ export function VideoCard({
       onMouseLeave={() => onHoverChange(false)}
       data-video-card-id={project.id}
     >
-      {/* Video region */}
       <div
         className={cn(
           "relative w-full overflow-hidden bg-black transition-[height] duration-[800ms] ease-[cubic-bezier(0.4,0,0.2,1)]",
           isHovered ? "h-[75vw] sm:h-[445px]" : "h-[202px]",
         )}
       >
-        {shouldLoadVideo && project.youtubeId ? (
-          <iframe
-            src={`https://www.youtube.com/embed/${project.youtubeId}?autoplay=1&mute=1&loop=1&playlist=${project.youtubeId}&controls=1&rel=0`}
-            className="absolute inset-0 h-full w-full"
-            allow="autoplay; encrypted-media"
-            allowFullScreen
-          />
-        ) : shouldLoadVideo && project.video ? (
+        {shouldLoadVideo && project.video ? (
           <>
             <video
               ref={videoRef}
@@ -273,15 +260,11 @@ export function VideoCard({
           </>
         ) : (
           <img
-            src={
-              project.youtubeId
-                ? `https://img.youtube.com/vi/${project.youtubeId}/maxresdefault.jpg`
-                : project.thumbnail || "/placeholder-user.jpg"
-            }
+            src={project.thumbnail || "/placeholder-user.jpg"}
             alt={project.projectName || "Project thumbnail"}
             className={cn(
               "absolute inset-0 h-full w-full transition-all duration-700",
-              !project.video && !project.youtubeId
+              !project.video
                 ? "object-contain p-8"
                 : "object-cover",
               !isActive && "brightness-[2] saturate-0",
@@ -290,7 +273,6 @@ export function VideoCard({
         )}
       </div>
 
-      {/* Content block — only rendered for projects with details or a GitHub link */}
       {(project.company || project.shortDescription || project.githubUrl) && (
         <div
           className={cn(

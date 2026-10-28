@@ -11,7 +11,6 @@ export default function Home() {
   const [linkedVideoId, setLinkedVideoId] = useState<number | null>(null);
   const mousePositionRef = useRef({ x: 0, y: 0 });
 
-  // Track mouse position and check hover on move/scroll (throttled for performance)
   useEffect(() => {
     let rafId: number | null = null;
     let pendingCheck = false;
@@ -28,7 +27,6 @@ export default function Home() {
       }
 
       if (element) {
-        // Find the video card element (might be nested)
         const videoCard = element.closest(
           "[data-video-card-id]",
         ) as HTMLElement;
@@ -44,7 +42,6 @@ export default function Home() {
         }
       }
 
-      // If no card is under cursor, clear hover state
       setHoveredId(null);
       pendingCheck = false;
     };
@@ -85,7 +82,6 @@ export default function Home() {
       const sections = sectionsRef.current.filter(Boolean) as HTMLElement[];
       if (sections.length === 0) return;
 
-      // Find the section that is most visible in the viewport
       let maxVisibility = 0;
       let activeId = "";
 
@@ -93,7 +89,6 @@ export default function Home() {
         const rect = section.getBoundingClientRect();
         const viewportHeight = window.innerHeight;
 
-        // Calculate visibility: how much of the section is in the viewport
         const visibleTop = Math.max(0, -rect.top);
         const visibleBottom = Math.min(rect.height, viewportHeight - rect.top);
         const visibleHeight = Math.max(0, visibleBottom - visibleTop);
@@ -111,10 +106,8 @@ export default function Home() {
         }
       });
 
-      // Map "test" section to "work" for navigation consistency
-      const sectionId = activeId === "test" ? "work" : activeId;
-      if (sectionId) {
-        setActiveSection(sectionId);
+      if (activeId) {
+        setActiveSection(activeId);
       }
     };
 
@@ -126,18 +119,15 @@ export default function Home() {
             entry.target.classList.add("animate-fade-in-up");
           }
         });
-        // Determine active section whenever intersection changes
         determineActiveSection();
       },
       { threshold: [0, 0.1, 0.5, 1], rootMargin: "0px 0px -10% 0px" },
     );
 
-    // Use setTimeout to ensure refs are set after render
     const timeoutId = setTimeout(() => {
       sectionsRef.current.forEach((section) => {
         if (section) {
           observer.observe(section);
-          // Check if section is already in viewport
           const rect = section.getBoundingClientRect();
           const isInViewport = rect.top < window.innerHeight && rect.bottom > 0;
           if (isInViewport) {
@@ -146,11 +136,9 @@ export default function Home() {
           }
         }
       });
-      // Initial determination
       determineActiveSection();
     }, 0);
 
-    // Also check on scroll for more reliable updates
     const handleScroll = () => {
       determineActiveSection();
     };
@@ -238,15 +226,13 @@ export default function Home() {
           {["intro", "work", "connect"].map((section) => (
             <button
               key={section}
-              onClick={() => {
-                const targetId = section === "work" ? "test" : section;
+              onClick={() =>
                 document
-                  .getElementById(targetId)
-                  ?.scrollIntoView({ behavior: "smooth" });
-              }}
+                  .getElementById(section)
+                  ?.scrollIntoView({ behavior: "smooth" })
+              }
               className={`w-2 h-8 rounded-full transition-all duration-500 ${
-                activeSection === section ||
-                (section === "work" && activeSection === "test")
+                activeSection === section
                   ? "bg-purple-accent"
                   : "bg-muted-foreground/30 hover:bg-muted-foreground/60"
               }`}
@@ -267,7 +253,7 @@ export default function Home() {
           <div className="grid lg:grid-cols-5 gap-12 sm:gap-16 w-full">
             <div className="lg:col-span-3 space-y-6 sm:space-y-8">
               <div className="space-y-3 sm:space-y-2">
-<h1 className="text-5xl sm:text-6xl lg:text-7xl font-light tracking-tight">
+                <h1 className="text-5xl sm:text-6xl lg:text-7xl font-light tracking-tight">
                   Aprameya
                   <br />
                   <span className="text-muted-foreground">Kannan</span>
@@ -280,7 +266,7 @@ export default function Home() {
         </header>
 
         <section
-          id="test"
+          id="work"
           ref={(el) => {
             sectionsRef.current[1] = el;
           }}
@@ -430,7 +416,7 @@ export default function Home() {
         >
           <div className="grid lg:grid-cols-2 gap-12 sm:gap-16">
             <div className="space-y-6 sm:space-y-8">
-              <h2 className="text-3xl sm:text-4xl font-light">Let's Connect</h2>
+              <h2 className="text-3xl sm:text-4xl font-light">Let&apos;s Connect</h2>
 
               <div className="space-y-6">
                 <div className="space-y-4">

@@ -4,7 +4,6 @@
   <img src="https://img.shields.io/badge/Next.js-000000?logo=nextdotjs&logoColor=white&style=flat-square" />
   <img src="https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=white&style=flat-square" />
   <img src="https://img.shields.io/badge/Tailwind_CSS-06B6D4?logo=tailwindcss&logoColor=white&style=flat-square" />
-  <img src="https://img.shields.io/badge/Framer_Motion-0055FF?logo=framer&logoColor=white&style=flat-square" />
   <img src="https://img.shields.io/badge/Vercel-000000?logo=vercel&logoColor=white&style=flat-square" />
 </p>
 
@@ -24,7 +23,6 @@ The site highlights projects, technical skills, and professional experience with
 - **Framework:** Next.js  
 - **Language:** TypeScript  
 - **Styling:** Tailwind CSS  
-- **Animations:** Framer Motion  
 - **Deployment:** Vercel  
 
 ---

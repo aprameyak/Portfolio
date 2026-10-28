@@ -10,6 +10,7 @@ const geist = Geist({
 })
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://aprameyak.vercel.app"),
   title: "Aprameya Kannan",
   description: "Aprameya Kannan - Full-stack web developer specializing in TypeScript, React, Python, and AI integration. Portfolio showcasing full-stack applications, AI automation projects, and innovative web solutions.",
   keywords: [
@@ -35,7 +36,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Aprameya Kannan",
     description: "Full-stack web developer specializing in TypeScript, React, Python, and AI integration.",
-    url: "https://yourdomain.com",
+    url: "https://aprameyak.vercel.app",
     siteName: "Aprameya Kannan Portfolio",
     locale: "en_US",
     type: "website",
