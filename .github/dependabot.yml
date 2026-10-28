@@ -1,2 +1,17 @@
 version: 2
-updates: []
+updates:
+  - package-ecosystem: "npm"
+    directory: "/"
+    target-branch: "production"
+    schedule:
+      interval: "weekly"
+    groups:
+      dependencies:
+        patterns:
+          - "*"
+
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    target-branch: "production"
+    schedule:
+      interval: "weekly"
