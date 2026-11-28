@@ -29,4 +29,4 @@ The site highlights projects, technical skills, and professional experience with
 
 ## Live Site
 
-🔗 https://aprameyak.vercel.app
+🔗 https://aprameyakannan.com
